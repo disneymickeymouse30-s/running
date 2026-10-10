@@ -1,0 +1,2253 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>RUNNING TRAINING LOG</title>
+<meta name="description" content="ランニング・ウォーキングの練習記録とApple Watch記録の手動インポート">
+<meta name="theme-color" content="#1d5fd0">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="RUN LOG">
+<meta name="format-detection" content="telephone=no">
+<link rel="apple-touch-icon" href="data:image/png;base64,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">
+<link rel="icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALQAAAC0CAIAAACyr5FlAAAII0lEQVR42u2de1BU1x2Al92FRReMgKYKrhYJII9mKQGiqNUhxjbVJiUl4IOHgEENrTFJpx3byTRppyZpmghNBTQuougU8RFNBBMd3RQUFMVgCEGwmgYf0UmRBNbAgkL/SKdjlnu3Ybm73Fu/789z7uOcHx/n/H73XtTNkNGgAhBCTQgAOQA5ADkAOQA5ADkAOQA5ADkAOQCQA5ADkAOQA5ADkAOQA5ADkAOQAwA5ADkAOQA5ADkAOQA5ADkAOQA5AJADkAOQA5ADkAOQA5ADFIbWGRc9rllAZF3PzNsVrBzAtgLIAcgByAHIAZSy0ldZVLkKiqTalfNxRi1+d5rhmkiqXTkf/FBWJMk5ADlAhnIMzpvISZUSSbWLZ4UZCoqkdqSsB/lHkpwDkAOQA5ADkAOQA+SJU0pZg+kykR0Blp1l5QC2FUAOQA5ADkAOQA5ADgDkAOQA5ADkAOQA5ADkAOQA5ADkAEAOQA5ADkAOQA5ADpA/2hG8t9VqnTQt7n/7q1Z76Ud76fV+fj5hIfeFh4XMT/hBcFDgMG/RVHfk3vHj7Jw7PtAo2H6m+qBhkv+Q5rJ7+8Y5M6fbudef8gpfzS8a3G6uKI8MD2XlEKW/v7+zy3L12vXGpnPlbx14Yd3r8fN+Ou/RxebqWqX8Cq7/65tsK67jbOPHyekrn137+/7+fvmP9viJ06fOnEUOl1Jatuc3L76iiKHmbdiMHK7GtK2svqFR/uM8dLSqqbkFOdjRRRaPAhPVigRkpiaPGuWpUqkGBgY6uywtrRfqGxoHBgYED66qOdnb1+fh7i7zWL9deXjtc21TvzsZOYbFL1evsKkzz7VeyFix5uI/2wYf3N3d09Tc+v37I+RfduUXmvJfeZFtRWKmhQQV5r0k1vv5v9oVMYtdew9c+ewackhPtDFykv9Ewa6OL75UxBT6bt3asGkrcjiFyYYAwXadh4eCyu/2Gx3IIT1iOek4P1/Zrnbu2m8kdj091iJTKXJIz+UrVwXbw6cFy3PA/v4TkhIX2jQWl+7s7LIgh5R8+FHzpSufDW6PjTb6+oyV7bCfXpWlVn8jzp1dFtPWvyGHZFy6fDX3ud8KdmWmpch55EGBUxb+aJ5N48YtO7q7e3jO4Qgbi3fo9aNUKtXAgMpiuflxy/nq4yf7bt0afGT8gzFJj/1Y5lF+Jnf525WH7mxpv9FRWrYnJ3MpcgyZvxQVf5vDIsJCiwv+7ObmJnM5IsNDH5o768j7x+5s3LBp67LUZDk/2FXquxW1Wp2+OKlid4mfr48iBvxs7pM2LVevXS/f+w45h8SE3DfVXLHztXXP60ePVsqY42KipsdG2y6QhVtu3+5HDilp/cfFtJw1tXX1yhr2M7nLbVo++bRtf8V7yCExbZeuJKWuOPr34yNwb0dTnIQ5M++PDLNpzCswiT3ZQw5hYqON8Q/GxEYb7XwD3NvXl7P61/bfY7m7u4ulq4K1z50XF+vy1Dn+qH7NU9k2Lc0t5w8drUKOIVBS9Pr+MlPlnm1NdUeq3t09d9YMwcO+7Oxa+7uX7eetXnrhvMT+YwY7vWO8vRye14IfPjT4u3nZfqykgG0lLDS4rKTg4YTZgr0HD5tPnv7AzuljvL0F2+2/5Rfr9fDw0Ol0wymyVq/MtGmsb2isrqlDDgfRaNRvvPqHe8YI/5hfe2OTnXP9/IRr3QuffGrnLMGvilQq1bhhV85JiQsNAbYfHpw4dQY5HMfP1+cXK7MEu8xVNc0t58VO/F7ENMH2mhOn7dzuWG3dkK727dFqNE/lZCgi5kqqVrLTU8T2+0LTdrGzoo2RIvvR+2KfCFmt1rfeeVf4alGRw59IWsrj48f5IYeUeOn1S1MSBbv27K8UyxJmxD0g2G65efNXz/9RsIx84aX1165/PqSrDQmdTrciKxU5JObJZUs1GoEx9/b2FpfuFDwlOCgw9oEowa59B957bFG2uarmq6+6VSpVT4/1WO2pJdk/3yzyPj0ocMrgp5yOkZWWIpZCIYeDGAImPjI/QbBry/Zyq9Uq/JNITRa7YG1dfXLGqikR0wNCYgxhcYlLlh8+Wi12cGZqslQv+by99Fnpi5BDYlZlpQm2t9/o2LWvQrAr8SePxEYb7V/WzlOvrwkNnpqx5AkJJ7IyK/Xrv81BDsmIi4kS+xMVsW8zNRp14fp1Xnq9wzf18PDYmP+yp6dOwon4+oxNW/Qz5JAYsWyu5fxFc1WNYNeUyZN2lhQ49n7f20tfuikvIkz6fycjNyeD7zkk5tEF8ydOuFe4pt28zc6Sc2jfDrHkVIzI8NCDe7cnzJnpjIn4T/jOE48vRA4pcddqs9MXC3aZq2vPtV4QO3GyIaBy99ZdpUVzZ82w/yur1Wimx0aXvplvrigPDZ7qvLk8vSpLsP6SA26GjAbJL9pWYpS/YT091lNnzn7w4UftNzo6vui0WG7q9aN9xo7x9fExRobFxUQp6Eui/6gv9f9lr1XdrXh66mbHx82Oj1PB/9O2AsgByAHIAcgByAHIAcgBgByAHCAJLnp8/t/H/op47SJnXBlJtSvno3LCy6G70wzXRFLtyvngh7IiSc4ByAEylGNw3kROqpRIOkUOm73wzjlghlR+2ETSGfmHdqSsB/lH0lnbCiXJyBYyJKSg2ISUxUPRy4bKSX+aQMKhdC1cJweKKHRVdp0cQM4ByAHIAcgBgByAHIAcgByAHIAcgByAHIAcgBwAyAHIAcgByAHIAcgByAHIAcgByAGAHIAcgByAHIAcgByAHIAcgByAHHBX82+h82VoonK8rwAAAABJRU5ErkJggg==">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&display=swap">
+<style>
+/* レイアウト：下部タブ＋1カラム（最大760px）。ホームは大会ゼッケン型のカウントダウンが主役 */
+:root{
+  --bg:#eef2f6; --surface:#ffffff; --surface-2:#f6f8fb; --ink:#14202e; --muted:#5a6878; --line:#d9e0e8;
+  --accent:#1d5fd0; --accent-ink:#ffffff; --accent-soft:#e3ecfb;
+  --race:#e2621b; --race-ink:#ffffff; --race-soft:#fdebdf; --good:#1b7f52; --good-soft:#e1f3ea; --warn:#9a6a00; --warn-soft:#fbf1d6;
+  --bad:#c23a3a; --bad-soft:#fbe4e4; --walk:#2f8f8a; --hard:#b0420f;
+  --num:"Barlow Condensed","Roboto Condensed","Arial Narrow",system-ui,sans-serif;
+  --jp:"Hiragino Sans","Hiragino Kaku Gothic ProN","Noto Sans JP","Yu Gothic UI","Meiryo",system-ui,sans-serif;
+  --r:14px; --nav-h:64px;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0e141b; --surface:#17202a; --surface-2:#1d2733; --ink:#e6edf5; --muted:#97a5b5; --line:#2b3746;
+  --accent:#6f9dff; --accent-ink:#0b1320; --accent-soft:#1d2c48;
+  --race:#ff8b4a; --race-ink:#2a1406; --race-soft:#3a2416; --good:#4cc38a; --good-soft:#15301f; --warn:#e2b54e; --warn-soft:#352a10;
+  --bad:#ff7070; --bad-soft:#3a1b1b; --walk:#5cc7c0; --hard:#ff8a5c; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0e141b; --surface:#17202a; --surface-2:#1d2733; --ink:#e6edf5; --muted:#97a5b5; --line:#2b3746;
+  --accent:#6f9dff; --accent-ink:#0b1320; --accent-soft:#1d2c48;
+  --race:#ff8b4a; --race-ink:#2a1406; --race-soft:#3a2416; --good:#4cc38a; --good-soft:#15301f; --warn:#e2b54e; --warn-soft:#352a10;
+  --bad:#ff7070; --bad-soft:#3a1b1b; --walk:#5cc7c0; --hard:#ff8a5c; color-scheme:dark}
+
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.6 var(--jp);-webkit-tap-highlight-color:transparent}
+button,input,select,textarea{font:inherit;color:inherit}
+.wrap{max-width:760px;margin:0 auto;padding-inline:16px;padding-block:calc(env(safe-area-inset-top,0px) + 12px) calc(var(--nav-h) + env(safe-area-inset-bottom,0px) + 28px)}
+body.in-sub .wrap{padding-bottom:calc(env(safe-area-inset-bottom,0px) + 40px)}
+.num{font-family:var(--num);font-variant-numeric:tabular-nums;letter-spacing:.01em}
+.muted{color:var(--muted)} .small{font-size:13px} .tiny{font-size:12px}
+h1,h2,h3{margin:0;line-height:1.3;text-wrap:balance}
+h2{font-size:15px;font-weight:700}
+.stack{display:flex;flex-direction:column;gap:14px}
+.row{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.between{display:flex;justify-content:space-between;align-items:center;gap:10px}
+.grow{flex:1 1 auto;min-width:0}
+.hidden{display:none!important}
+:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+
+/* ヘッダー */
+.top{display:flex;align-items:flex-end;justify-content:space-between;gap:12px;padding:6px 2px 2px}
+.top .date{font-size:20px;font-weight:700}
+.brand{font-family:var(--num);font-weight:700;letter-spacing:.14em;font-size:12px;color:var(--accent)}
+.bar{position:sticky;top:0;z-index:5;margin:0 -16px;padding:calc(env(safe-area-inset-top,0px) + 8px) 16px 8px;background:var(--bg);display:flex;align-items:center;gap:8px;border-bottom:1px solid var(--line)}
+.bar h1{font-size:17px;flex:1;min-width:0}
+.back{border:0;background:none;color:var(--accent);font-weight:700;padding:8px 6px;min-height:44px;cursor:pointer}
+
+/* カード */
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:16px}
+.card.flat{background:transparent;border:0;padding:0}
+.sec-title{flex-wrap:wrap;display:flex;justify-content:space-between;align-items:baseline;gap:8px;margin-bottom:10px}
+.sec-title h2{font-size:15px}
+.link{border:0;background:none;color:var(--accent);font-weight:600;padding:6px 0;cursor:pointer;font-size:14px}
+
+/* ゼッケン型カウントダウン */
+.bib{position:relative;border-radius:10px;background:var(--surface);border:1px solid var(--line);overflow:hidden;cursor:pointer;text-align:left;width:100%;padding:0}
+.bib-top{background:var(--race);color:var(--race-ink);display:flex;justify-content:space-between;padding:7px 24px;font-family:var(--num);font-weight:600;letter-spacing:.12em;font-size:13px}
+.bib-body{padding:12px 24px 14px;position:relative}
+.bib-body::before,.bib-body::after,.bib-top::before,.bib-top::after{content:"";position:absolute;width:9px;height:9px;border-radius:50%;background:var(--bg);border:1px solid var(--line)}
+.bib-top{position:relative}
+.bib-top::before{left:6px;top:7px}.bib-top::after{right:6px;top:7px}
+.bib-body::before{left:6px;bottom:8px}.bib-body::after{right:6px;bottom:8px}
+.bib-name{font-weight:700;font-size:16px}
+.bib-count{display:flex;align-items:baseline;gap:8px;margin:2px 0}
+.bib-big{font-family:var(--num);font-weight:700;font-size:76px;line-height:.95;color:var(--ink);font-variant-numeric:tabular-nums}
+.bib-big.word{font-size:40px;line-height:1.2;color:var(--race)}
+.bib-unit{font-weight:700;font-size:16px}
+.bib-meta{font-size:13px;color:var(--muted)}
+
+/* ボタン */
+.btn{white-space:nowrap;flex-shrink:0;display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:46px;padding:0 18px;border-radius:12px;border:1px solid var(--line);background:var(--surface);font-weight:700;cursor:pointer;text-decoration:none}
+.btn.primary{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
+.btn.race{background:var(--race);border-color:var(--race);color:var(--race-ink)}
+.btn.danger{background:var(--bad);border-color:var(--bad);color:#fff}
+.btn.ghost-danger{color:var(--bad);border-color:var(--bad)}
+.btn.block{width:100%}
+.btn.big{min-height:58px;font-size:17px;border-radius:14px}
+.btn.sm{min-height:36px;padding:0 12px;font-size:13px;border-radius:10px}
+.btn:disabled{opacity:.45;cursor:not-allowed}
+.btns{display:flex;gap:10px;flex-wrap:wrap}
+.btns>.btn{flex:1 1 140px}
+
+/* KPI */
+.kpis{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+@media (min-width:620px){.kpis.four{grid-template-columns:repeat(4,minmax(0,1fr))}}
+.kpi{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:12px 14px}
+.kpi .lab{font-size:12px;color:var(--muted);font-weight:600}
+.kpi .val{font-family:var(--num);font-weight:700;font-size:34px;line-height:1.1;font-variant-numeric:tabular-nums}
+.kpi .val small{font-family:var(--jp);font-size:13px;font-weight:600;margin-left:3px;color:var(--muted)}
+.kpi .val.none{font-family:var(--jp);font-size:16px;color:var(--muted);font-weight:600;padding-top:10px}
+.kpi .delta{font-size:12px;color:var(--muted)}
+
+/* 進捗バー */
+.prog{display:flex;flex-direction:column;gap:6px}
+.prog-track{height:10px;border-radius:6px;background:var(--surface-2);border:1px solid var(--line);overflow:hidden}
+.prog-fill{height:100%;background:var(--accent);border-radius:6px}
+.prog-fill.over{background:var(--good)}
+.prog .between{font-size:13px}
+
+/* チップ・バッジ */
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{min-height:40px;padding:0 14px;border-radius:20px;border:1px solid var(--line);background:var(--surface);font-weight:600;cursor:pointer;font-size:14px}
+.chip[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
+.badge{display:inline-flex;align-items:center;gap:4px;padding:1px 8px;border-radius:999px;font-size:12px;font-weight:700;background:var(--surface-2);border:1px solid var(--line);color:var(--muted);white-space:nowrap}
+.badge.src{background:var(--accent-soft);border-color:transparent;color:var(--accent)}
+.badge.ok{background:var(--good-soft);color:var(--good);border-color:transparent}
+.badge.warn{background:var(--warn-soft);color:var(--warn);border-color:transparent}
+.badge.bad{background:var(--bad-soft);color:var(--bad);border-color:transparent}
+.badge.race{background:var(--race-soft);color:var(--race);border-color:transparent}
+.badge.main{background:var(--race);color:var(--race-ink);border-color:transparent}
+
+/* 記録カード */
+.wlist{display:flex;flex-direction:column;gap:10px}
+.witem{display:grid;grid-template-columns:54px minmax(0,1fr);gap:12px;align-items:center;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:12px 14px;cursor:pointer;text-align:left;width:100%}
+.wdate{text-align:center;border-right:1px solid var(--line);padding-right:10px}
+.wdate .d{font-family:var(--num);font-weight:700;font-size:22px;line-height:1}
+.wdate .w{font-size:12px;color:var(--muted)}
+.wmain .t{display:flex;gap:6px;align-items:center;flex-wrap:wrap;font-weight:700}
+.wstats{display:flex;gap:14px;flex-wrap:wrap;margin-top:2px;font-size:13px;color:var(--muted)}
+.wstats b{font-family:var(--num);font-size:19px;color:var(--ink);font-weight:700;margin-right:2px}
+.empty{padding:22px 16px;text-align:center;color:var(--muted);border:1px dashed var(--line);border-radius:12px}
+
+/* 表 */
+.tablewrap{overflow-x:auto;border:1px solid var(--line);border-radius:12px;background:var(--surface)}
+table{border-collapse:collapse;width:100%;font-size:13px}
+th,td{padding:9px 10px;border-bottom:1px solid var(--line);text-align:left;white-space:nowrap}
+th{font-size:12px;color:var(--muted);background:var(--surface-2);position:sticky;top:0}
+td.n{font-family:var(--num);font-size:15px;text-align:right;font-variant-numeric:tabular-nums}
+tbody tr{cursor:pointer}
+tbody tr:hover{background:var(--surface-2)}
+
+/* フォーム */
+.field{display:flex;flex-direction:column;gap:6px}
+.field>label,.lab2{font-weight:700;font-size:14px}
+.req{color:var(--bad);font-size:12px;margin-left:4px}
+.opt{color:var(--muted);font-size:12px;font-weight:500;margin-left:4px}
+input[type=text],input[type=number],input[type=date],input[type=time],input[type=search],select,textarea{
+  width:100%;min-height:46px;padding:10px 12px;border-radius:10px;border:1px solid var(--line);background:var(--surface);font-size:16px}
+textarea{min-height:90px;resize:vertical}
+input:focus,select:focus,textarea:focus{border-color:var(--accent);outline:none;box-shadow:0 0 0 3px var(--accent-soft)}
+.inline-unit{display:flex;align-items:center;gap:8px}
+.inline-unit input{flex:1;min-width:0}
+.inline-unit span{color:var(--muted);font-weight:600;white-space:nowrap}
+.dur3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+.dur3 .inline-unit input{text-align:right}
+.grid2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+@media (max-width:420px){.grid2.stack-sm{grid-template-columns:1fr}}
+.seg{display:flex;border:1px solid var(--line);border-radius:12px;overflow:hidden;background:var(--surface)}
+.seg button{flex:1;min-height:44px;border:0;background:none;font-weight:700;cursor:pointer;border-right:1px solid var(--line)}
+.seg button:last-child{border-right:0}
+.seg button[aria-pressed="true"]{background:var(--accent);color:var(--accent-ink)}
+.calcline{background:var(--surface-2);border:1px solid var(--line);border-radius:10px;padding:10px 12px;font-size:14px}
+.calcline b{font-family:var(--num);font-size:19px}
+.alert{border-radius:10px;padding:12px 14px;font-size:14px;border:1px solid transparent}
+.alert.err{background:var(--bad-soft);color:var(--bad)}
+.alert.warn{background:var(--warn-soft);color:var(--warn)}
+.alert.info{background:var(--accent-soft);color:var(--ink)}
+.alert.ok{background:var(--good-soft);color:var(--good)}
+.alert ul{margin:6px 0 0;padding-left:20px}
+details.more{border-top:1px solid var(--line);padding-top:12px}
+details.more>summary{cursor:pointer;font-weight:700;color:var(--accent);list-style:none;min-height:40px;display:flex;align-items:center}
+details.more>summary::-webkit-details-marker{display:none}
+details.more>summary::before{content:"＋";margin-right:6px}
+details.more[open]>summary::before{content:"－"}
+.check{display:flex;gap:10px;align-items:center;min-height:44px;cursor:pointer}
+.check input{width:22px;height:22px;accent-color:var(--accent)}
+
+/* 定義リスト */
+.dl{display:grid;grid-template-columns:auto minmax(0,1fr);gap:8px 16px;font-size:14px;margin:0}
+.dl dt{color:var(--muted)}
+.dl dd{margin:0;font-weight:600;overflow-wrap:anywhere}
+
+/* カレンダー */
+.cal{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:3px}
+.cal .dh{text-align:center;font-size:12px;color:var(--muted);font-weight:700;padding:4px 0}
+.cal .dh.sun{color:var(--bad)} .cal .dh.sat{color:var(--accent)}
+.cday{min-height:68px;border-radius:8px;background:var(--surface);border:1px solid var(--line);padding:3px 3px 4px;display:flex;flex-direction:column;gap:2px;cursor:pointer;text-align:left;min-width:0;overflow:hidden}
+.cday.out{opacity:.35}
+.cday.today{border:2px solid var(--accent)}
+.cday.sel{background:var(--accent-soft)}
+.cday .dn{font-family:var(--num);font-weight:700;font-size:15px;line-height:1}
+.cday .km{font-family:var(--num);font-size:12px;color:var(--muted);line-height:1}
+.tags{display:flex;flex-wrap:wrap;gap:2px}
+.tg{font-size:10px;line-height:1.35;padding:0 3px;border-radius:4px;font-weight:700;white-space:nowrap}
+.tg.run{background:var(--accent);color:var(--accent-ink)}
+.tg.walk{background:var(--walk);color:#fff}
+.tg.hard{background:var(--hard);color:#fff}
+.tg.race{background:var(--race);color:var(--race-ink)}
+.tg.other{background:var(--muted);color:var(--surface)}
+.tg.plan{border:1px dashed var(--accent);color:var(--accent)}
+.tg.rest{border:1px solid var(--good);color:var(--good)}
+.legend{display:flex;flex-wrap:wrap;gap:10px;font-size:12px;color:var(--muted)}
+.legend span{display:inline-flex;gap:4px;align-items:center}
+
+/* グラフ */
+.chart{width:100%;height:auto;display:block}
+.chart text{fill:var(--muted);font-size:11px;font-family:var(--jp)}
+.chart .v{fill:var(--ink);font-family:var(--num);font-size:12px;font-weight:700}
+.chart .grid{stroke:var(--line);stroke-width:1}
+.chart .bar{fill:var(--accent)}
+.chart .bar.hl{fill:var(--race)}
+.chart .goal{stroke:var(--race);stroke-dasharray:4 3;stroke-width:1.5}
+.chart .line{fill:none;stroke:var(--accent);stroke-width:2.2}
+.chart .dot{fill:var(--accent)}
+.chart .area{fill:var(--accent-soft)}
+.hbars{display:flex;flex-direction:column;gap:8px}
+.hbar{display:grid;grid-template-columns:7.5em minmax(0,1fr) 5.5em;gap:8px;align-items:center;font-size:13px}
+.hbar .tr{height:12px;background:var(--surface-2);border-radius:6px;overflow:hidden;border:1px solid var(--line)}
+.hbar .fl{height:100%;background:var(--accent)}
+.hbar .vv{text-align:right;font-family:var(--num);font-size:15px}
+
+/* 下部ナビ */
+.nav{position:fixed;left:0;right:0;bottom:0;z-index:10;background:var(--surface);border-top:1px solid var(--line);padding-bottom:env(safe-area-inset-bottom,0px)}
+.nav-in{max-width:760px;margin:0 auto;display:grid;grid-template-columns:repeat(5,1fr)}
+.nav button{border:0;background:none;min-height:var(--nav-h);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;font-size:11px;font-weight:700;color:var(--muted);cursor:pointer}
+.nav button svg{width:24px;height:24px}
+.nav button[aria-current="page"]{color:var(--accent)}
+body.in-sub .nav{display:none}
+
+/* 設定リスト */
+.menu{display:flex;flex-direction:column;background:var(--surface);border:1px solid var(--line);border-radius:12px;overflow:hidden}
+.menu>button,.menu>.mi{display:flex;justify-content:space-between;align-items:center;gap:10px;min-height:52px;padding:10px 14px;border:0;border-bottom:1px solid var(--line);background:none;text-align:left;cursor:pointer;width:100%}
+.menu>:last-child{border-bottom:0}
+.menu .chev{color:var(--muted)}
+.menu .danger-t{color:var(--bad);font-weight:700}
+
+/* インポート */
+.steps{margin:0;padding-left:22px;display:flex;flex-direction:column;gap:4px;font-size:14px}
+.progress{height:8px;background:var(--surface-2);border-radius:4px;overflow:hidden;border:1px solid var(--line)}
+.progress>div{height:100%;background:var(--accent);width:0}
+.imp-item{display:grid;grid-template-columns:30px minmax(0,1fr);gap:8px;padding:10px 12px;border-bottom:1px solid var(--line);align-items:start}
+.imp-item:last-child{border-bottom:0}
+.imp-item input{width:22px;height:22px;margin-top:3px;accent-color:var(--accent)}
+.imp-list{background:var(--surface);border:1px solid var(--line);border-radius:12px;overflow:hidden}
+.code{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:12px;background:var(--surface-2);border:1px solid var(--line);border-radius:8px;padding:10px;overflow-x:auto;white-space:pre}
+
+/* トースト・モーダル */
+.toast{position:fixed;left:50%;top:calc(env(safe-area-inset-top,0px) + 12px);transform:translateX(-50%);z-index:50;background:var(--ink);color:var(--bg);padding:12px 18px;border-radius:12px;font-weight:700;max-width:calc(100% - 32px);box-shadow:0 6px 24px rgba(0,0,0,.25)}
+.toast.err{background:var(--bad);color:#fff}
+.modal-bg{position:fixed;inset:0;z-index:40;background:rgba(10,16,24,.5);display:flex;align-items:flex-end;justify-content:center;padding:16px;padding-bottom:calc(env(safe-area-inset-bottom,0px) + 16px)}
+@media (min-width:620px){.modal-bg{align-items:center}}
+.modal{background:var(--surface);border-radius:16px;padding:20px;width:100%;max-width:440px;display:flex;flex-direction:column;gap:14px;max-height:85vh;overflow:auto}
+.modal h3{font-size:17px}
+.modal p{margin:0;white-space:pre-line}
+
+.sug{border-left:3px solid var(--accent);padding:2px 0 2px 12px;display:flex;flex-direction:column;gap:4px}
+.sug.alertish{border-left-color:var(--bad)}
+.sug .t{font-weight:700}
+.note{font-size:12px;color:var(--muted)}
+.today-row{display:flex;justify-content:space-between;gap:10px;align-items:center;padding:10px 0;border-bottom:1px solid var(--line)}
+.today-row:last-child{border-bottom:0}
+@media (min-width:720px){.home-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}}
+
+</style>
+</head>
+<body>
+<main id="main" class="wrap" aria-live="polite"><p style="padding:40px 0;text-align:center;color:#5a6878">読み込み中…</p></main>
+<nav class="nav" aria-label="メインメニュー"><div class="nav-in">
+ <button data-act="tab" data-tab="home"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11l9-7 9 7"/><path d="M5 10v10h14V10"/></svg>ホーム</button>
+ <button data-act="tab" data-tab="records"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M9 8h6M9 12h6M9 16h4"/></svg>記録</button>
+ <button data-act="tab" data-tab="calendar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>カレンダー</button>
+ <button data-act="tab" data-tab="stats"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg>統計</button>
+ <button data-act="tab" data-tab="settings"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M2 12h3M19 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1"/></svg>設定</button>
+</div></nav>
+<noscript><p style="padding:16px">このアプリを使うにはJavaScriptを有効にしてください。</p></noscript>
+<script>
+/* ===== Core: 純粋関数（日付・計算・検証・CSV・ヘルスケアXML解析・重複判定・提案） ===== */
+var Core = (function () {
+  'use strict';
+  const pad2 = n => String(n).padStart(2, '0');
+  const DOW = ['日', '月', '火', '水', '木', '金', '土'];
+
+  /* ---------- 日付 ---------- */
+  function ymd(d) { return d.getFullYear() + '-' + pad2(d.getMonth() + 1) + '-' + pad2(d.getDate()); }
+  function hm(d) { return pad2(d.getHours()) + ':' + pad2(d.getMinutes()); }
+  function isYmd(s) {
+    if (typeof s !== 'string' || !/^\d{4}-\d{2}-\d{2}$/.test(s)) return false;
+    const [y, m, d] = s.split('-').map(Number);
+    const dt = new Date(y, m - 1, d);
+    return y >= 1900 && y <= 2200 && dt.getFullYear() === y && dt.getMonth() === m - 1 && dt.getDate() === d;
+  }
+  function isHm(s) { return typeof s === 'string' && /^([01]\d|2[0-3]):[0-5]\d$/.test(s); }
+  function toDate(s) { const [y, m, d] = s.split('-').map(Number); return new Date(y, m - 1, d); }
+  function addDays(s, n) { const d = toDate(s); d.setDate(d.getDate() + n); return ymd(d); }
+  function dayDiff(a, b) { // b - a（日）
+    const [y1, m1, d1] = a.split('-').map(Number), [y2, m2, d2] = b.split('-').map(Number);
+    return Math.round((Date.UTC(y2, m2 - 1, d2) - Date.UTC(y1, m1 - 1, d1)) / 86400000);
+  }
+  function weekStart(s) { const w = (toDate(s).getDay() + 6) % 7; return addDays(s, -w); } // 月曜始まり
+  function monthStart(s) { return s.slice(0, 8) + '01'; }
+  function monthEnd(s) { const [y, m] = s.split('-').map(Number); return ymd(new Date(y, m, 0)); }
+  function addMonths(s, n) { const [y, m] = s.split('-').map(Number); return ymd(new Date(y, m - 1 + n, 1)); }
+  function dow(s) { return DOW[toDate(s).getDay()]; }
+  function fmtDateJa(s) { const [y, m, d] = s.split('-').map(Number); return `${y}年${m}月${d}日（${dow(s)}）`; }
+  function fmtMD(s) { const [, m, d] = s.split('-').map(Number); return `${m}/${d}`; }
+  function normDate(s) { // 2026/9/1 → 2026-09-01
+    const m = String(s || '').trim().match(/^(\d{4})[-/.](\d{1,2})[-/.](\d{1,2})$/);
+    if (!m) return null; const r = `${m[1]}-${pad2(m[2])}-${pad2(m[3])}`; return isYmd(r) ? r : null;
+  }
+  function normTime(s) {
+    const m = String(s || '').trim().match(/^(\d{1,2}):(\d{2})(?::\d{2})?$/);
+    if (!m) return null; const r = `${pad2(m[1])}:${m[2]}`; return isHm(r) ? r : null;
+  }
+
+  /* ---------- 数値・表示（丸めは ここに統一） ---------- */
+  // 距離：小数2桁(km) / ペース：秒単位で四捨五入 / 速度：小数1桁 / 割合：整数に四捨五入
+  function round(n, dp) { const f = 10 ** dp; return Math.round(n * f) / f; }
+  function fmtKm(m) { return (m == null || !isFinite(m)) ? '—' : round(m / 1000, 2).toFixed(2); }
+  function fmtDur(sec, withSec) {
+    if (sec == null || !isFinite(sec)) return '—';
+    sec = Math.round(sec);
+    if (!withSec) {
+      const tm = Math.round(sec / 60), H = Math.floor(tm / 60), M = tm % 60;
+      return H ? `${H}時間${pad2(M)}分` : `${M}分`;
+    }
+    const h = Math.floor(sec / 3600), m = Math.floor(sec % 3600 / 60), s = sec % 60;
+    return (h ? `${h}時間${pad2(m)}分` : `${m}分`) + (s ? `${pad2(s)}秒` : '');
+  }
+  function fmtClock(sec) {
+    if (sec == null || !isFinite(sec)) return '';
+    sec = Math.round(sec); const h = Math.floor(sec / 3600), m = Math.floor(sec % 3600 / 60), s = sec % 60;
+    return h ? `${h}:${pad2(m)}:${pad2(s)}` : `${m}:${pad2(s)}`;
+  }
+  function fmtPace(p) { if (p == null || !isFinite(p)) return '—'; const r = Math.round(p); return `${Math.floor(r / 60)}'${pad2(r % 60)}"`; }
+  function fmtPaceClock(p) { if (p == null || !isFinite(p)) return ''; const r = Math.round(p); return `${Math.floor(r / 60)}:${pad2(r % 60)}`; }
+  function paceSec(distM, durSec) { if (!(distM > 0) || !(durSec > 0)) return null; return durSec / (distM / 1000); }
+  function speedKmh(distM, durSec) { if (!(distM > 0) || !(durSec > 0)) return null; return (distM / 1000) / (durSec / 3600); }
+  function fmtSpeed(v) { return v == null ? '—' : round(v, 1).toFixed(1); }
+  function pct(a, b) { return (b > 0) ? Math.round(a / b * 100) : null; }
+
+  function parsePace(str) { // "5:30" "5'30"" → 秒/km、空→null、不正→NaN
+    if (str == null) return null; str = String(str).trim(); if (!str) return null;
+    const m = str.match(/^(\d{1,2})\s*[:'’′分]\s*(\d{1,2})\s*(?:["”″秒])?$/);
+    if (!m) return NaN; const s = +m[2]; if (s > 59) return NaN; return +m[1] * 60 + s;
+  }
+  function parseClock(str) { // "h:mm:ss" または "mm:ss" → 秒
+    if (str == null) return null; str = String(str).trim(); if (!str) return null;
+    const p = str.split(':'); if (p.length < 2 || p.length > 3 || p.some(x => !/^\d+$/.test(x))) return NaN;
+    const n = p.map(Number);
+    if (p.length === 3) { if (n[1] > 59 || n[2] > 59) return NaN; return n[0] * 3600 + n[1] * 60 + n[2]; }
+    if (n[1] > 59) return NaN; return n[0] * 60 + n[1];
+  }
+  function parseTarget(str) { // 大会目標 "3:40" = 3時間40分、"3:40:30" も可
+    if (str == null) return null; str = String(str).trim(); if (!str) return null;
+    const p = str.split(':'); if (p.length < 2 || p.length > 3 || p.some(x => !/^\d+$/.test(x))) return NaN;
+    const n = p.map(Number); if (n[1] > 59 || (n[2] || 0) > 59) return NaN;
+    return n[0] * 3600 + n[1] * 60 + (n[2] || 0);
+  }
+
+  /* ---------- 練習種別 ---------- */
+  const DEFAULT_TYPES = [
+    { name: 'ウォーキング', cat: 'walk' }, { name: 'ジョギング', cat: 'run' }, { name: 'ペース走', cat: 'hard' },
+    { name: 'ロング走', cat: 'run' }, { name: 'インターバル練習', cat: 'hard' }, { name: 'ビルドアップ走', cat: 'hard' },
+    { name: 'LSD', cat: 'run' }, { name: '大会・レース', cat: 'race' }, { name: 'その他', cat: 'other' }
+  ];
+  const CAT_LABEL = { run: 'ランニング', walk: 'ウォーキング', hard: '強度の高い練習', race: '大会・レース', other: 'その他' };
+  function catOf(type, types) {
+    const t = (types || []).find(x => x.name === type) || DEFAULT_TYPES.find(x => x.name === type);
+    return t ? t.cat : 'other';
+  }
+
+  /* ---------- 集計 ---------- */
+  function countedDist(w, ctx) {
+    if (!(w.distanceM > 0)) return 0;
+    if (ctx && ctx.includeWalk === false && catOf(w.type, ctx.types) === 'walk') return 0;
+    return w.distanceM;
+  }
+  function aggregate(ws, from, to, ctx) {
+    const r = { distM: 0, count: 0, durSec: 0, pDist: 0, pDur: 0, distCount: 0 };
+    for (const w of ws) {
+      if (w.date < from || w.date > to) continue;
+      r.count++;
+      if (w.durationSec > 0) r.durSec += w.durationSec;
+      const d = countedDist(w, ctx);
+      if (d > 0) {
+        r.distM += d; r.distCount++;
+        if (w.durationSec > 0) { r.pDist += d; r.pDur += w.durationSec; }
+      }
+    }
+    r.avgPace = paceSec(r.pDist, r.pDur);
+    r.avgDist = r.distCount ? r.distM / r.distCount : null;
+    return r;
+  }
+
+  /* ---------- 検証 ---------- */
+  const SOURCES = ['manual', 'apple_xml', 'csv', 'json'];
+  const SOURCE_LABEL = { manual: '手入力', apple_xml: 'AppleヘルスケアXML', csv: 'CSVインポート', json: 'JSONインポート' };
+  function validateWorkout(w) {
+    const e = [];
+    if (!w || typeof w !== 'object') return ['記録の形式が正しくありません'];
+    if (!isYmd(w.date)) e.push('実施日が正しくありません');
+    if (!w.type || typeof w.type !== 'string' || !w.type.trim()) e.push('練習種別を選んでください');
+    const d = w.distanceM, t = w.durationSec;
+    if (d != null && !(typeof d === 'number' && isFinite(d) && d >= 0 && d <= 500000)) e.push('距離は0〜500kmの数値で入力してください');
+    if (t != null && !(typeof t === 'number' && isFinite(t) && t >= 0 && t <= 172800)) e.push('運動時間は48時間以内で入力してください');
+    if (!(d > 0) && !(t > 0)) e.push('距離または運動時間のどちらかを入力してください');
+    if (w.startTime != null && w.startTime !== '' && !isHm(w.startTime)) e.push('開始時刻が正しくありません');
+    for (const [k, lab] of [['avgHr', '平均心拍数'], ['maxHr', '最大心拍数']]) {
+      const v = w[k];
+      if (v != null && !(Number.isInteger(v) && v >= 30 && v <= 250)) e.push(lab + 'は30〜250の整数で入力してください');
+    }
+    if (Number.isInteger(w.avgHr) && Number.isInteger(w.maxHr) && w.avgHr > w.maxHr) e.push('平均心拍数が最大心拍数を上回っています');
+    if (w.fatigue != null && !(Number.isInteger(w.fatigue) && w.fatigue >= 1 && w.fatigue <= 5)) e.push('疲労度は1〜5で選んでください');
+    if (w.manualPaceSec != null && !(typeof w.manualPaceSec === 'number' && w.manualPaceSec >= 60 && w.manualPaceSec <= 3600)) e.push('平均ペースは1\'00"〜60\'00"の範囲で入力してください');
+    if (w.pain != null && typeof w.pain !== 'boolean') e.push('痛みの値が正しくありません');
+    if (!SOURCES.includes(w.source)) e.push('データ取得元が正しくありません');
+    if (w.memo != null && typeof w.memo !== 'string') e.push('メモの形式が正しくありません');
+    return e;
+  }
+
+  /* ---------- CSV ---------- */
+  function parseCSV(text) {
+    if (text.charCodeAt(0) === 0xFEFF) text = text.slice(1);
+    const rows = []; let row = [], f = '', q = false, quoted = false;
+    for (let i = 0; i < text.length; i++) {
+      const c = text[i];
+      if (q) {
+        if (c === '"') { if (text[i + 1] === '"') { f += '"'; i++; } else q = false; }
+        else f += c;
+      } else if (c === '"' && f === '' && !quoted) { q = true; quoted = true; }
+      else if (c === ',') { row.push(f); f = ''; quoted = false; }
+      else if (c === '\n' || c === '\r') {
+        if (c === '\r' && text[i + 1] === '\n') i++;
+        row.push(f); rows.push(row); row = []; f = ''; quoted = false;
+      } else f += c;
+    }
+    if (q) throw new Error('引用符（"）が閉じていません');
+    if (f !== '' || row.length) { row.push(f); rows.push(row); }
+    return rows.filter(r => !(r.length === 1 && r[0].trim() === ''));
+  }
+  function csvCell(v) {
+    v = v == null ? '' : String(v);
+    if (/^[=+\-@\t\r]/.test(v) && !/^-?\d/.test(v)) v = "'" + v; // 表計算ソフトでの数式実行を防ぐ
+    return /[",\r\n]/.test(v) ? '"' + v.replace(/"/g, '""') + '"' : v;
+  }
+  function toCSV(rows) { return rows.map(r => r.map(csvCell).join(',')).join('\r\n'); }
+  function uncell(v) { return /^'[=+\-@]/.test(v) ? v.slice(1) : v; }
+
+  const CSV_COLS = ['実施日', '開始時刻', '練習種別', '距離(km)', '運動時間', '平均ペース(分/km)', '平均心拍数', '最大心拍数', '疲労度', 'メモ', 'データ取得元'];
+  function workoutsToCSV(ws) {
+    const rows = [CSV_COLS];
+    for (const w of ws) {
+      const p = paceSec(w.distanceM, w.durationSec);
+      rows.push([w.date, w.startTime || '', w.type, w.distanceM > 0 ? fmtKm(w.distanceM) : '',
+        w.durationSec > 0 ? fmtClock(w.durationSec) : '', p ? fmtPaceClock(p) : '',
+        w.avgHr ?? '', w.maxHr ?? '', w.fatigue ?? '', w.memo || '', SOURCE_LABEL[w.source] || '']);
+    }
+    return '﻿' + toCSV(rows);
+  }
+  function intOrNull(v, lab, errs) {
+    v = String(v ?? '').trim(); if (!v) return null;
+    if (!/^\d+$/.test(v)) { errs.push(lab + 'が整数ではありません'); return null; }
+    return +v;
+  }
+  function parseAppCSV(text) {
+    let rows;
+    try { rows = parseCSV(text); } catch (e) { return { error: 'CSVを読み取れません：' + e.message }; }
+    if (!rows.length) return { error: 'ファイルが空です' };
+    const header = rows[0].map(h => h.trim());
+    const unknown = header.filter(h => !CSV_COLS.includes(h));
+    if (unknown.length) return { error: `対応していない列名があります：${unknown.join('、')}。このアプリのCSV形式（列名一覧）に合わせてください。` };
+    const dupH = header.filter((h, i) => header.indexOf(h) !== i);
+    if (dupH.length) return { error: `列名が重複しています：${dupH.join('、')}` };
+    if (!header.includes('実施日') || !header.includes('練習種別')) return { error: '必須の列「実施日」「練習種別」がありません' };
+    if (!header.includes('距離(km)') && !header.includes('運動時間')) return { error: '「距離(km)」か「運動時間」の列が必要です' };
+    if (rows.length < 2) return { error: 'データ行がありません' };
+    const items = [];
+    rows.slice(1).forEach((r, i) => {
+      const line = i + 2, errs = [];
+      if (r.length !== header.length) { items.push({ line, error: `${line}行目：列の数（${r.length}）が見出し（${header.length}）と一致しません`, group: '—' }); return; }
+      const g = k => { const j = header.indexOf(k); return j < 0 ? '' : uncell(r[j]).trim(); };
+      const date = normDate(g('実施日')); if (!date) errs.push('実施日が正しくありません（例：2026-10-01）');
+      let startTime = null; if (g('開始時刻')) { startTime = normTime(g('開始時刻')); if (!startTime) errs.push('開始時刻が正しくありません（例：06:30）'); }
+      const type = g('練習種別'); if (!type) errs.push('練習種別が空です');
+      let distanceM = null; const ds = g('距離(km)');
+      if (ds) { if (!/^\d+(\.\d+)?$/.test(ds)) errs.push('距離(km)が数値ではありません'); else distanceM = Math.round(parseFloat(ds) * 1000); }
+      let durationSec = null; const ts = g('運動時間');
+      if (ts) { const v = parseClock(ts); if (Number.isNaN(v)) errs.push('運動時間が正しくありません（例：0:32:10）'); else durationSec = v; }
+      const avgHr = intOrNull(g('平均心拍数'), '平均心拍数', errs), maxHr = intOrNull(g('最大心拍数'), '最大心拍数', errs);
+      const fatigue = intOrNull(g('疲労度'), '疲労度', errs);
+      const it = { line, date, startTime, group: type || '—', type, distanceM: distanceM > 0 ? distanceM : null, durationSec: durationSec > 0 ? durationSec : null, avgHr, maxHr, fatigue, memo: g('メモ'), warnings: [] };
+      if (!errs.length) errs.push(...validateWorkout(Object.assign({}, it, { source: 'csv' })));
+      it.error = errs.length ? `${line}行目：${errs.join('／')}` : null;
+      items.push(it);
+    });
+    return { items };
+  }
+
+  /* ---------- JSON（このアプリ定義の取り込み形式） ---------- */
+  const JSON_FORMAT = 'rtl-workouts';
+  function parseAppJSON(text) {
+    let o;
+    try { o = JSON.parse(text.charCodeAt(0) === 0xFEFF ? text.slice(1) : text); } catch (e) { return { error: 'JSONとして読み取れません：' + e.message }; }
+    if (o && o.format === 'rtl-backup') return { error: 'これはバックアップファイルです。「設定 → データ復元」から読み込んでください。' };
+    if (!o || o.format !== JSON_FORMAT) return { error: `対応していないJSON形式です。"format": "${JSON_FORMAT}" を含むこのアプリの形式にしてください。` };
+    if (o.version !== 1) return { error: `未対応のバージョンです（version: ${o.version}）` };
+    if (!Array.isArray(o.workouts)) return { error: '"workouts" 配列がありません' };
+    if (!o.workouts.length) return { error: '"workouts" が空です' };
+    const allowed = ['id', 'date', 'startTime', 'type', 'distanceKm', 'durationSec', 'avgHr', 'maxHr', 'fatigue', 'memo'];
+    const items = o.workouts.map((x, i) => {
+      const n = i + 1, errs = [];
+      if (!x || typeof x !== 'object' || Array.isArray(x)) return { line: n, group: '—', error: `${n}件目：オブジェクトではありません` };
+      const extra = Object.keys(x).filter(k => !allowed.includes(k));
+      if (extra.length) errs.push('未対応の項目：' + extra.join('、'));
+      const numOrNull = (v, lab) => { if (v == null || v === '') return null; if (typeof v !== 'number' || !isFinite(v)) { errs.push(lab + 'が数値ではありません'); return null; } return v; };
+      const dk = numOrNull(x.distanceKm, 'distanceKm'), ds = numOrNull(x.durationSec, 'durationSec');
+      let startTime = null; if (x.startTime != null && x.startTime !== '') { startTime = normTime(x.startTime); if (!startTime) errs.push('startTimeが正しくありません'); }
+      const it = {
+        line: n, date: isYmd(x.date) ? x.date : null, startTime, type: typeof x.type === 'string' ? x.type.trim() : '',
+        distanceM: dk > 0 ? Math.round(dk * 1000) : null, durationSec: ds > 0 ? Math.round(ds) : null,
+        avgHr: numOrNull(x.avgHr, 'avgHr'), maxHr: numOrNull(x.maxHr, 'maxHr'), fatigue: numOrNull(x.fatigue, 'fatigue'),
+        memo: typeof x.memo === 'string' ? x.memo : '', warnings: [],
+        externalKey: (x.id != null && x.id !== '') ? 'json|' + String(x.id) : null
+      };
+      if (dk != null && dk < 0) errs.push('distanceKmが負の値です');
+      it.group = it.type || '—';
+      if (!it.date) errs.push('dateが正しくありません（YYYY-MM-DD）');
+      if (!errs.length) errs.push(...validateWorkout(Object.assign({}, it, { source: 'json' })));
+      it.error = errs.length ? `${n}件目：${errs.join('／')}` : null;
+      return it;
+    });
+    return { items };
+  }
+
+  /* ---------- Appleヘルスケア XML ---------- */
+  const ENT = { amp: '&', lt: '<', gt: '>', quot: '"', apos: "'" };
+  function decodeEnt(s) {
+    if (/&(?!(#x[0-9a-fA-F]+|#\d+|amp|lt|gt|quot|apos);)/.test(s)) throw new Error('未対応の文字参照（実体参照）を含んでいます');
+    return s.replace(/&(#x[0-9a-fA-F]+|#\d+|amp|lt|gt|quot|apos);/g, (m, e) =>
+      e[0] === '#' ? String.fromCodePoint(e[1] === 'x' ? parseInt(e.slice(2), 16) : parseInt(e.slice(1), 10)) : ENT[e]);
+  }
+  // 小さなXML断片を、DTD・実体展開なしで安全に解析する（外部実体参照は構文ごと拒否）
+  function parseXmlFragment(xml) {
+    const tagRe = /<(\/?)([A-Za-z_][\w.:-]*)((?:\s+[A-Za-z_][\w.:-]*\s*=\s*(?:"[^"<]*"|'[^'<]*'))*)\s*(\/?)>/y;
+    const attrRe = /([A-Za-z_][\w.:-]*)\s*=\s*(?:"([^"]*)"|'([^']*)')/g;
+    let i = 0, root = null; const stack = [];
+    while (i < xml.length) {
+      const lt = xml.indexOf('<', i);
+      const txt = lt < 0 ? xml.slice(i) : xml.slice(i, lt);
+      if (txt.trim() && !stack.length) throw new Error('要素の外に文字があります');
+      if (lt < 0) break;
+      if (xml.startsWith('<!--', lt)) { const e = xml.indexOf('-->', lt + 4); if (e < 0) throw new Error('コメントが閉じていません'); i = e + 3; continue; }
+      if (xml[lt + 1] === '!' || xml[lt + 1] === '?') throw new Error('未対応のXML構文（DTD・実体宣言など）を含んでいます');
+      tagRe.lastIndex = lt; const m = tagRe.exec(xml);
+      if (!m) throw new Error('タグの形式が正しくありません');
+      i = tagRe.lastIndex;
+      const [, close, name, attrStr, self] = m;
+      if (close) {
+        if (attrStr.trim() || self) throw new Error('終了タグの形式が正しくありません');
+        const top = stack.pop(); if (!top || top.name !== name) throw new Error('タグの対応が正しくありません（' + name + '）');
+        continue;
+      }
+      const attrs = {}; let a; attrRe.lastIndex = 0;
+      while ((a = attrRe.exec(attrStr))) {
+        if (Object.prototype.hasOwnProperty.call(attrs, a[1])) throw new Error('属性が重複しています（' + a[1] + '）');
+        attrs[a[1]] = decodeEnt(a[2] !== undefined ? a[2] : a[3]);
+      }
+      const el = { name, attrs, children: [] };
+      if (stack.length) stack[stack.length - 1].children.push(el);
+      else if (root) throw new Error('ルート要素が複数あります');
+      else root = el;
+      if (!self) stack.push(el);
+    }
+    if (stack.length) throw new Error('閉じていないタグがあります（' + stack[stack.length - 1].name + '）');
+    if (!root) throw new Error('要素がありません');
+    return root;
+  }
+
+  // export.xml を少しずつ受け取り、<Workout> 要素だけを切り出す（巨大ファイル対応）
+  const MAX_PENDING = 64 * 1024 * 1024;
+  function createHealthScanner() {
+    let buf = '', head = '', sawRoot = false, started = false, total = 0;
+    function findTagEnd(s, from) {
+      let q = null;
+      for (let i = from; i < s.length; i++) {
+        const c = s[i];
+        if (q) { if (c === q) q = null; }
+        else if (c === '"' || c === "'") q = c;
+        else if (c === '>') return i;
+      }
+      return -1;
+    }
+    return {
+      push(text) {
+        if (!started) {
+          const t = text.replace(/^﻿/, '').trimStart();
+          if (t) { started = true; if (t[0] !== '<') throw new Error('XMLファイルではありません'); }
+        }
+        if (!sawRoot) {
+          head += text;
+          if (/<HealthData[\s>]/.test(head)) { sawRoot = true; head = ''; }
+          else if (head.length > 4 * 1024 * 1024) throw new Error('Appleヘルスケアの書き出しファイルではありません（HealthData要素が見つかりません）');
+        }
+        buf += text; total += text.length;
+        const out = []; let pos = 0;
+        for (;;) {
+          const s = buf.indexOf('<Workout', pos);
+          if (s < 0) { buf = buf.slice(Math.max(pos, buf.length - 8)); break; }
+          const c = buf[s + 8];
+          if (c === undefined) { buf = buf.slice(s); break; }
+          if (!/[\s>\/]/.test(c)) { pos = s + 8; continue; }
+          const gt = findTagEnd(buf, s);
+          if (gt < 0) { buf = buf.slice(s); break; }
+          let end;
+          if (buf[gt - 1] === '/') end = gt + 1;
+          else { const ce = buf.indexOf('</Workout>', gt); if (ce < 0) { buf = buf.slice(s); break; } end = ce + 10; }
+          out.push(buf.slice(s, end)); pos = end;
+        }
+        if (buf.length > MAX_PENDING) throw new Error('ワークアウト要素が閉じていません。ファイルが壊れている可能性があります');
+        return out;
+      },
+      finish() {
+        if (!started) throw new Error('ファイルが空です');
+        if (!sawRoot) throw new Error('Appleヘルスケアの書き出しファイルではありません（HealthData要素が見つかりません）');
+        return { truncated: /<Workout[\s>\/]/.test(buf), chars: total };
+      }
+    };
+  }
+
+  function parseHealthDate(s) {
+    const m = String(s || '').match(/^(\d{4})-(\d{2})-(\d{2})[ T](\d{2}):(\d{2}):(\d{2})\s*([+-])(\d{2}):?(\d{2})$/);
+    if (!m) return null;
+    const off = (m[7] === '-' ? -1 : 1) * (+m[8] * 60 + +m[9]);
+    const ms = Date.UTC(+m[1], +m[2] - 1, +m[3], +m[4], +m[5], +m[6]) - off * 60000;
+    return isNaN(ms) ? null : { ms, off };
+  }
+  const DIST_UNIT = { km: 1000, m: 1, mi: 1609.344, yd: 0.9144, ft: 0.3048, cm: 0.01 };
+  const DUR_UNIT = { min: 60, s: 1, sec: 1, hr: 3600, h: 3600, ms: 0.001 };
+  const ACT_NAMES = {
+    Running: 'ランニング', Walking: 'ウォーキング', Hiking: 'ハイキング', Cycling: 'サイクリング', Swimming: '水泳',
+    Yoga: 'ヨガ', TraditionalStrengthTraining: '筋力トレーニング', FunctionalStrengthTraining: '機能的筋力トレーニング',
+    HighIntensityIntervalTraining: 'HIIT', Elliptical: 'エリプティカル', Rowing: 'ローイング', CoreTraining: 'コアトレーニング',
+    Dance: 'ダンス', Cooldown: 'クールダウン', StairClimbing: '階段', MixedCardio: 'ミックスカーディオ', TrackAndField: '陸上競技', Other: 'その他'
+  };
+  function actName(a) { const k = String(a || '').replace(/^HKWorkoutActivityType/, ''); return ACT_NAMES[k] || k || '不明'; }
+
+  function workoutFromElement(el) {
+    if (!el || el.name !== 'Workout') throw new Error('Workout要素ではありません');
+    const A = el.attrs, warn = [];
+    const st = parseHealthDate(A.startDate), en = parseHealthDate(A.endDate);
+    const base = { activityType: A.workoutActivityType || '不明', group: A.workoutActivityType || '不明', sourceName: A.sourceName || '', warnings: warn };
+    if (!st) return Object.assign(base, { error: '開始日時を読み取れません' });
+    let stats = el.children.filter(c => c.name === 'WorkoutStatistics');
+    if (!stats.length) { const acts = el.children.filter(c => c.name === 'WorkoutActivity'); if (acts.length === 1) stats = acts[0].children.filter(c => c.name === 'WorkoutStatistics'); }
+    const stat = t => stats.find(s => s.attrs.type === t);
+
+    // 距離：旧形式は属性、iOS16以降は WorkoutStatistics
+    let origDist = null, origUnit = null, distM = null, distFrom = null;
+    if (A.totalDistance != null && A.totalDistance !== '') { origDist = A.totalDistance; origUnit = A.totalDistanceUnit || null; distFrom = 'totalDistance'; }
+    else {
+      const ds = stats.find(s => /^HKQuantityTypeIdentifierDistance/.test(s.attrs.type || '') && s.attrs.sum != null);
+      if (ds) { origDist = ds.attrs.sum; origUnit = ds.attrs.unit || null; distFrom = 'WorkoutStatistics'; }
+    }
+    if (origDist != null) {
+      const v = Number(origDist);
+      if (!isFinite(v) || v < 0) warn.push('距離の値を読み取れないため、距離は取り込みません');
+      else if (!origUnit || !Object.prototype.hasOwnProperty.call(DIST_UNIT, origUnit)) warn.push(`距離の単位（${origUnit || '不明'}）を判別できないため、距離は取り込みません`);
+      else distM = Math.round(v * DIST_UNIT[origUnit]);
+    }
+    // 運動時間
+    const origDur = (A.duration != null && A.duration !== '') ? A.duration : null, durUnit = A.durationUnit || null;
+    let durSec = null;
+    if (origDur != null) {
+      const v = Number(origDur);
+      if (!isFinite(v) || v < 0) warn.push('運動時間の値を読み取れないため、運動時間は取り込みません');
+      else if (!durUnit || !Object.prototype.hasOwnProperty.call(DUR_UNIT, durUnit)) warn.push(`運動時間の単位（${durUnit || '不明'}）を判別できないため、運動時間は取り込みません`);
+      else durSec = Math.round(v * DUR_UNIT[durUnit]);
+    }
+    // 心拍：ファイルに平均値・最大値がある場合のみ（個別データからは計算しない）
+    let avgHr = null, maxHr = null;
+    const hr = stat('HKQuantityTypeIdentifierHeartRate');
+    if (hr && hr.attrs.unit === 'count/min') {
+      const a = Number(hr.attrs.average), mx = Number(hr.attrs.maximum);
+      if (hr.attrs.average != null) { if (a >= 30 && a <= 250) avgHr = Math.round(a); else warn.push('平均心拍数が範囲外のため取り込みません'); }
+      if (hr.attrs.maximum != null) { if (mx >= 30 && mx <= 250) maxHr = Math.round(mx); else warn.push('最大心拍数が範囲外のため取り込みません'); }
+    }
+    // 消費エネルギー（参考情報として保存）
+    let kcal = null;
+    const conv = (v, u) => { v = Number(v); if (!isFinite(v)) return null; if (u === 'kcal' || u === 'Cal') return Math.round(v); if (u === 'kJ') return Math.round(v / 4.184); return null; };
+    if (A.totalEnergyBurned != null) kcal = conv(A.totalEnergyBurned, A.totalEnergyBurnedUnit);
+    else { const e = stat('HKQuantityTypeIdentifierActiveEnergyBurned'); if (e) kcal = conv(e.attrs.sum, e.attrs.unit); }
+    let indoor = null;
+    const md = el.children.find(c => c.name === 'MetadataEntry' && c.attrs.key === 'HKIndoorWorkout');
+    if (md) indoor = md.attrs.value === '1';
+
+    const sd = new Date(st.ms);
+    const it = Object.assign(base, {
+      externalKey: ['apple', A.sourceName || '', A.startDate, A.endDate || ''].join('|'),
+      startMs: st.ms, endMs: en ? en.ms : null, date: ymd(sd), startTime: hm(sd),
+      distanceM: distM > 0 ? distM : null, durationSec: durSec > 0 ? durSec : null,
+      avgHr, maxHr, energyKcal: kcal, indoor,
+      original: { distance: origDist, distanceUnit: origUnit, distanceFrom: distFrom, duration: origDur, durationUnit: durUnit, startDate: A.startDate, endDate: A.endDate || null, sourceVersion: A.sourceVersion || null }
+    });
+    it.error = (!(it.distanceM > 0) && !(it.durationSec > 0)) ? '距離と運動時間がどちらも取得できないため取り込めません' : null;
+    return it;
+  }
+  function parseWorkoutBlock(block) {
+    try { return workoutFromElement(parseXmlFragment(block)); }
+    catch (e) { return { group: '不明', activityType: '不明', warnings: [], error: 'XMLの形式が正しくありません：' + e.message }; }
+  }
+
+  /* ---------- 重複判定 ---------- */
+  function startMsOf(w) {
+    if (!w.startTime || !isYmd(w.date)) return null;
+    const [y, m, d] = w.date.split('-').map(Number), [H, M] = w.startTime.split(':').map(Number);
+    return new Date(y, m - 1, d, H, M).getTime();
+  }
+  function near(a, b, tol) { return Math.abs(a - b) <= tol * Math.max(a, b); }
+  function similar(a, b) { // 距離・時間の両方を比べ、比較できた値がすべて近い場合のみ true
+    const dOk = (a.distanceM > 0 && b.distanceM > 0) ? near(a.distanceM, b.distanceM, 0.05) : null;
+    const tOk = (a.durationSec > 0 && b.durationSec > 0) ? near(a.durationSec, b.durationSec, 0.10) : null;
+    if (dOk === false || tOk === false) return false;
+    return dOk === true || tOk === true;
+  }
+  function classifyDuplicates(items, existing) {
+    const keys = new Map();
+    for (const w of existing) { const k = w.sourceInfo && w.sourceInfo.externalKey; if (k) keys.set(k, w); }
+    const seen = new Map();
+    for (const it of items) {
+      it.dup = null; it.dupReason = null;
+      if (it.error) continue;
+      if (it.externalKey && keys.has(it.externalKey)) { it.dup = 'same'; it.dupReason = '同じワークアウトを取り込み済みです'; continue; }
+      if (it.externalKey && seen.has(it.externalKey)) { it.dup = 'same'; it.dupReason = 'ファイル内に同じ記録が重複しています'; continue; }
+      if (it.externalKey) seen.set(it.externalKey, it);
+      const sMs = it.startMs != null ? it.startMs : startMsOf(it);
+      for (const w of existing) {
+        if (w.date !== it.date || !similar(w, it)) continue;
+        const wMs = startMsOf(w);
+        if (sMs != null && wMs != null && Math.abs(sMs - wMs) > 10 * 60000) continue; // 開始時刻が10分以上違えば別の練習
+        it.dup = 'possible';
+        it.dupReason = `既存の記録（${fmtMD(w.date)}${w.startTime ? ' ' + w.startTime : ''} ${w.type} ${w.distanceM > 0 ? fmtKm(w.distanceM) + 'km' : fmtDur(w.durationSec)}）と内容が近いです`;
+        break;
+      }
+    }
+    // ファイル内で時間帯が重なる別記録（例：iPhoneとApple Watchの両方で計測）
+    const timed = items.filter(i => !i.error && !i.dup && i.startMs != null && i.endMs != null).sort((a, b) => a.startMs - b.startMs);
+    for (let i = 0; i < timed.length; i++) {
+      for (let j = i + 1; j < timed.length && timed[j].startMs < timed[i].endMs; j++) {
+        const b = timed[j];
+        if (!b.dup) { b.dup = 'possible'; b.dupReason = `ファイル内の別の記録（${timed[i].startTime}開始・${timed[i].sourceName || '記録元不明'}）と時間帯が重なっています`; }
+      }
+    }
+    return items;
+  }
+
+  /* ---------- バックアップ検証 ---------- */
+  function validateBackup(o) {
+    const errors = [];
+    if (!o || typeof o !== 'object' || o.format !== 'rtl-backup') return { ok: false, errors: ['RUNNING TRAINING LOG のバックアップファイルではありません'] };
+    if (o.version !== 1) return { ok: false, errors: [`未対応のバージョンです（version: ${o.version}）`] };
+    const d = o.data;
+    if (!d || typeof d !== 'object') return { ok: false, errors: ['data がありません'] };
+    for (const k of ['workouts', 'races', 'plans', 'shoes']) if (!Array.isArray(d[k])) errors.push(`${k} が配列ではありません`);
+    if (!d.kv || typeof d.kv !== 'object' || Array.isArray(d.kv)) errors.push('kv（設定）がありません');
+    if (errors.length) return { ok: false, errors };
+    const idOk = x => x && typeof x.id === 'string' && x.id.length > 0;
+    d.workouts.forEach((w, i) => { if (!idOk(w)) errors.push(`練習記録${i + 1}：idがありません`); else { const e = validateWorkout(w); if (e.length) errors.push(`練習記録${i + 1}（${w.date || '日付不明'}）：${e.join('／')}`); } });
+    d.races.forEach((r, i) => { if (!idOk(r) || !r.name || !isYmd(r.date)) errors.push(`大会${i + 1}：大会名・開催日・idが正しくありません`); });
+    d.plans.forEach((p, i) => { if (!idOk(p) || !isYmd(p.date) || !p.type) errors.push(`練習予定${i + 1}：日付・種別・idが正しくありません`); });
+    d.shoes.forEach((s, i) => { if (!idOk(s) || !s.name) errors.push(`シューズ${i + 1}：名前・idが正しくありません`); });
+    return { ok: errors.length === 0, errors: errors.slice(0, 30), more: Math.max(0, errors.length - 30), counts: { workouts: d.workouts.length, races: d.races.length, plans: d.plans.length, shoes: d.shoes.length } };
+  }
+
+  /* ---------- 次回の練習提案（ルールベース・診断ではない） ---------- */
+  function suggest(ws, today, race, ctx) {
+    const past = ws.filter(w => w.date <= today).sort((a, b) => (b.date + (b.startTime || '')).localeCompare(a.date + (a.startTime || '')));
+    const last7 = aggregate(past, addDays(today, -6), today, ctx), prev7 = aggregate(past, addDays(today, -13), addDays(today, -7), ctx);
+    const recent14 = past.filter(w => dayDiff(w.date, today) < 14);
+    const painRec = past.find(w => w.pain === true && dayDiff(w.date, today) <= 3);
+    const fatRec = past.find(w => w.fatigue != null && dayDiff(w.date, today) <= 2);
+    const walkType = ((ctx && ctx.types) || DEFAULT_TYPES).find(t => t.cat === 'walk');
+    const walk = walkType ? walkType.name : 'ウォーキング';
+    const daysLeft = race ? dayDiff(today, race.date) : null;
+    const out = [];
+    if (painRec) out.push({ title: '休養、または痛みの出ない範囲での軽い運動', reason: `${fmtMD(painRec.date)}の記録に「痛みあり」があります。`, note: '痛みが続く・強くなる場合は運動を中止し、必要に応じて医療機関に相談してください。', plan: { type: '休養' } });
+    if (fatRec && fatRec.fatigue >= 4) out.push({ title: `休養、または軽い${walk}（20〜30分）`, reason: `${fmtMD(fatRec.date)}の疲労度が ${fatRec.fatigue}（5段階）です。`, plan: { type: walk, durationSec: 1800 } });
+    if (daysLeft != null && daysLeft >= 1 && daysLeft <= 14) out.push({ title: '疲労を残さない軽めの練習', reason: `${race.name}まであと${daysLeft}日です。`, plan: { type: 'ジョギング', durationSec: 1800 } });
+    if (prev7.distM > 0 && last7.distM > prev7.distM * 1.3) out.push({ title: '距離をさらに増やさず、回復を優先する', reason: `直近7日間（${fmtKm(last7.distM)}km）が、その前の7日間（${fmtKm(prev7.distM)}km）より30%以上増えています。`, plan: { type: 'ジョギング', durationSec: 1800 } });
+    if (last7.count <= 1 && !painRec && !(fatRec && fatRec.fatigue >= 4)) out.push({ title: `短時間の軽いジョギング、または${walk}（20〜30分）`, reason: last7.count === 0 ? '直近7日間の記録がありません。' : '直近7日間の練習が1回です。', plan: { type: 'ジョギング', durationSec: 1200 } });
+    if (!out.length) {
+      const cnt = {}; recent14.forEach(w => { cnt[w.type] = (cnt[w.type] || 0) + 1; });
+      const t = Object.keys(cnt).sort((a, b) => cnt[b] - cnt[a])[0] || (past[0] && past[0].type) || 'ジョギング';
+      out.push({ title: `いつもの練習を継続（${t}）`, reason: `直近7日間に${last7.count}回・${fmtKm(last7.distM)}kmの記録があり、2日以内の高い疲労度や3日以内の痛みの記録はありません。`, plan: { type: t } });
+    }
+    return { items: out.slice(0, 3), few: past.length < 5 || recent14.length < 3, raceToday: daysLeft === 0 };
+  }
+
+  const api = {
+    pad2, ymd, hm, isYmd, isHm, toDate, addDays, dayDiff, weekStart, monthStart, monthEnd, addMonths, dow, fmtDateJa, fmtMD, normDate, normTime,
+    round, fmtKm, fmtDur, fmtClock, fmtPace, fmtPaceClock, paceSec, speedKmh, fmtSpeed, pct, parsePace, parseClock, parseTarget,
+    DEFAULT_TYPES, CAT_LABEL, catOf, countedDist, aggregate, SOURCES, SOURCE_LABEL, validateWorkout,
+    parseCSV, toCSV, CSV_COLS, workoutsToCSV, parseAppCSV, JSON_FORMAT, parseAppJSON,
+    parseXmlFragment, createHealthScanner, parseHealthDate, workoutFromElement, parseWorkoutBlock, actName, DIST_UNIT,
+    startMsOf, classifyDuplicates, validateBackup, suggest
+  };
+  if (typeof module !== 'undefined' && module.exports) module.exports = api;
+  return api;
+})();
+
+/* ===== IndexedDB ===== */
+const DB = (() => {
+  const NAME = 'running-training-log', VER = 1, STORES = ['workouts', 'races', 'plans', 'shoes', 'kv'];
+  let db = null;
+  function open() {
+    return new Promise((res, rej) => {
+      if (!('indexedDB' in window) || !window.indexedDB) return rej(new Error('このブラウザはIndexedDB（ブラウザ内データベース）に対応していません'));
+      let r;
+      try { r = indexedDB.open(NAME, VER); } catch (e) { return rej(e); }
+      r.onupgradeneeded = () => {
+        const d = r.result;
+        for (const s of STORES) if (!d.objectStoreNames.contains(s)) d.createObjectStore(s, { keyPath: s === 'kv' ? 'key' : 'id' });
+      };
+      r.onsuccess = () => { db = r.result; db.onversionchange = () => { db.close(); }; res(db); };
+      r.onerror = () => rej(r.error || new Error('データベースを開けません'));
+      r.onblocked = () => rej(new Error('別のタブでこのアプリが開かれているため、データベースを開けません。ほかのタブを閉じてください'));
+    });
+  }
+  // 1つのトランザクションで実行。途中で失敗した場合は全体が取り消される（既存データは壊れない）
+  function tx(stores, mode, fn) {
+    return new Promise((res, rej) => {
+      if (!db) return rej(new Error('データベースが開かれていません'));
+      let t;
+      try { t = db.transaction(stores, mode); } catch (e) { return rej(e); }
+      const st = {}; [].concat(stores).forEach(s => { st[s] = t.objectStore(s); });
+      let result;
+      t.oncomplete = () => res(result);
+      t.onerror = () => rej(t.error || new Error('保存に失敗しました'));
+      t.onabort = () => rej(t.error || new Error('処理が中止されたため、変更は保存されていません'));
+      try { result = fn(st, t); } catch (e) { try { t.abort(); } catch (_) { } rej(e); }
+    });
+  }
+  async function getAll(store) { const r = await tx(store, 'readonly', st => st[store].getAll()); return r.result || []; }
+  const put = (store, obj) => tx(store, 'readwrite', st => { st[store].put(obj); });
+  const del = (store, id) => tx(store, 'readwrite', st => { st[store].delete(id); });
+  return { open, tx, getAll, put, del, STORES };
+})();
+
+const ICON180='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';
+const ICON512='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';
+/* ===== アプリ本体（画面・操作） ===== */
+'use strict';
+const C = Core;
+const $ = (s, r = document) => r.querySelector(s);
+const $$ = (s, r = document) => [...r.querySelectorAll(s)];
+const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+const uid = () => (window.crypto && crypto.randomUUID) ? crypto.randomUUID() : Date.now().toString(36) + Math.random().toString(36).slice(2, 10);
+const nowIso = () => new Date().toISOString();
+const today = () => C.ymd(new Date());
+
+const S = { workouts: [], races: [], plans: [], shoes: [], kv: {} };
+const kv = (k, d) => (S.kv[k] !== undefined ? S.kv[k] : d);
+async function setKV(k, v) { await DB.put('kv', { key: k, value: v }); S.kv[k] = v; }
+const types = () => kv('types', C.DEFAULT_TYPES);
+const settings = () => kv('settings', {});
+const ctx = () => ({ includeWalk: settings().includeWalk !== false, types: types() });
+const byTimeDesc = (a, b) => (b.date + (b.startTime || '99:99')).localeCompare(a.date + (a.startTime || '99:99')) || (b.createdAt || '').localeCompare(a.createdAt || '');
+const sortW = ws => [...ws].sort(byTimeDesc);
+const REST = '休養';
+const EVENTS = { 'フルマラソン': 42.195, 'ハーフマラソン': 21.0975, '10km': 10, '5km': 5, 'その他': null };
+const RACE_STATUS = ['予定', '出走済み', '中止・DNS', '終了'];
+const WEATHERS = ['晴れ', 'くもり', '雨', '雪', '暑い', '寒い', '風が強い'];
+
+/* ---------- 共通UI ---------- */
+let toastTimer;
+function toast(msg, err) {
+  let t = $('#toast'); if (!t) { t = document.createElement('div'); t.id = 'toast'; t.setAttribute('role', 'status'); t.setAttribute('aria-live', 'polite'); document.body.appendChild(t); }
+  t.className = 'toast' + (err ? ' err' : ''); t.textContent = msg; t.hidden = false;
+  clearTimeout(toastTimer); toastTimer = setTimeout(() => { t.hidden = true; }, err ? 5000 : 2600);
+}
+function modal(inner, onClick) {
+  const bg = document.createElement('div'); bg.className = 'modal-bg';
+  bg.innerHTML = `<div class="modal" role="dialog" aria-modal="true">${inner}</div>`;
+  document.body.appendChild(bg);
+  bg.addEventListener('click', e => onClick(e, bg));
+  return bg;
+}
+function ask({ title, body = '', ok = 'OK', cancel = 'キャンセル', danger = false, html = false }) {
+  return new Promise(res => {
+    const bg = modal(`<h3>${esc(title)}</h3>${html ? body : `<p>${esc(body)}</p>`}<div class="btns">${cancel ? `<button class="btn" data-r="0">${esc(cancel)}</button>` : ''}<button class="btn ${danger ? 'danger' : 'primary'}" data-r="1">${esc(ok)}</button></div>`,
+      (e, bg) => { const b = e.target.closest('[data-r]'); if (b) { bg.remove(); res(b.dataset.r === '1'); } else if (e.target === bg && cancel) { bg.remove(); res(false); } });
+    const f = bg.querySelector('[data-r="1"]'); f && f.focus();
+  });
+}
+function askText(title, label, def = '', okLabel = '登録') {
+  return new Promise(res => {
+    const bg = modal(`<h3>${esc(title)}</h3><div class="field"><label for="ask-in">${esc(label)}</label><input type="text" id="ask-in" maxlength="40" value="${esc(def)}"></div><div class="btns"><button class="btn" data-r="0">キャンセル</button><button class="btn primary" data-r="1">${esc(okLabel)}</button></div>`,
+      (e, bg) => { const b = e.target.closest('[data-r]'); if (!b) return; const v = $('#ask-in', bg).value.trim(); bg.remove(); res(b.dataset.r === '1' ? v : null); });
+    setTimeout(() => $('#ask-in', bg).focus(), 30);
+  });
+}
+function errMsg(e) {
+  const m = (e && (e.message || e.name)) || String(e);
+  if (e && e.name === 'QuotaExceededError') return 'ストレージの空き容量が不足しています。不要なデータを削除するか、端末の空き容量を確認してください。';
+  if (/InvalidStateError|mutation/i.test(m)) return 'このブラウザのモード（プライベートブラウズ等）ではデータを保存できない可能性があります。通常モードで開いてください。（' + m + '）';
+  return m;
+}
+const bar = (title, extra = '') => `<header class="bar"><button class="back" data-act="back" aria-label="戻る">‹ 戻る</button><h1>${esc(title)}</h1>${extra}</header>`;
+const kpi = (lab, val, sub = '') => `<div class="kpi"><div class="lab">${esc(lab)}</div>${val}${sub ? `<div class="delta">${sub}</div>` : ''}</div>`;
+const valNum = (n, unit) => `<div class="val">${n}<small>${unit}</small></div>`;
+const valNone = (t = '記録なし') => `<div class="val none">${t}</div>`;
+function valDur(sec) {
+  const tm = Math.round(sec / 60), H = Math.floor(tm / 60), M = tm % 60;
+  return `<div class="val">${H ? `${H}<small>時間</small>` : ''}${H ? C.pad2(M) : M}<small>分</small></div>`;
+}
+function progHtml(label, cur, goal, fmt, unit) {
+  if (!(goal > 0)) return `<div class="prog"><div class="between"><span>${esc(label)}</span><span class="muted">目標未設定</span></div></div>`;
+  const p = C.pct(cur, goal);
+  return `<div class="prog"><div class="between"><span>${esc(label)}</span><span><b class="num" style="font-size:17px">${fmt(cur)}</b> / ${fmt(goal)}${unit}（${p}%${p >= 100 ? '・達成' : ''}）</span></div>
+  <div class="prog-track" role="progressbar" aria-valuenow="${p}" aria-valuemin="0" aria-valuemax="100" aria-label="${esc(label)}"><div class="prog-fill${p >= 100 ? ' over' : ''}" style="width:${Math.min(100, p)}%"></div></div></div>`;
+}
+const fmtKmN = m => C.fmtKm(m);
+const fmtCnt = n => String(n);
+const fmtHours = s => C.fmtDur(s);
+function srcBadge(w) {
+  if (!w.source || w.source === 'manual') return '';
+  return `<span class="badge src">${{ apple_xml: 'Apple Watch取込', csv: 'CSV取込', json: 'JSON取込' }[w.source] || '取込'}</span>`;
+}
+function wCard(w) {
+  const p = C.paceSec(w.distanceM, w.durationSec), [, m, d] = w.date.split('-').map(Number);
+  return `<button class="witem" data-act="detail" data-id="${esc(w.id)}"><div class="wdate"><div class="d">${m}/${d}</div><div class="w">${w.date.slice(0, 4) !== today().slice(0, 4) ? w.date.slice(0, 4) : C.dow(w.date) + '曜'}</div></div>
+  <div class="wmain"><div class="t">${esc(w.type)} ${srcBadge(w)}${w.pain ? ' <span class="badge bad">痛みあり</span>' : ''}</div>
+  <div class="wstats">${w.distanceM > 0 ? `<span><b>${C.fmtKm(w.distanceM)}</b>km</span>` : '<span>距離なし</span>'}${w.durationSec > 0 ? `<span>${C.fmtDur(w.durationSec, true)}</span>` : ''}${p ? `<span>${C.fmtPace(p)}/km</span>` : ''}${w.avgHr ? `<span>心拍${w.avgHr}</span>` : ''}${w.fatigue ? `<span>疲労${w.fatigue}/5</span>` : ''}${w.startTime ? `<span>${w.startTime}開始</span>` : ''}</div></div></button>`;
+}
+function mainRace() {
+  const t = today();
+  const m = S.races.find(r => r.isMain);
+  if (m) return m;
+  const up = S.races.filter(r => r.date >= t).sort((a, b) => a.date.localeCompare(b.date));
+  if (up.length) return up[0];
+  return [...S.races].sort((a, b) => b.date.localeCompare(a.date))[0] || null;
+}
+function fmtTarget(sec) { if (!(sec > 0)) return ''; const h = Math.floor(sec / 3600), m = Math.floor(sec % 3600 / 60), s = sec % 60; return `${h}時間${C.pad2(m)}分${s ? C.pad2(s) + '秒' : ''}`; }
+function racePace(r) { return (r && r.targetSec > 0 && r.eventKm > 0) ? r.targetSec / r.eventKm : null; }
+function raceState(r, t) {
+  const d = C.dayDiff(t, r.date);
+  if (d > 0) return { d, label: `あと${d}日` };
+  if (d === 0) return { d, label: '大会当日' };
+  return { d, label: '大会終了' };
+}
+
+/* ---------- グラフ（SVG） ---------- */
+function niceMax(m) { if (!(m > 0)) return 1; const p = 10 ** Math.floor(Math.log10(m)), n = m / p; return (n <= 1 ? 1 : n <= 2 ? 2 : n <= 2.5 ? 2.5 : n <= 5 ? 5 : 10) * p; }
+function barChart(data, { h = 180, fmt = v => v.toFixed(1), every = 1, goal = null, unit = '' } = {}) {
+  const W = 340, L = 32, R = 6, T = 18, B = 34, ih = h - T - B, iw = W - L - R;
+  const max = Math.max(goal || 0, ...data.map(d => d.v || 0)), top = niceMax(max);
+  const bw = iw / data.length, y = v => T + (1 - v / top) * ih;
+  const tf = v => top < 10 ? v.toFixed(1) : String(Math.round(v));
+  let s = `<svg class="chart" viewBox="0 0 ${W} ${h}" role="img" aria-label="${esc(unit)}">`;
+  for (const v of [0, top / 2, top]) s += `<line class="grid" x1="${L}" x2="${W - R}" y1="${y(v)}" y2="${y(v)}"/><text x="${L - 4}" y="${y(v) + 4}" text-anchor="end">${tf(v)}</text>`;
+  data.forEach((d, i) => {
+    const x = L + i * bw, v = d.v || 0;
+    if (v > 0) s += `<rect class="bar${d.hl ? ' hl' : ''}" x="${(x + bw * .17).toFixed(1)}" y="${y(v).toFixed(1)}" width="${(bw * .66).toFixed(1)}" height="${(T + ih - y(v)).toFixed(1)}" rx="2"><title>${esc(d.l)} ${fmt(v)}${unit}</title></rect>`;
+    if (v > 0 && data.length <= 14) s += `<text class="v" x="${(x + bw / 2).toFixed(1)}" y="${(y(v) - 4).toFixed(1)}" text-anchor="middle">${fmt(v)}</text>`;
+    if (i % every === 0 || i === data.length - 1) {
+      s += `<text x="${(x + bw / 2).toFixed(1)}" y="${h - B + 15}" text-anchor="middle">${esc(d.l)}</text>`;
+      if (d.l2) s += `<text x="${(x + bw / 2).toFixed(1)}" y="${h - B + 28}" text-anchor="middle">${esc(d.l2)}</text>`;
+    }
+  });
+  if (goal > 0) s += `<line class="goal" x1="${L}" x2="${W - R}" y1="${y(goal)}" y2="${y(goal)}"/><text x="${W - R}" y="${y(goal) - 4}" text-anchor="end" style="fill:var(--race)">目標</text>`;
+  return s + '</svg>';
+}
+function lineChart(pts, { h = 170, fmt = v => v, invert = false, every = 1 } = {}) {
+  const vals = pts.map(p => p.v).filter(v => v != null);
+  if (!vals.length) return '<div class="empty">この期間はデータがありません</div>';
+  const W = 340, L = 44, R = 10, T = 16, B = 26, ih = h - T - B, iw = W - L - R;
+  let lo = Math.min(...vals), hi = Math.max(...vals); const pad = Math.max((hi - lo) * .15, 5); lo -= pad; hi += pad;
+  const x = i => L + (pts.length === 1 ? iw / 2 : i * iw / (pts.length - 1));
+  const y = v => invert ? T + (v - lo) / (hi - lo) * ih : T + (1 - (v - lo) / (hi - lo)) * ih;
+  let s = `<svg class="chart" viewBox="0 0 ${W} ${h}" role="img">`;
+  for (const v of [lo + pad, (lo + hi) / 2, hi - pad]) s += `<line class="grid" x1="${L}" x2="${W - R}" y1="${y(v)}" y2="${y(v)}"/><text x="${L - 4}" y="${y(v) + 4}" text-anchor="end">${esc(fmt(v))}</text>`;
+  let seg = [];
+  const flush = () => { if (seg.length > 1) s += `<polyline class="line" points="${seg.join(' ')}"/>`; seg = []; };
+  pts.forEach((p, i) => { if (p.v == null) flush(); else seg.push(`${x(i).toFixed(1)},${y(p.v).toFixed(1)}`); });
+  flush();
+  let lastI = -1; pts.forEach((p, i) => { if (p.v != null) lastI = i; });
+  pts.forEach((p, i) => {
+    if (p.v != null) s += `<circle class="dot" cx="${x(i).toFixed(1)}" cy="${y(p.v).toFixed(1)}" r="${i === lastI ? 4.5 : 2.8}"><title>${esc(p.l)} ${esc(fmt(p.v))}</title></circle>`;
+    if (i % every === 0 || i === pts.length - 1) s += `<text x="${x(i).toFixed(1)}" y="${h - 8}" text-anchor="middle">${esc(p.l)}</text>`;
+  });
+  return s + '</svg>';
+}
+function distSeries(from, days, c) {
+  const out = [];
+  for (let i = 0; i < days; i++) {
+    const d = C.addDays(from, i), a = C.aggregate(S.workouts, d, d, c);
+    out.push({ l: C.fmtMD(d), l2: C.dow(d), v: a.distM / 1000, hl: d === today() });
+  }
+  return out;
+}
+
+/* ---------- ナビゲーション ---------- */
+let tab = 'home';
+const stack = [];
+function go(t) { stack.length = 0; tab = t; render(true); }
+function push(v, p) { stack.push({ v, p: p || {} }); render(true); }
+function back() { stack.pop(); render(true); }
+function replaceTop(v, p) { stack.pop(); stack.push({ v, p: p || {} }); render(true); }
+const TAB = {}, SUB = {}, AFTER = {}, ACT = {};
+function render(scroll) {
+  const top = stack[stack.length - 1];
+  document.body.classList.toggle('in-sub', !!top);
+  const main = $('#main');
+  try { main.innerHTML = top ? SUB[top.v](top.p) : TAB[tab](); }
+  catch (e) { console.error(e); main.innerHTML = `${top ? bar('エラー') : ''}<div class="alert err">画面の表示中にエラーが発生しました：${esc(e.message)}<br>ページを再読み込みしてください。解決しない場合は設定からバックアップを取ってください。</div>`; }
+  $$('.nav button').forEach(b => b.setAttribute('aria-current', !top && b.dataset.tab === tab ? 'page' : 'false'));
+  if (scroll) window.scrollTo(0, 0);
+  const after = top ? AFTER[top.v] : AFTER['tab_' + tab];
+  if (after) after(top ? top.p : {});
+}
+document.addEventListener('click', e => {
+  const el = e.target.closest('[data-act]');
+  if (!el || el.closest('.modal-bg')) return;
+  const f = ACT[el.dataset.act];
+  if (f) { e.preventDefault(); f(el, e); }
+});
+document.addEventListener('keydown', e => {
+  if ((e.key === 'Enter' || e.key === ' ') && e.target.matches('[role="button"][data-act]')) { e.preventDefault(); e.target.click(); }
+});
+ACT.back = () => back();
+ACT.tab = el => go(el.dataset.tab);
+ACT.detail = el => push('detail', { id: el.dataset.id });
+ACT.newRecord = el => push('form', { prefill: el.dataset.date ? { date: el.dataset.date } : null });
+ACT.open = el => push(el.dataset.v, el.dataset.id ? { id: el.dataset.id } : {});
+ACT.races = () => push('races');
+
+/* ---------- ホーム ---------- */
+function bibHtml(race, t) {
+  if (!race) return `<div class="bib" role="button" tabindex="0" data-act="races"><div class="bib-top"><span>MAIN RACE</span><span></span></div><div class="bib-body"><div class="bib-name">大会が登録されていません</div><div class="bib-meta">タップして大会を登録</div></div></div>`;
+  const st = raceState(race, t), p = racePace(race);
+  return `<div class="bib" role="button" tabindex="0" data-act="races" aria-label="${esc(race.name)} ${st.label}">
+  <div class="bib-top"><span>MAIN RACE</span><span>${esc(race.event || '')}</span></div>
+  <div class="bib-body"><div class="bib-name">${esc(race.name)}</div>
+  ${st.d > 0 ? `<div class="bib-meta">大会まで</div><div class="bib-count"><span class="bib-big">${st.d}</span><span class="bib-unit">日</span></div>` : `<div class="bib-count"><span class="bib-big word">${st.label}</span></div>`}
+  <div class="bib-meta">${C.fmtDateJa(race.date)}${race.startTime ? ' ' + esc(race.startTime) + ' スタート' : ''}</div>
+  ${race.targetSec ? `<div class="bib-meta">目標 ${fmtTarget(race.targetSec)}${p ? `・理論上の平均ペース ${C.fmtPace(p)}/km` : ''}</div>` : '<div class="bib-meta">目標タイム未設定</div>'}
+  </div></div>`;
+}
+function planLabel(p) {
+  if (p.type === REST) return '休養日';
+  const bits = [esc(p.type)]; if (p.distanceM > 0) bits.push(C.fmtKm(p.distanceM) + 'km'); if (p.durationSec > 0) bits.push(C.fmtDur(p.durationSec));
+  return bits.join('・');
+}
+function todayCard(t, ws, ps) {
+  const planRows = ps.length ? ps.map(p => `<div class="today-row"><span>${p.type === REST ? '<span class="badge ok">休養日（予定）</span>' : `<span class="badge">予定</span> ${planLabel(p)}`}${p.status === 'done' ? ' <span class="badge ok">実施済み</span>' : ''}</span>${p.type !== REST && p.status !== 'done' ? `<button class="btn sm" data-act="planDo" data-id="${p.id}">実施した</button>` : ''}</div>`).join('')
+    : '<div class="today-row muted">予定なし</div>';
+  let res;
+  if (ws.length) res = ws.map(w => `<div class="today-row" ><span><b>${esc(w.type)}</b> ${w.distanceM > 0 ? C.fmtKm(w.distanceM) + 'km' : ''} ${w.durationSec > 0 ? C.fmtDur(w.durationSec, true) : ''} ${srcBadge(w)}</span><button class="btn sm" data-act="detail" data-id="${w.id}">確認・編集</button></div>`).join('');
+  else if (ps.some(p => p.type === REST)) res = '<div class="today-row">休養日のため記録なし</div>';
+  else if (ps.length) res = '<div class="today-row"><span class="badge warn">未実施</span></div>';
+  else res = '<div class="today-row muted">記録なし</div>';
+  return `<section class="card"><div class="sec-title"><h2>今日の練習</h2><button class="link" data-act="calToday">カレンダー</button></div>
+  <div class="tiny muted" style="font-weight:700">予定</div>${planRows}<div class="tiny muted" style="font-weight:700;margin-top:8px">実績</div>${res}</section>`;
+}
+function suggestCard(t) {
+  const race = mainRace(), c = ctx();
+  const sg = C.suggest(S.workouts, t, race && race.date >= t ? race : null, c);
+  if (sg.raceToday) return `<section class="card"><div class="sec-title"><h2>次回の練習提案</h2></div><p class="small" style="margin:0">今日は${esc(race.name)}の当日です。提案はお休みします。</p></section>`;
+  return `<section class="card"><div class="sec-title"><h2>次回の練習提案</h2></div><div class="stack" style="gap:12px">
+  ${sg.few ? '<div class="alert warn small">記録が少ないため参考提案です。</div>' : ''}
+  ${sg.items.map((s, i) => `<div class="sug${s.note ? ' alertish' : ''}"><div class="t">${esc(s.title)}</div><div class="small muted">理由：${esc(s.reason)}</div>${s.note ? `<div class="small" style="color:var(--bad)">${esc(s.note)}</div>` : ''}
+    <div><button class="btn sm" data-act="sugPlan" data-i="${i}">明日の予定に追加（編集できます）</button></div></div>`).join('')}
+  <div class="note">記録をもとにした目安です。医療的な診断ではなく、完走やタイムを保証するものではありません。</div></div></section>`;
+}
+ACT.sugPlan = el => {
+  const t = today(), race = mainRace();
+  const sg = C.suggest(S.workouts, t, race && race.date >= t ? race : null, ctx()), s = sg.items[+el.dataset.i];
+  if (!s) return;
+  push('plan', { prefill: Object.assign({ date: C.addDays(t, 1), memo: s.title }, s.plan) });
+};
+TAB.home = () => {
+  const t = today(), c = ctx(), wsd = C.weekStart(t);
+  const wk = C.aggregate(S.workouts, wsd, C.addDays(wsd, 6), c), mo = C.aggregate(S.workouts, C.monthStart(t), C.monthEnd(t), c);
+  const g = kv('goals', {}), race = mainRace();
+  const todayW = sortW(S.workouts.filter(w => w.date === t)), todayP = S.plans.filter(p => p.date === t);
+  const prev = sortW(S.workouts.filter(w => w.date < t))[0];
+  return `<header class="top"><div><div class="brand">RUNNING TRAINING LOG</div><div class="date">${C.fmtDateJa(t)}</div></div></header>
+  <div class="stack" style="margin-top:10px">
+    ${bibHtml(race, t)}
+    <button class="btn primary big block" data-act="newRecord">＋ 今日の練習を記録する</button>
+    ${todayCard(t, todayW, todayP)}
+    <div class="kpis four">
+      ${kpi('今週の走行距離', wk.count ? valNum(C.fmtKm(wk.distM), 'km') : valNone())}
+      ${kpi('今月の走行距離', mo.count ? valNum(C.fmtKm(mo.distM), 'km') : valNone())}
+      ${kpi('今月の練習回数', mo.count ? valNum(mo.count, '回') : valNone())}
+      ${kpi('今月の運動時間', mo.durSec ? valDur(mo.durSec) : valNone())}
+    </div>
+    <section class="card"><div class="sec-title"><h2>月間目標の達成率</h2><button class="link" data-act="open" data-v="goals">目標を設定</button></div>
+      <div class="stack" style="gap:10px">${progHtml('月間走行距離', mo.distM / 1000, g.monthDistKm, v => C.round(v, 2).toFixed(2), 'km')}${progHtml('月間練習回数', mo.count, g.monthCount, fmtCnt, '回')}</div></section>
+    <section class="card"><div class="sec-title"><h2>直近7日間の走行距離</h2><span class="tiny muted">km${c.includeWalk ? '' : '・歩きを除く'}</span></div>${barChart(distSeries(C.addDays(t, -6), 7, c), { fmt: v => v.toFixed(1), unit: 'km' })}</section>
+    <div class="home-grid stack">
+      <section class="card"><div class="sec-title"><h2>前回の練習</h2>${prev ? '' : ''}</div>${prev ? wCard(prev) : '<div class="empty">記録なし</div>'}</section>
+      ${suggestCard(t)}
+    </div>
+    <section class="card"><div class="between"><div><h2>Apple Watchの記録を取り込む</h2><div class="small muted">ヘルスケアから書き出したファイルで手動インポート</div></div><button class="btn sm" data-act="open" data-v="import">開く</button></div></section>
+  </div>`;
+};
+ACT.calToday = () => { calMonth = C.monthStart(today()); calSel = today(); go('calendar'); };
+ACT.planDo = el => {
+  const p = S.plans.find(x => x.id === el.dataset.id); if (!p) return;
+  push('form', { prefill: { date: p.date, type: p.type, distanceM: p.distanceM, durationSec: p.durationSec, memo: p.memo || '' }, planId: p.id });
+};
+
+/* ---------- 練習記録（履歴） ---------- */
+const hf = { sort: 'desc', type: '', from: '', to: '', dmin: '', dmax: '', q: '', source: '', view: 'card', limit: 100 };
+function filtered() {
+  const q = hf.q.trim().toLowerCase();
+  const dmin = hf.dmin !== '' ? parseFloat(hf.dmin) * 1000 : null, dmax = hf.dmax !== '' ? parseFloat(hf.dmax) * 1000 : null;
+  const shoes = Object.fromEntries(S.shoes.map(s => [s.id, s.name]));
+  let ws = S.workouts.filter(w => {
+    if (hf.type && w.type !== hf.type) return false;
+    if (hf.source && w.source !== hf.source) return false;
+    if (hf.from && w.date < hf.from) return false;
+    if (hf.to && w.date > hf.to) return false;
+    if (dmin != null && !(w.distanceM >= dmin)) return false;
+    if (dmax != null && !(w.distanceM > 0 && w.distanceM <= dmax)) return false;
+    if (q) { const hay = [w.type, w.memo, w.weather, w.painNote, shoes[w.shoeId], C.SOURCE_LABEL[w.source], w.date].join(' ').toLowerCase(); if (!hay.includes(q)) return false; }
+    return true;
+  });
+  ws = sortW(ws); if (hf.sort === 'asc') ws.reverse();
+  return ws;
+}
+function histList() {
+  const ws = filtered(), shown = ws.slice(0, hf.limit);
+  if (!S.workouts.length) return '<div class="empty">まだ練習記録がありません。<br>「＋ 記録する」から最初の練習を登録できます。</div>';
+  if (!ws.length) return '<div class="empty">条件に合う記録がありません</div>';
+  let body;
+  if (hf.view === 'table') {
+    body = `<div class="tablewrap"><table><thead><tr><th>実施日</th><th>曜日</th><th>練習種別</th><th>距離(km)</th><th>時間</th><th>平均ペース</th><th>平均心拍</th><th>疲労度</th><th>取得元</th></tr></thead><tbody>
+    ${shown.map(w => { const p = C.paceSec(w.distanceM, w.durationSec); return `<tr data-act="detail" data-id="${esc(w.id)}"><td>${w.date}</td><td>${C.dow(w.date)}</td><td>${esc(w.type)}</td><td class="n">${w.distanceM > 0 ? C.fmtKm(w.distanceM) : '—'}</td><td>${w.durationSec > 0 ? C.fmtDur(w.durationSec, true) : '—'}</td><td class="n">${p ? C.fmtPace(p) : '—'}</td><td class="n">${w.avgHr ?? '—'}</td><td class="n">${w.fatigue ?? '—'}</td><td>${C.SOURCE_LABEL[w.source] || ''}</td></tr>`; }).join('')}</tbody></table></div>`;
+  } else body = `<div class="wlist">${shown.map(wCard).join('')}</div>`;
+  return `<div class="small muted" style="margin-bottom:8px">${ws.length}件${ws.length > shown.length ? `（${shown.length}件を表示中）` : ''}</div>${body}${ws.length > shown.length ? '<button class="btn block" style="margin-top:10px" data-act="histMore">さらに表示</button>' : ''}`;
+}
+TAB.records = () => {
+  const active = ['type', 'from', 'to', 'dmin', 'dmax', 'q', 'source'].filter(k => hf[k]).length;
+  return `<header class="top"><div><div class="brand">RECORDS</div><div class="date">練習記録</div></div><button class="btn primary sm" data-act="newRecord">＋ 記録する</button></header>
+  <div class="stack" style="margin-top:12px">
+    <input type="search" id="hf-q" placeholder="キーワード検索（メモ・種別・天候・シューズ）" value="${esc(hf.q)}" aria-label="キーワード検索">
+    <details class="card" ${active > (hf.q ? 1 : 0) ? 'open' : ''}><summary style="cursor:pointer;font-weight:700">絞り込み・並べ替え${active ? `（${active}件の条件）` : ''}</summary>
+      <div class="stack" style="margin-top:12px">
+        <div class="grid2"><div class="field"><label for="hf-sort">並び順</label><select id="hf-sort"><option value="desc" ${hf.sort === 'desc' ? 'selected' : ''}>新しい順</option><option value="asc" ${hf.sort === 'asc' ? 'selected' : ''}>古い順</option></select></div>
+        <div class="field"><label for="hf-type">練習種別</label><select id="hf-type"><option value="">すべて</option>${[...new Set([...types().map(t => t.name), ...S.workouts.map(w => w.type)])].map(n => `<option ${hf.type === n ? 'selected' : ''}>${esc(n)}</option>`).join('')}</select></div></div>
+        <div class="grid2"><div class="field"><label for="hf-from">期間（から）</label><input type="date" id="hf-from" value="${hf.from}"></div><div class="field"><label for="hf-to">期間（まで）</label><input type="date" id="hf-to" value="${hf.to}"></div></div>
+        <div class="grid2"><div class="field"><label for="hf-dmin">距離（以上）</label><div class="inline-unit"><input type="number" inputmode="decimal" step="0.1" min="0" id="hf-dmin" value="${esc(hf.dmin)}"><span>km</span></div></div><div class="field"><label for="hf-dmax">距離（以下）</label><div class="inline-unit"><input type="number" inputmode="decimal" step="0.1" min="0" id="hf-dmax" value="${esc(hf.dmax)}"><span>km</span></div></div></div>
+        <div class="field"><label for="hf-source">データ取得元</label><select id="hf-source"><option value="">すべて</option>${C.SOURCES.map(s => `<option value="${s}" ${hf.source === s ? 'selected' : ''}>${C.SOURCE_LABEL[s]}</option>`).join('')}</select></div>
+        <button class="btn" data-act="hfClear">条件をクリア</button>
+      </div></details>
+    <div class="seg" role="group" aria-label="表示形式"><button data-act="hfView" data-v="card" aria-pressed="${hf.view === 'card'}">カード</button><button data-act="hfView" data-v="table" aria-pressed="${hf.view === 'table'}">一覧表</button></div>
+    <div id="hlist">${histList()}</div>
+  </div>`;
+};
+AFTER.tab_records = () => {
+  const map = { 'hf-q': 'q', 'hf-sort': 'sort', 'hf-type': 'type', 'hf-from': 'from', 'hf-to': 'to', 'hf-dmin': 'dmin', 'hf-dmax': 'dmax', 'hf-source': 'source' };
+  for (const [id, k] of Object.entries(map)) {
+    const el = document.getElementById(id); if (!el) continue;
+    el.addEventListener(el.tagName === 'SELECT' ? 'change' : 'input', () => { hf[k] = el.value; hf.limit = 100; $('#hlist').innerHTML = histList(); });
+  }
+};
+ACT.hfView = el => { hf.view = el.dataset.v; render(false); };
+ACT.hfClear = () => { Object.assign(hf, { type: '', from: '', to: '', dmin: '', dmax: '', q: '', source: '', limit: 100 }); render(false); };
+ACT.histMore = () => { hf.limit += 200; $('#hlist').innerHTML = histList(); };
+
+/* ---------- 記録の詳細 ---------- */
+SUB.detail = ({ id }) => {
+  const w = S.workouts.find(x => x.id === id);
+  if (!w) return bar('記録の詳細') + '<div class="empty" style="margin-top:16px">この記録は見つかりません（削除された可能性があります）</div>';
+  const p = C.paceSec(w.distanceM, w.durationSec), sp = C.speedKmh(w.distanceM, w.durationSec);
+  const race = mainRace(), tp = racePace(race);
+  const shoe = w.shoeId ? (S.shoes.find(s => s.id === w.shoeId) || { name: '（削除済みのシューズ）' }) : null;
+  const rows = [['実施日', C.fmtDateJa(w.date)], ['開始時刻', w.startTime || '—'], ['練習種別', esc(w.type)],
+    ['距離', w.distanceM > 0 ? C.fmtKm(w.distanceM) + ' km' : '記録なし'], ['運動時間', w.durationSec > 0 ? C.fmtDur(w.durationSec, true) : '記録なし'],
+    ['平均ペース（計算値）', p ? C.fmtPace(p) + ' /km' : '距離と時間がそろっていないため未計算'], ['平均速度', sp ? C.fmtSpeed(sp) + ' km/h' : '未計算']];
+  if (w.manualPaceSec) {
+    rows.push(['平均ペース（入力値）', C.fmtPace(w.manualPaceSec) + ' /km']);
+    if (p && Math.abs(p - w.manualPaceSec) > 5) rows.push(['確認', '<span style="color:var(--warn)">入力値と計算値が異なります。集計には計算値を使います。</span>']);
+    if (w.distanceM > 0 && !(w.durationSec > 0)) rows.push(['推定所要時間', C.fmtDur(w.manualPaceSec * w.distanceM / 1000, true) + '（入力ペース×距離からの計算）']);
+  }
+  const usePace = p || w.manualPaceSec;
+  if (usePace && tp) { const d = Math.round(usePace - tp); rows.push(['目標ペースとの差', `${d === 0 ? '同じ' : `${Math.abs(d)}秒/km ${d > 0 ? '遅い' : '速い'}`}<div class="tiny muted">${esc(race.name)}の目標タイムから計算した理論上の平均ペース ${C.fmtPace(tp)}/km との比較</div>`]); }
+  rows.push(['平均心拍数', w.avgHr ? w.avgHr + ' bpm' : '記録なし'], ['最大心拍数', w.maxHr ? w.maxHr + ' bpm' : '記録なし'],
+    ['疲労度', w.fatigue ? w.fatigue + ' / 5' : '—'], ['痛み', w.pain === true ? 'あり' + (w.painNote ? '：' + esc(w.painNote) : '') : w.pain === false ? 'なし' : '—'],
+    ['天候', esc(w.weather) || '—'], ['シューズ', shoe ? esc(shoe.name) : '—'], ['メモ', w.memo ? esc(w.memo).replace(/\n/g, '<br>') : '—'], ['データ取得元', C.SOURCE_LABEL[w.source] || '']);
+  const si = w.sourceInfo;
+  let imp = '';
+  if (si) {
+    const o = si.original || {};
+    const r2 = [['取り込み日時', si.importedAt ? new Date(si.importedAt).toLocaleString('ja-JP') : '—'], ['ファイル', esc(si.fileName || '—')], ['ファイル形式', esc(si.format || '—')]];
+    if (si.activityType) r2.push(['元のワークアウト種別', esc(C.actName(si.activityType)) + ` <span class="tiny muted">${esc(si.activityType)}</span>`]);
+    if (si.sourceName) r2.push(['記録元', esc(si.sourceName)]);
+    if (o.distance != null) r2.push(['元の距離', `${esc(o.distance)} ${esc(o.distanceUnit || '単位不明')}`]);
+    if (o.duration != null) r2.push(['元の運動時間', `${esc(o.duration)} ${esc(o.durationUnit || '単位不明')}`]);
+    if (o.startDate) r2.push(['元の開始・終了', `${esc(o.startDate)}<br>${esc(o.endDate || '')}`]);
+    if (si.energyKcal != null) r2.push(['消費エネルギー（参考）', si.energyKcal + ' kcal']);
+    if (si.indoor != null) r2.push(['屋内ワークアウト', si.indoor ? 'はい' : 'いいえ']);
+    if (si.line) r2.push(['元ファイルの位置', si.line + (si.format === 'CSV' ? '行目' : '件目')]);
+    imp = `<section class="card"><h2 style="margin-bottom:10px">インポート元の情報</h2><dl class="dl">${r2.map(([a, b]) => `<dt>${a}</dt><dd>${b}</dd>`).join('')}</dl></section>`;
+  }
+  return bar('記録の詳細') + `<div class="stack" style="margin-top:14px">
+    <section class="card"><div class="between" style="margin-bottom:10px"><h2>${esc(w.type)}</h2>${srcBadge(w)}</div><dl class="dl">${rows.map(([a, b]) => `<dt>${a}</dt><dd>${b}</dd>`).join('')}</dl></section>
+    ${imp}
+    <div class="btns"><button class="btn primary" data-act="editW" data-id="${esc(w.id)}">編集</button><button class="btn" data-act="favFromW" data-id="${esc(w.id)}">お気に入りに登録</button></div>
+    <button class="btn ghost-danger block" data-act="delW" data-id="${esc(w.id)}">この記録を削除</button>
+  </div>`;
+};
+ACT.editW = el => push('form', { id: el.dataset.id });
+ACT.delW = async el => {
+  const w = S.workouts.find(x => x.id === el.dataset.id); if (!w) return;
+  const ok = await ask({ title: '記録を削除しますか？', body: `${C.fmtDateJa(w.date)} ${w.type}${w.distanceM > 0 ? ' ' + C.fmtKm(w.distanceM) + 'km' : ''}\nこの操作は取り消せません。`, ok: '削除する', danger: true });
+  if (!ok) return;
+  try {
+    await DB.tx(['workouts', 'plans'], 'readwrite', st => {
+      st.workouts.delete(w.id);
+      S.plans.filter(p => p.workoutId === w.id).forEach(p => st.plans.put(Object.assign({}, p, { status: 'planned', workoutId: null })));
+    });
+  } catch (e) { toast('削除できませんでした：' + errMsg(e), true); return; }
+  S.workouts = S.workouts.filter(x => x.id !== w.id);
+  S.plans = S.plans.map(p => p.workoutId === w.id ? Object.assign({}, p, { status: 'planned', workoutId: null }) : p);
+  toast('削除しました'); back();
+};
+ACT.favFromW = async el => {
+  const w = S.workouts.find(x => x.id === el.dataset.id); if (!w) return;
+  await addFavorite({ type: w.type, distanceM: w.distanceM, durationSec: w.durationSec, memo: '' }, `${w.type}${w.distanceM > 0 ? ' ' + C.fmtKm(w.distanceM) + 'km' : ''}`);
+};
+async function addFavorite(f, def) {
+  const name = await askText('お気に入りに登録', 'お気に入りの名前', def);
+  if (name == null) return;
+  if (!name) { toast('名前を入力してください', true); return; }
+  const favs = [...kv('favorites', []), { id: uid(), name, type: f.type, distanceM: f.distanceM || null, durationSec: f.durationSec || null, memo: f.memo || '' }];
+  try { await setKV('favorites', favs); toast('お気に入りに登録しました'); } catch (e) { toast('登録できませんでした：' + errMsg(e), true); }
+}
+
+/* ---------- 記録の入力フォーム ---------- */
+const DIST_CHIPS = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+const DUR_CHIPS = [[600, '10分'], [1200, '20分'], [1800, '30分'], [2400, '40分'], [3000, '50分'], [3600, '1時間'], [5400, '1時間30分'], [7200, '2時間']];
+let formDirty = false;
+SUB.form = (p) => {
+  const w = p.id ? S.workouts.find(x => x.id === p.id) : null;
+  if (p.id && !w) return bar('記録の編集') + '<div class="empty">この記録は見つかりません</div>';
+  const pre = w || p.prefill || {};
+  const tlist = types();
+  const type = pre.type || kv('lastType') || (tlist[1] || tlist[0]).name;
+  const allTypes = tlist.some(t => t.name === type) ? tlist : [...tlist, { name: type, cat: C.catOf(type, tlist) }];
+  const dur = pre.durationSec || 0, h = Math.floor(dur / 3600), m = Math.floor(dur % 3600 / 60), s = dur % 60;
+  const favs = kv('favorites', []);
+  const shoes = S.shoes.filter(x => !x.retired || x.id === pre.shoeId);
+  formDirty = false;
+  return bar(w ? '記録の編集' : '練習を記録') + `
+  <form id="wform" class="stack" style="margin-top:14px" novalidate>
+   <div id="f-err" role="alert"></div>
+   <div id="f-body" class="stack">
+    ${favs.length && !w ? `<div class="field"><span class="lab2">お気に入りから入力</span><div class="chips">${favs.map(f => `<button type="button" class="chip" data-act="applyFav" data-id="${f.id}">${esc(f.name)}</button>`).join('')}</div></div>` : ''}
+    <div class="grid2">
+      <div class="field"><label for="f-date">実施日<span class="req">必須</span></label><input type="date" id="f-date" value="${esc(pre.date || today())}" required></div>
+      <div class="field"><label for="f-start">開始時刻<span class="opt">任意</span></label><input type="time" id="f-start" value="${esc(pre.startTime || '')}"></div>
+    </div>
+    <div class="field"><span class="lab2">練習種別<span class="req">必須</span></span><input type="hidden" id="f-type" value="${esc(type)}">
+      <div class="chips" id="f-types" role="radiogroup" aria-label="練習種別">${allTypes.map(t => `<button type="button" class="chip" role="radio" aria-checked="${t.name === type}" aria-pressed="${t.name === type}" data-act="pickType" data-v="${esc(t.name)}">${esc(t.name)}</button>`).join('')}</div></div>
+    <div class="field"><label for="f-dist">距離<span class="opt">距離か時間のどちらかは必須</span></label>
+      <div class="inline-unit"><input type="number" id="f-dist" inputmode="decimal" step="0.01" min="0" max="500" placeholder="例：5.2" value="${pre.distanceM > 0 ? C.round(pre.distanceM / 1000, 2) : ''}"><span>km</span></div>
+      <div class="chips">${DIST_CHIPS.map(k => `<button type="button" class="chip" data-act="setDist" data-v="${k}">${k}km</button>`).join('')}</div></div>
+    <div class="field"><span class="lab2">運動時間</span>
+      <div class="dur3"><div class="inline-unit"><input type="number" id="f-h" inputmode="numeric" min="0" max="48" step="1" aria-label="時間" value="${h || ''}"><span>時間</span></div>
+      <div class="inline-unit"><input type="number" id="f-m" inputmode="numeric" min="0" max="59" step="1" aria-label="分" value="${dur ? m : ''}"><span>分</span></div>
+      <div class="inline-unit"><input type="number" id="f-s" inputmode="numeric" min="0" max="59" step="1" aria-label="秒" value="${dur && s ? s : ''}"><span>秒</span></div></div>
+      <div class="chips">${DUR_CHIPS.map(([v, l]) => `<button type="button" class="chip" data-act="setDur" data-v="${v}">${l}</button>`).join('')}</div></div>
+    <div class="calcline" id="f-calc" aria-live="polite"></div>
+    <details class="more" ${w && (w.avgHr || w.fatigue || w.memo || w.pain != null || w.manualPaceSec || w.weather || w.shoeId) ? 'open' : ''}><summary>詳細を入力（任意）</summary>
+     <div class="stack" style="margin-top:6px">
+      <div class="field"><label for="f-pace">平均ペース（手入力）<span class="opt">分:秒/km、例 5:30</span></label><input type="text" id="f-pace" inputmode="numeric" placeholder="距離と時間があれば自動計算します" value="${pre.manualPaceSec ? C.fmtPaceClock(pre.manualPaceSec) : ''}"></div>
+      <div class="grid2"><div class="field"><label for="f-avghr">平均心拍数</label><div class="inline-unit"><input type="number" id="f-avghr" inputmode="numeric" min="30" max="250" value="${pre.avgHr ?? ''}"><span>bpm</span></div></div>
+      <div class="field"><label for="f-maxhr">最大心拍数</label><div class="inline-unit"><input type="number" id="f-maxhr" inputmode="numeric" min="30" max="250" value="${pre.maxHr ?? ''}"><span>bpm</span></div></div></div>
+      <div class="field"><span class="lab2">主観的な疲労度（1＝楽 〜 5＝とてもきつい）</span><input type="hidden" id="f-fat" value="${pre.fatigue ?? ''}">
+        <div class="seg" role="group" aria-label="疲労度"><button type="button" data-act="pickSeg" data-t="f-fat" data-v="" aria-pressed="${pre.fatigue == null}">未入力</button>${[1, 2, 3, 4, 5].map(n => `<button type="button" data-act="pickSeg" data-t="f-fat" data-v="${n}" aria-pressed="${pre.fatigue === n}">${n}</button>`).join('')}</div></div>
+      <div class="field"><span class="lab2">痛みの有無</span><input type="hidden" id="f-pain" value="${pre.pain === true ? '1' : pre.pain === false ? '0' : ''}">
+        <div class="seg" role="group" aria-label="痛み"><button type="button" data-act="pickSeg" data-t="f-pain" data-v="" aria-pressed="${pre.pain == null}">未入力</button><button type="button" data-act="pickSeg" data-t="f-pain" data-v="0" aria-pressed="${pre.pain === false}">なし</button><button type="button" data-act="pickSeg" data-t="f-pain" data-v="1" aria-pressed="${pre.pain === true}">あり</button></div>
+        <input type="text" id="f-painnote" placeholder="痛みの場所・程度（任意）" value="${esc(pre.painNote || '')}" class="${pre.pain === true ? '' : 'hidden'}"></div>
+      <div class="grid2"><div class="field"><label for="f-weather">天候</label><select id="f-weather"><option value="">未選択</option>${[...new Set([...WEATHERS, pre.weather].filter(Boolean))].map(x => `<option ${pre.weather === x ? 'selected' : ''}>${esc(x)}</option>`).join('')}</select></div>
+      <div class="field"><label for="f-shoe">シューズ</label><select id="f-shoe"><option value="">未選択</option>${shoes.map(x => `<option value="${x.id}" ${pre.shoeId === x.id ? 'selected' : ''}>${esc(x.name)}</option>`).join('')}</select></div></div>
+      ${S.shoes.length ? '' : '<div class="tiny muted">シューズは「設定 → シューズ」で登録できます。</div>'}
+      <div class="field"><label for="f-memo">練習内容のメモ</label><textarea id="f-memo" maxlength="2000">${esc(pre.memo || '')}</textarea></div>
+     </div></details>
+    <div class="small muted">データ取得元：${C.SOURCE_LABEL[w ? w.source : 'manual']}${w && w.source !== 'manual' ? '（編集しても取得元とインポート情報は保持されます）' : ''}</div>
+    <div class="btns"><button type="button" class="btn" data-act="formCancel">キャンセル</button><button type="submit" class="btn primary">内容を確認</button></div>
+    <button type="button" class="link" data-act="formFav">この内容をお気に入りに登録</button>
+   </div>
+   <div id="f-confirm" class="hidden"></div>
+  </form>`;
+};
+AFTER.form = () => {
+  const f = $('#wform');
+  f.addEventListener('input', e => { formDirty = true; if (['f-dist', 'f-h', 'f-m', 'f-s', 'f-pace'].includes(e.target.id)) updateCalc(); });
+  f.addEventListener('submit', e => { e.preventDefault(); showConfirm(); });
+  updateCalc();
+};
+function readDur() {
+  const raw = ['f-h', 'f-m', 'f-s'].map(id => $('#' + id).value.trim());
+  if (raw.every(v => v === '')) return { sec: null };
+  if (raw.some(v => v !== '' && !/^\d+$/.test(v))) return { err: '運動時間は0以上の整数で入力してください' };
+  const [h, m, s] = raw.map(v => v === '' ? 0 : +v);
+  if (m > 59 || s > 59) return { err: '運動時間の分・秒は0〜59で入力してください' };
+  const sec = h * 3600 + m * 60 + s; return { sec: sec > 0 ? sec : null };
+}
+function readDist() {
+  const v = $('#f-dist').value.trim(); if (!v) return { m: null };
+  if (!/^\d+(\.\d+)?$/.test(v)) return { err: '距離は数値（例：5.2）で入力してください' };
+  const m = Math.round(parseFloat(v) * 1000); return { m: m > 0 ? m : null };
+}
+function updateCalc() {
+  const el = $('#f-calc'); if (!el) return;
+  const d = readDist(), t = readDur();
+  if (d.err || t.err) { el.innerHTML = `<span style="color:var(--bad)">${esc(d.err || t.err)}</span>`; return; }
+  const p = C.paceSec(d.m, t.sec), sp = C.speedKmh(d.m, t.sec);
+  if (!p) { el.innerHTML = '<span class="muted">距離と運動時間を入力すると、平均ペースと平均速度を自動計算します。</span>'; return; }
+  let s = `平均ペース <b>${C.fmtPace(p)}</b>/km　平均速度 <b>${C.fmtSpeed(sp)}</b>km/h`;
+  const mp = C.parsePace($('#f-pace').value);
+  if (mp > 0 && Math.abs(mp - p) > 5) s += `<div class="small" style="color:var(--warn)">手入力のペース（${C.fmtPace(mp)}）と計算値が異なります</div>`;
+  const tp = racePace(mainRace());
+  if (tp) { const df = Math.round(p - tp); s += `<div class="tiny muted">大会の目標ペース（理論値 ${C.fmtPace(tp)}/km）より ${df === 0 ? '差なし' : Math.abs(df) + '秒/km ' + (df > 0 ? '遅い' : '速い')}</div>`; }
+  el.innerHTML = s;
+}
+function readForm() {
+  const errs = [], p = stack[stack.length - 1].p, old = p.id ? S.workouts.find(x => x.id === p.id) : null;
+  const d = readDist(), t = readDur(); if (d.err) errs.push(d.err); if (t.err) errs.push(t.err);
+  const int = (id, lab) => { const v = $('#' + id).value.trim(); if (!v) return null; if (!/^\d+$/.test(v)) { errs.push(lab + 'は整数で入力してください'); return null; } return +v; };
+  const mp = C.parsePace($('#f-pace').value); if (Number.isNaN(mp)) errs.push('平均ペースは「5:30」の形式で入力してください');
+  const fat = $('#f-fat').value, pain = $('#f-pain').value;
+  const w = Object.assign({}, old || { id: uid(), source: 'manual', createdAt: nowIso() }, {
+    date: $('#f-date').value, startTime: $('#f-start').value || null, type: $('#f-type').value,
+    distanceM: d.m ?? null, durationSec: t.sec ?? null, manualPaceSec: Number.isNaN(mp) ? null : mp,
+    avgHr: int('f-avghr', '平均心拍数'), maxHr: int('f-maxhr', '最大心拍数'),
+    fatigue: fat === '' ? null : +fat, pain: pain === '' ? null : pain === '1', painNote: pain === '1' ? $('#f-painnote').value.trim() : '',
+    weather: $('#f-weather').value, shoeId: $('#f-shoe').value || null, memo: $('#f-memo').value.trim(), updatedAt: nowIso()
+  });
+  if (!errs.length) errs.push(...C.validateWorkout(w));
+  return { w, errs };
+}
+function showErrs(errs) {
+  $('#f-err').innerHTML = errs.length ? `<div class="alert err"><b>入力内容を確認してください</b><ul>${errs.map(e => `<li>${esc(e)}</li>`).join('')}</ul></div>` : '';
+  if (errs.length) $('#f-err').scrollIntoView({ block: 'center', behavior: 'smooth' });
+}
+function showConfirm() {
+  const { w, errs } = readForm();
+  showErrs(errs); if (errs.length) return;
+  const p = C.paceSec(w.distanceM, w.durationSec), warn = [];
+  if (w.manualPaceSec && p && Math.abs(w.manualPaceSec - p) > 5) warn.push(`入力した平均ペース（${C.fmtPace(w.manualPaceSec)}/km）と、距離・時間からの計算値（${C.fmtPace(p)}/km）が異なります。両方保存し、集計には計算値を使います。`);
+  if (w.date > today()) warn.push('実施日が未来の日付です。予定として登録する場合はカレンダーから「予定を追加」を使ってください。');
+  const sameDay = S.workouts.filter(x => x.date === w.date && x.id !== w.id);
+  if (sameDay.length) warn.push(`同じ日に${sameDay.length}件の記録があります（同じ日に複数の練習を登録できます）。`);
+  const rows = [['実施日', C.fmtDateJa(w.date) + (w.startTime ? ' ' + w.startTime : '')], ['練習種別', esc(w.type)], ['距離', w.distanceM ? C.fmtKm(w.distanceM) + ' km' : '—'], ['運動時間', w.durationSec ? C.fmtDur(w.durationSec, true) : '—'], ['平均ペース', p ? C.fmtPace(p) + '/km（計算）' : w.manualPaceSec ? C.fmtPace(w.manualPaceSec) + '/km（入力）' : '—']];
+  if (w.avgHr) rows.push(['平均心拍数', w.avgHr]); if (w.maxHr) rows.push(['最大心拍数', w.maxHr]);
+  if (w.fatigue) rows.push(['疲労度', w.fatigue + '/5']); if (w.pain != null) rows.push(['痛み', w.pain ? 'あり' : 'なし']);
+  if (w.weather) rows.push(['天候', esc(w.weather)]); if (w.memo) rows.push(['メモ', esc(w.memo)]);
+  $('#f-confirm').innerHTML = `<section class="card stack"><h2>この内容で保存しますか？</h2>${warn.map(x => `<div class="alert warn small">${esc(x)}</div>`).join('')}<dl class="dl">${rows.map(([a, b]) => `<dt>${a}</dt><dd>${b}</dd>`).join('')}</dl>
+   <div class="btns"><button type="button" class="btn" data-act="formEdit">修正する</button><button type="button" class="btn primary" data-act="formSave" id="f-save">保存する</button></div></section>`;
+  $('#f-body').classList.add('hidden'); $('#f-confirm').classList.remove('hidden'); window.scrollTo(0, 0);
+}
+ACT.formEdit = () => { $('#f-confirm').classList.add('hidden'); $('#f-body').classList.remove('hidden'); };
+ACT.formSave = async (el) => {
+  const { w, errs } = readForm(); if (errs.length) { ACT.formEdit(); showErrs(errs); return; }
+  const p = stack[stack.length - 1].p, isNew = !p.id;
+  el.disabled = true; el.textContent = '保存中…';
+  const plan = p.planId ? S.plans.find(x => x.id === p.planId) : null;
+  try {
+    await DB.tx(['workouts', 'plans', 'kv'], 'readwrite', st => {
+      st.workouts.put(w);
+      if (plan) st.plans.put(Object.assign({}, plan, { status: 'done', workoutId: w.id }));
+      st.kv.put({ key: 'lastType', value: w.type });
+    });
+  } catch (e) {
+    el.disabled = false; el.textContent = '保存する';
+    $('#f-confirm').insertAdjacentHTML('afterbegin', `<div class="alert err">保存できませんでした。記録はまだ保存されていません。<br>原因：${esc(errMsg(e))}</div>`);
+    return;
+  }
+  const i = S.workouts.findIndex(x => x.id === w.id); if (i >= 0) S.workouts[i] = w; else S.workouts.push(w);
+  if (plan) Object.assign(plan, { status: 'done', workoutId: w.id });
+  S.kv.lastType = w.type; formDirty = false;
+  requestPersist();
+  toast(isNew ? '保存しました' : '変更を保存しました');
+  if (isNew) replaceTop('detail', { id: w.id }); else back();
+};
+ACT.formCancel = async () => {
+  if (formDirty && !(await ask({ title: '入力を破棄しますか？', body: '保存していない入力内容は失われます。', ok: '破棄する', danger: true }))) return;
+  back();
+};
+ACT.pickType = el => { $('#f-type').value = el.dataset.v; $$('#f-types .chip').forEach(b => { const on = b === el; b.setAttribute('aria-pressed', on); b.setAttribute('aria-checked', on); }); formDirty = true; };
+ACT.pickSeg = el => {
+  $('#' + el.dataset.t).value = el.dataset.v;
+  $$(`[data-t="${el.dataset.t}"]`).forEach(b => b.setAttribute('aria-pressed', b === el));
+  if (el.dataset.t === 'f-pain') $('#f-painnote').classList.toggle('hidden', el.dataset.v !== '1');
+  formDirty = true;
+};
+ACT.setDist = el => { $('#f-dist').value = el.dataset.v; formDirty = true; updateCalc(); };
+ACT.setDur = el => { const v = +el.dataset.v; $('#f-h').value = Math.floor(v / 3600) || ''; $('#f-m').value = Math.floor(v % 3600 / 60); $('#f-s').value = ''; formDirty = true; updateCalc(); };
+ACT.applyFav = el => {
+  const f = kv('favorites', []).find(x => x.id === el.dataset.id); if (!f) return;
+  const tb = $$('#f-types .chip').find(b => b.dataset.v === f.type);
+  if (tb) ACT.pickType(tb); else { $('#f-types').insertAdjacentHTML('beforeend', `<button type="button" class="chip" role="radio" data-act="pickType" data-v="${esc(f.type)}">${esc(f.type)}</button>`); ACT.pickType($$('#f-types .chip').pop()); }
+  $('#f-dist').value = f.distanceM > 0 ? C.round(f.distanceM / 1000, 2) : '';
+  const d = f.durationSec || 0; $('#f-h').value = Math.floor(d / 3600) || ''; $('#f-m').value = d ? Math.floor(d % 3600 / 60) : ''; $('#f-s').value = d % 60 || '';
+  if (f.memo) $('#f-memo').value = f.memo;
+  updateCalc(); toast(`「${f.name}」を入力しました`);
+};
+ACT.formFav = async () => {
+  const d = readDist(), t = readDur();
+  await addFavorite({ type: $('#f-type').value, distanceM: d.m, durationSec: t.sec, memo: $('#f-memo').value.trim() }, $('#f-type').value);
+};
+
+/* ---------- カレンダー ---------- */
+let calMonth = null, calSel = null;
+function dayInfo(d) {
+  return { ws: sortW(S.workouts.filter(w => w.date === d)), ps: S.plans.filter(p => p.date === d), rs: S.races.filter(r => r.date === d) };
+}
+function dayTags(d, info, t) {
+  const tags = [];
+  if (info.rs.length) tags.push('<span class="tg race">大会</span>');
+  const cats = new Set(info.ws.map(w => C.catOf(w.type, types())));
+  const lab = { run: ['run', '走'], walk: ['walk', '歩'], hard: ['hard', '強'], race: ['race', '大会'], other: ['other', '他'] };
+  for (const c of ['hard', 'run', 'walk', 'race', 'other']) if (cats.has(c) && !(c === 'race' && info.rs.length)) tags.push(`<span class="tg ${lab[c][0]}">${lab[c][1]}</span>`);
+  if (info.ps.some(p => p.type === REST)) tags.push('<span class="tg rest">休</span>');
+  const pending = info.ps.filter(p => p.type !== REST && p.status !== 'done');
+  if (pending.length) tags.push(`<span class="tg plan">${d < t && !info.ws.length ? '未' : '予'}</span>`);
+  return tags.join('');
+}
+TAB.calendar = () => {
+  const t = today(); if (!calMonth) calMonth = C.monthStart(t); if (!calSel) calSel = t;
+  const ms = calMonth, me = C.monthEnd(ms), gs = C.weekStart(ms), ge = C.addDays(C.weekStart(me), 6);
+  const [y, m] = ms.split('-').map(Number);
+  let cells = ['月', '火', '水', '木', '金', '土', '日'].map((x, i) => `<div class="dh ${i === 5 ? 'sat' : i === 6 ? 'sun' : ''}">${x}</div>`).join('');
+  for (let d = gs; d <= ge; d = C.addDays(d, 1)) {
+    const info = dayInfo(d), km = info.ws.reduce((a, w) => a + C.countedDist(w, ctx()), 0);
+    cells += `<button class="cday${d.slice(0, 7) !== ms.slice(0, 7) ? ' out' : ''}${d === t ? ' today' : ''}${d === calSel ? ' sel' : ''}" data-act="calPick" data-d="${d}" aria-label="${C.fmtDateJa(d)}${info.ws.length ? ' 記録' + info.ws.length + '件' : ''}${info.ps.length ? ' 予定' + info.ps.length + '件' : ''}">
+      <span class="dn">${+d.slice(8)}</span><span class="tags">${dayTags(d, info, t)}</span>${km > 0 ? `<span class="km">${C.round(km / 1000, 1).toFixed(1)}</span>` : ''}${info.ws.length > 1 ? `<span class="km">${info.ws.length}件</span>` : ''}</button>`;
+  }
+  return `<header class="top"><div><div class="brand">CALENDAR</div><div class="date">${y}年${m}月</div></div>
+    <div class="row"><button class="btn sm" data-act="calNav" data-n="-1" aria-label="前の月">‹</button><button class="btn sm" data-act="calNav" data-n="0">今月</button><button class="btn sm" data-act="calNav" data-n="1" aria-label="次の月">›</button></div></header>
+  <div class="stack" style="margin-top:12px">
+    <div class="cal">${cells}</div>
+    <div class="legend"><span><span class="tg run">走</span>ランニング</span><span><span class="tg walk">歩</span>ウォーキング</span><span><span class="tg hard">強</span>強度の高い練習</span><span><span class="tg race">大会</span>大会</span><span><span class="tg rest">休</span>休養日</span><span><span class="tg plan">予</span>予定</span><span><span class="tg plan">未</span>予定を未実施</span><span>数字＝距離(km)</span></div>
+    <section class="card" id="calday">${dayPanel(calSel)}</section>
+  </div>`;
+};
+function dayPanel(d) {
+  const info = dayInfo(d), t = today();
+  const hasRest = info.ps.some(p => p.type === REST);
+  return `<div class="sec-title"><h2>${C.fmtDateJa(d)}</h2>${d === t ? '<span class="badge src">今日</span>' : ''}</div>
+  <div class="stack" style="gap:10px">
+   ${info.rs.map(r => `<div class="row"><span class="badge race">大会</span><b>${esc(r.name)}</b>${r.startTime ? `<span class="small muted">${esc(r.startTime)}スタート</span>` : ''}</div>`).join('')}
+   <div><div class="tiny muted" style="font-weight:700">予定</div>
+   ${info.ps.length ? info.ps.map(p => `<div class="today-row"><span>${p.type === REST ? '<span class="badge ok">休養日</span>' : `${planLabel(p)}`} ${p.status === 'done' ? '<span class="badge ok">実施済み</span>' : p.type !== REST && d < t ? '<span class="badge warn">未実施</span>' : ''}${p.memo ? `<div class="tiny muted">${esc(p.memo)}</div>` : ''}</span>
+     <span class="row">${p.type !== REST && p.status !== 'done' ? `<button class="btn sm" data-act="planDo" data-id="${p.id}">実績に変換</button>` : ''}<button class="btn sm" data-act="planEdit" data-id="${p.id}">編集</button></span></div>`).join('') : '<div class="today-row muted">予定なし</div>'}</div>
+   <div><div class="tiny muted" style="font-weight:700">実績</div>
+   ${info.ws.length ? `<div class="wlist" style="margin-top:6px">${info.ws.map(wCard).join('')}</div>` : `<div class="today-row muted">${hasRest ? '休養日（記録なし）' : '記録なし'}</div>`}</div>
+   <div class="btns"><button class="btn primary sm" data-act="newRecord" data-date="${d}">＋ 練習を記録</button><button class="btn sm" data-act="planNew" data-date="${d}">＋ 予定を追加</button>${hasRest ? '' : `<button class="btn sm" data-act="restDay" data-date="${d}">休養日にする</button>`}</div>
+  </div>`;
+}
+ACT.calPick = el => { calSel = el.dataset.d; if (calSel.slice(0, 7) !== calMonth.slice(0, 7)) { calMonth = C.monthStart(calSel); render(false); return; } $$('.cday.sel').forEach(x => x.classList.remove('sel')); el.classList.add('sel'); $('#calday').innerHTML = dayPanel(calSel); };
+ACT.calNav = el => { const n = +el.dataset.n; calMonth = n === 0 ? C.monthStart(today()) : C.addMonths(calMonth, n); if (n === 0) calSel = today(); render(false); };
+ACT.planNew = el => push('plan', { prefill: { date: el.dataset.date } });
+ACT.planEdit = el => push('plan', { id: el.dataset.id });
+ACT.restDay = async el => {
+  const p = { id: uid(), date: el.dataset.date, type: REST, distanceM: null, durationSec: null, memo: '', status: 'planned', workoutId: null, createdAt: nowIso() };
+  try { await DB.put('plans', p); S.plans.push(p); toast('休養日に設定しました'); render(false); } catch (e) { toast('保存できませんでした：' + errMsg(e), true); }
+};
+
+/* ---------- 練習予定フォーム ---------- */
+SUB.plan = (p) => {
+  const pl = p.id ? S.plans.find(x => x.id === p.id) : null;
+  if (p.id && !pl) return bar('練習予定') + '<div class="empty">予定が見つかりません</div>';
+  const pre = pl || p.prefill || {};
+  const tl = [...types().map(t => t.name), REST]; if (pre.type && !tl.includes(pre.type)) tl.unshift(pre.type);
+  const dur = pre.durationSec || 0;
+  return bar(pl ? '練習予定の編集' : '練習予定を追加') + `<form id="pform" class="stack" style="margin-top:14px" novalidate>
+   <div id="p-err" role="alert"></div>
+   <div class="alert info small">予定は実績として集計されません。実施したら「実績に変換」で記録にしてください。</div>
+   ${pl && pl.status === 'done' ? '<div class="alert ok small">この予定は実施済みです（記録と連携しています）。</div>' : ''}
+   <div class="field"><label for="p-date">日付<span class="req">必須</span></label><input type="date" id="p-date" value="${esc(pre.date || today())}"></div>
+   <div class="field"><label for="p-type">内容<span class="req">必須</span></label><select id="p-type">${tl.map(n => `<option ${n === (pre.type || 'ジョギング') ? 'selected' : ''}>${esc(n)}</option>`).join('')}</select></div>
+   <div class="grid2"><div class="field"><label for="p-dist">予定距離<span class="opt">任意</span></label><div class="inline-unit"><input type="number" id="p-dist" inputmode="decimal" step="0.1" min="0" value="${pre.distanceM > 0 ? C.round(pre.distanceM / 1000, 2) : ''}"><span>km</span></div></div>
+   <div class="field"><label for="p-dur">予定時間<span class="opt">任意</span></label><div class="inline-unit"><input type="number" id="p-dur" inputmode="numeric" min="0" step="1" value="${dur ? Math.round(dur / 60) : ''}"><span>分</span></div></div></div>
+   <div class="field"><label for="p-memo">メモ</label><textarea id="p-memo">${esc(pre.memo || '')}</textarea></div>
+   <div class="btns"><button type="button" class="btn" data-act="back">キャンセル</button><button type="submit" class="btn primary">保存する</button></div>
+   ${pl ? `<button type="button" class="btn ghost-danger block" data-act="planDel" data-id="${pl.id}">この予定を削除</button>` : ''}
+  </form>`;
+};
+AFTER.plan = (p) => {
+  $('#pform').addEventListener('submit', async e => {
+    e.preventDefault();
+    const errs = [], date = $('#p-date').value, type = $('#p-type').value, ds = $('#p-dist').value.trim(), us = $('#p-dur').value.trim();
+    if (!C.isYmd(date)) errs.push('日付を入力してください');
+    if (ds && !/^\d+(\.\d+)?$/.test(ds)) errs.push('予定距離は数値で入力してください');
+    if (us && !/^\d+$/.test(us)) errs.push('予定時間は分単位の整数で入力してください');
+    if (errs.length) { $('#p-err').innerHTML = `<div class="alert err">${errs.map(esc).join('<br>')}</div>`; return; }
+    const old = p.id ? S.plans.find(x => x.id === p.id) : null;
+    const pl = Object.assign({}, old || { id: uid(), status: 'planned', workoutId: null, createdAt: nowIso() }, {
+      date, type, distanceM: type !== REST && ds ? Math.round(parseFloat(ds) * 1000) || null : null,
+      durationSec: type !== REST && us ? (+us * 60) || null : null, memo: $('#p-memo').value.trim(), updatedAt: nowIso()
+    });
+    try { await DB.put('plans', pl); } catch (er) { $('#p-err').innerHTML = `<div class="alert err">保存できませんでした：${esc(errMsg(er))}</div>`; return; }
+    const i = S.plans.findIndex(x => x.id === pl.id); if (i >= 0) S.plans[i] = pl; else S.plans.push(pl);
+    toast('予定を保存しました'); calSel = pl.date; calMonth = C.monthStart(pl.date); back();
+  });
+};
+ACT.planDel = async el => {
+  if (!(await ask({ title: '予定を削除しますか？', body: '練習記録（実績）は削除されません。', ok: '削除する', danger: true }))) return;
+  try { await DB.del('plans', el.dataset.id); } catch (e) { toast('削除できませんでした：' + errMsg(e), true); return; }
+  S.plans = S.plans.filter(x => x.id !== el.dataset.id); toast('予定を削除しました'); back();
+};
+
+/* ---------- 統計 ---------- */
+const stv = { mode: 'month', anchor: null, trendN: 12 };
+function deltaTxt(cur, prev, fmt, unit, lab) {
+  if (!prev.count) return `${lab}の記録なし`;
+  const d = cur - (typeof prev === 'object' ? prev.v : prev);
+  return `${lab}比 ${d > 0 ? '+' : d < 0 ? '−' : '±'}${fmt(Math.abs(d))}${unit}`;
+}
+TAB.stats = () => {
+  const t = today(); if (!stv.anchor) stv.anchor = t;
+  const c = ctx(), g = kv('goals', {}), a = stv.anchor;
+  let label, from, to, pFrom, pTo, plab;
+  if (stv.mode === 'week') { from = C.weekStart(a); to = C.addDays(from, 6); pFrom = C.addDays(from, -7); pTo = C.addDays(from, -1); label = `${C.fmtMD(from)}（月）〜 ${C.fmtMD(to)}（日）`; plab = '前週'; }
+  else if (stv.mode === 'month') { from = C.monthStart(a); to = C.monthEnd(a); pFrom = C.addMonths(from, -1); pTo = C.monthEnd(pFrom); const [y, m] = from.split('-').map(Number); label = `${y}年${m}月`; plab = '前月'; }
+  else { from = a.slice(0, 4) + '-01-01'; to = a.slice(0, 4) + '-12-31'; pFrom = (+a.slice(0, 4) - 1) + '-01-01'; pTo = (+a.slice(0, 4) - 1) + '-12-31'; label = a.slice(0, 4) + '年'; plab = '前年'; }
+  const cur = C.aggregate(S.workouts, from, to, c), prv = C.aggregate(S.workouts, pFrom, pTo, c);
+  const dl = (v, pv, fmt, unit) => prv.count ? `${plab}比 ${v - pv > 0 ? '+' : v - pv < 0 ? '−' : '±'}${fmt(Math.abs(v - pv))}${unit}` : `${plab}の記録なし`;
+  const kpis = [
+    kpi('走行距離', cur.count ? valNum(C.fmtKm(cur.distM), 'km') : valNone(), dl(cur.distM, prv.distM, v => C.fmtKm(v), 'km')),
+    kpi('練習回数', cur.count ? valNum(cur.count, '回') : valNone(), dl(cur.count, prv.count, String, '回')),
+    kpi('運動時間', cur.durSec ? valDur(cur.durSec) : valNone(), dl(cur.durSec, prv.durSec, s => C.fmtDur(s), '')),
+    kpi('平均ペース', cur.avgPace ? valNum(C.fmtPace(cur.avgPace), '/km') : valNone('—'), cur.avgPace ? '距離と時間がある記録から計算' : '')
+  ];
+  if (stv.mode === 'month') kpis.push(kpi('1回あたりの平均距離', cur.avgDist ? valNum(C.fmtKm(cur.avgDist), 'km') : valNone('—'), cur.avgDist ? `距離のある${cur.distCount}回の平均` : ''));
+  let body = '';
+  if (stv.mode === 'week') {
+    body += `<section class="card"><div class="sec-title"><h2>日別走行距離</h2><span class="tiny muted">km</span></div>${barChart(distSeries(from, 7, c), { unit: 'km' })}</section>`;
+    body += `<section class="card stack" style="gap:10px"><h2>週間目標</h2>${progHtml('週間走行距離', cur.distM / 1000, g.weekDistKm, v => C.round(v, 2).toFixed(2), 'km')}${progHtml('週間練習回数', cur.count, g.weekCount, fmtCnt, '回')}</section>`;
+  } else if (stv.mode === 'month') {
+    const days = C.dayDiff(from, to) + 1;
+    body += `<section class="card"><div class="sec-title"><h2>日別走行距離</h2><span class="tiny muted">km</span></div>${barChart(distSeries(from, days, c).map(x => Object.assign(x, { l: String(+x.l.split('/')[1]), l2: '' })), { every: 5, unit: 'km' })}</section>`;
+    body += `<section class="card stack" style="gap:10px"><h2>月間目標の達成率</h2>${progHtml('月間走行距離', cur.distM / 1000, g.monthDistKm, v => C.round(v, 2).toFixed(2), 'km')}${progHtml('月間練習回数', cur.count, g.monthCount, fmtCnt, '回')}${progHtml('月間運動時間', cur.durSec / 3600, g.monthTimeH, v => C.round(v, 1).toFixed(1), '時間')}</section>`;
+    const byType = {}; S.workouts.filter(w => w.date >= from && w.date <= to).forEach(w => { const o = byType[w.type] || (byType[w.type] = { n: 0, d: 0 }); o.n++; o.d += C.countedDist(w, c); });
+    const rows = Object.entries(byType).sort((x, y) => y[1].n - x[1].n);
+    body += `<section class="card"><div class="sec-title"><h2>練習種別の割合</h2><span class="tiny muted">回数ベース</span></div>${rows.length ? `<div class="hbars">${rows.map(([k, o]) => `<div class="hbar"><span>${esc(k)}</span><div class="tr"><div class="fl" style="width:${Math.round(o.n / cur.count * 100)}%"></div></div><span class="vv">${Math.round(o.n / cur.count * 100)}%<span class="tiny muted"> ${o.n}回</span></span></div>`).join('')}</div>` : '<div class="empty">記録なし</div>'}</section>`;
+  } else {
+    const y = from.slice(0, 4), md = [], mt = [];
+    for (let i = 1; i <= 12; i++) { const ms = `${y}-${C.pad2(i)}-01`, ag = C.aggregate(S.workouts, ms, C.monthEnd(ms), c); md.push({ l: i + '月', v: ag.distM / 1000, hl: ms === C.monthStart(t) }); mt.push({ l: i + '月', v: ag.durSec / 3600 }); }
+    body += `<section class="card"><div class="sec-title"><h2>月別走行距離</h2><span class="tiny muted">km</span></div>${barChart(md.map(x => Object.assign({}, x, { l: x.l.replace('月', '') })), { fmt: v => v >= 100 ? v.toFixed(0) : v.toFixed(1), unit: 'km' })}</section>`;
+    body += `<section class="card"><div class="sec-title"><h2>月別運動時間</h2><span class="tiny muted">時間</span></div>${barChart(mt.map(x => Object.assign({}, x, { l: x.l.replace('月', '') })), { fmt: v => v.toFixed(1), unit: '時間' })}</section>`;
+  }
+  // 推移
+  const N = stv.trendN, endW = C.weekStart(stv.mode === 'week' ? from : (to < t ? to : t)), wd = [], wp = [];
+  for (let i = N - 1; i >= 0; i--) { const s = C.addDays(endW, -7 * i), ag = C.aggregate(S.workouts, s, C.addDays(s, 6), c); wd.push({ l: C.fmtMD(s), v: ag.distM / 1000, hl: s === endW }); wp.push({ l: C.fmtMD(s), v: ag.avgPace }); }
+  body += `<section class="card"><div class="sec-title"><h2>週間走行距離の推移</h2><select id="st-n" aria-label="期間" style="width:auto;min-height:36px;padding:4px 8px">${[8, 12, 26, 52].map(n => `<option value="${n}" ${n === N ? 'selected' : ''}>${n}週</option>`).join('')}</select></div>${barChart(wd, { every: Math.ceil(N / 6), goal: g.weekDistKm || null, unit: 'km', fmt: v => v.toFixed(0) })}<div class="tiny muted">${C.fmtMD(C.addDays(endW, -7 * (N - 1)))}の週〜${C.fmtMD(endW)}の週（月曜始まり）</div></section>`;
+  body += `<section class="card"><div class="sec-title"><h2>平均ペースの推移（週ごと）</h2><span class="tiny muted">上ほど速い</span></div>${lineChart(wp, { invert: true, fmt: v => C.fmtPace(v), every: Math.ceil(N / 6) })}<div class="tiny muted">記録がない週は線をつなげず、空白のままにしています。</div></section>`;
+  return `<header class="top"><div><div class="brand">STATS</div><div class="date">統計</div></div><button class="link" data-act="open" data-v="goals">目標設定</button></header>
+  <div class="stack" style="margin-top:12px">
+   <div class="seg" role="group" aria-label="集計期間">${[['week', '週間'], ['month', '月間'], ['year', '年間']].map(([k, l]) => `<button data-act="stMode" data-v="${k}" aria-pressed="${stv.mode === k}">${l}</button>`).join('')}</div>
+   <div class="between"><button class="btn sm" data-act="stNav" data-n="-1" aria-label="前へ">‹</button><b>${label}</b><button class="btn sm" data-act="stNav" data-n="1" aria-label="次へ">›</button></div>
+   <div class="kpis">${kpis.join('')}</div>
+   <div class="small muted">走行距離は${c.includeWalk ? 'ウォーキングを含みます' : 'ウォーキングを除いています'}（設定で変更できます）。距離のない記録は回数・時間のみに反映します。</div>
+   ${body}
+  </div>`;
+};
+AFTER.tab_stats = () => { const s = $('#st-n'); if (s) s.addEventListener('change', () => { stv.trendN = +s.value; render(false); }); };
+ACT.stMode = el => { stv.mode = el.dataset.v; render(false); };
+ACT.stNav = el => {
+  const n = +el.dataset.n, a = stv.anchor;
+  stv.anchor = stv.mode === 'week' ? C.addDays(a, 7 * n) : stv.mode === 'month' ? C.addMonths(a, n) : `${+a.slice(0, 4) + n}-01-01`;
+  render(false);
+};
+
+/* ---------- 目標 ---------- */
+SUB.goals = () => {
+  const g = kv('goals', {}), t = today(), c = ctx(), ws = C.weekStart(t);
+  const wk = C.aggregate(S.workouts, ws, C.addDays(ws, 6), c), mo = C.aggregate(S.workouts, C.monthStart(t), C.monthEnd(t), c);
+  const f = (id, lab, unit, v, step = '1') => `<div class="field"><label for="${id}">${lab}</label><div class="inline-unit"><input type="number" id="${id}" inputmode="decimal" min="0" step="${step}" value="${v ?? ''}" placeholder="未設定"><span>${unit}</span></div></div>`;
+  const race = mainRace();
+  return bar('目標管理') + `<form id="gform" class="stack" style="margin-top:14px" novalidate>
+   <div id="g-err"></div>
+   <section class="card stack"><h2>今の進捗</h2>
+    ${progHtml('週間走行距離', wk.distM / 1000, g.weekDistKm, v => C.round(v, 2).toFixed(2), 'km')}${progHtml('週間練習回数', wk.count, g.weekCount, fmtCnt, '回')}
+    ${progHtml('月間走行距離', mo.distM / 1000, g.monthDistKm, v => C.round(v, 2).toFixed(2), 'km')}${progHtml('月間練習回数', mo.count, g.monthCount, fmtCnt, '回')}${progHtml('月間運動時間', mo.durSec / 3600, g.monthTimeH, v => C.round(v, 1).toFixed(1), '時間')}</section>
+   <section class="card stack"><h2>目標を設定</h2><div class="small muted">空欄は「未設定」になります。目標を変更しても、過去の練習記録は変更されません。過去の期間の達成率も現在の目標値で表示します。</div>
+    <div class="grid2">${f('g-wd', '週間走行距離', 'km', g.weekDistKm, '0.1')}${f('g-wc', '週間練習回数', '回', g.weekCount)}</div>
+    <div class="grid2">${f('g-md', '月間走行距離', 'km', g.monthDistKm, '0.1')}${f('g-mc', '月間練習回数', '回', g.monthCount)}</div>
+    ${f('g-mt', '月間運動時間', '時間', g.monthTimeH, '0.5')}
+    <button type="submit" class="btn primary block">目標を保存</button></section>
+   <section class="card"><div class="between"><div><h2>大会目標タイム</h2><div class="small muted">${race ? `${esc(race.name)}：${race.targetSec ? fmtTarget(race.targetSec) : '未設定'}` : '大会が未登録です'}</div></div><button type="button" class="btn sm" data-act="races">大会で設定</button></div></section>
+  </form>`;
+};
+AFTER.goals = () => {
+  $('#gform').addEventListener('submit', async e => {
+    e.preventDefault();
+    const errs = [], g = {};
+    for (const [id, k, lab, int] of [['g-wd', 'weekDistKm', '週間走行距離'], ['g-wc', 'weekCount', '週間練習回数', 1], ['g-md', 'monthDistKm', '月間走行距離'], ['g-mc', 'monthCount', '月間練習回数', 1], ['g-mt', 'monthTimeH', '月間運動時間']]) {
+      const v = $('#' + id).value.trim(); if (!v) continue;
+      if (!(int ? /^\d+$/ : /^\d+(\.\d+)?$/).test(v) || !(+v > 0)) { errs.push(`${lab}は0より大きい${int ? '整数' : '数値'}で入力してください`); continue; }
+      g[k] = +v;
+    }
+    if (errs.length) { $('#g-err').innerHTML = `<div class="alert err">${errs.map(esc).join('<br>')}</div>`; return; }
+    try { await setKV('goals', g); } catch (er) { $('#g-err').innerHTML = `<div class="alert err">保存できませんでした：${esc(errMsg(er))}</div>`; return; }
+    toast('目標を保存しました'); render(false);
+  });
+};
+
+/* ---------- 大会 ---------- */
+SUB.races = () => {
+  const t = today(), list = [...S.races].sort((a, b) => a.date.localeCompare(b.date));
+  const up = list.filter(r => r.date >= t), past = list.filter(r => r.date < t).reverse();
+  const card = r => { const st = raceState(r, t), p = racePace(r); return `<div class="card stack" style="gap:8px"><div class="between"><div><b>${esc(r.name)}</b> ${r.isMain ? '<span class="badge main">メイン</span>' : ''}</div><span class="badge ${st.d >= 0 ? 'race' : ''}">${st.label}</span></div>
+    <div class="small muted">${C.fmtDateJa(r.date)}${r.startTime ? ' ' + esc(r.startTime) + 'スタート' : ''}${r.place ? '・' + esc(r.place) : ''}・${esc(r.event || '')}・状態：${esc(r.status || '予定')}</div>
+    <div class="small">${r.targetSec ? `目標 ${fmtTarget(r.targetSec)}${p ? `（理論上の平均ペース ${C.fmtPace(p)}/km）` : ''}` : '目標タイム未設定'}</div>
+    <div class="btns"><button class="btn sm" data-act="raceEdit" data-id="${r.id}">編集</button>${r.isMain ? '' : `<button class="btn sm" data-act="raceMain" data-id="${r.id}">メインに設定</button>`}</div></div>`; };
+  return bar('大会管理') + `<div class="stack" style="margin-top:14px">
+   <button class="btn primary block" data-act="raceNew">＋ 大会を追加</button>
+   <h2>これからの大会</h2>${up.length ? up.map(card).join('') : '<div class="empty">予定している大会はありません</div>'}
+   <h2>過去の大会</h2>${past.length ? past.map(card).join('') : '<div class="empty">過去の大会はありません</div>'}
+  </div>`;
+};
+ACT.raceNew = () => push('raceForm', {});
+ACT.raceEdit = el => push('raceForm', { id: el.dataset.id });
+ACT.raceMain = async el => {
+  try { await DB.tx('races', 'readwrite', st => { S.races.forEach(r => st.races.put(Object.assign({}, r, { isMain: r.id === el.dataset.id }))); }); }
+  catch (e) { toast('保存できませんでした：' + errMsg(e), true); return; }
+  S.races.forEach(r => { r.isMain = r.id === el.dataset.id; }); toast('メイン大会を変更しました'); render(false);
+};
+const TARGETS = [['3:40', '3時間40分'], ['4:30', '4時間30分'], ['5:30', '5時間30分'], ['5:55', '5時間55分']];
+SUB.raceForm = (p) => {
+  const r = p.id ? S.races.find(x => x.id === p.id) : null;
+  if (p.id && !r) return bar('大会') + '<div class="empty">大会が見つかりません</div>';
+  const x = r || { event: 'フルマラソン', eventKm: 42.195, status: '予定' };
+  const tgt = x.targetSec ? C.fmtClock(x.targetSec) : '';
+  const evKey = Object.keys(EVENTS).includes(x.event) ? x.event : 'その他';
+  return bar(r ? '大会の編集' : '大会を追加') + `<form id="rform" class="stack" style="margin-top:14px" novalidate>
+   <div id="r-err"></div>
+   <div class="field"><label for="r-name">大会名<span class="req">必須</span></label><input type="text" id="r-name" maxlength="80" value="${esc(x.name || '')}"></div>
+   <div class="grid2"><div class="field"><label for="r-date">開催日<span class="req">必須</span></label><input type="date" id="r-date" value="${esc(x.date || '')}"></div>
+   <div class="field"><label for="r-time">スタート時刻</label><input type="time" id="r-time" value="${esc(x.startTime || '')}"></div></div>
+   <div class="field"><label for="r-place">開催場所</label><input type="text" id="r-place" maxlength="80" value="${esc(x.place || '')}"></div>
+   <div class="grid2"><div class="field"><label for="r-event">種目</label><select id="r-event">${Object.keys(EVENTS).map(k => `<option ${k === evKey ? 'selected' : ''}>${k}</option>`).join('')}</select></div>
+   <div class="field"><label for="r-km">距離</label><div class="inline-unit"><input type="number" id="r-km" inputmode="decimal" step="0.001" min="0" value="${x.eventKm ?? ''}" ${evKey !== 'その他' ? 'readonly' : ''}><span>km</span></div></div></div>
+   <div class="field"><span class="lab2">目標タイム</span><div class="chips">${TARGETS.map(([v, l]) => `<button type="button" class="chip" data-act="raceTgt" data-v="${v}" aria-pressed="${tgt === v + ':00'}">${l}</button>`).join('')}</div>
+     <input type="text" id="r-target" inputmode="numeric" placeholder="任意入力（時:分 または 時:分:秒、例 4:15）" value="${tgt}" aria-label="目標タイム"></div>
+   <div class="calcline" id="r-pace"></div>
+   <div class="field"><label for="r-status">大会の状態</label><select id="r-status">${RACE_STATUS.map(s => `<option ${s === (x.status || '予定') ? 'selected' : ''}>${s}</option>`).join('')}</select></div>
+   <div class="field"><label for="r-memo">メモ</label><textarea id="r-memo">${esc(x.memo || '')}</textarea></div>
+   <label class="check"><input type="checkbox" id="r-main" ${x.isMain || !S.races.length ? 'checked' : ''}> ホーム画面に表示するメイン大会にする</label>
+   <div class="btns"><button type="button" class="btn" data-act="back">キャンセル</button><button type="submit" class="btn primary">保存する</button></div>
+   ${r ? `<button type="button" class="btn ghost-danger block" data-act="raceDel" data-id="${r.id}">この大会を削除</button>` : ''}
+  </form>`;
+};
+function updRacePace() {
+  const el = $('#r-pace'); if (!el) return;
+  const t = C.parseTarget($('#r-target').value), km = parseFloat($('#r-km').value);
+  if (t == null) { el.innerHTML = '<span class="muted">目標タイムを入力すると、理論上の平均ペースを計算します。</span>'; return; }
+  if (Number.isNaN(t) || !(t > 0)) { el.innerHTML = '<span style="color:var(--bad)">目標タイムは「4:30」または「4:30:00」の形式で入力してください</span>'; return; }
+  if (!(km > 0)) { el.innerHTML = '<span class="muted">距離を入力するとペースを計算します。</span>'; return; }
+  el.innerHTML = `目標ペース <b>${C.fmtPace(t / km)}</b>/km<div class="tiny muted">目標タイムを${km}kmで割った理論上の平均ペースです。実際の走力や完走できるかどうかを示すものではありません。</div>`;
+}
+AFTER.raceForm = (p) => {
+  $('#r-event').addEventListener('change', () => { const k = $('#r-event').value; const km = $('#r-km'); if (EVENTS[k]) { km.value = EVENTS[k]; km.readOnly = true; } else { km.readOnly = false; km.value = ''; } updRacePace(); });
+  ['r-target', 'r-km'].forEach(id => $('#' + id).addEventListener('input', () => { $$('[data-act="raceTgt"]').forEach(b => b.setAttribute('aria-pressed', $('#r-target').value === b.dataset.v + ':00' || $('#r-target').value === b.dataset.v)); updRacePace(); }));
+  updRacePace();
+  $('#rform').addEventListener('submit', async e => {
+    e.preventDefault();
+    const errs = [], name = $('#r-name').value.trim(), date = $('#r-date').value, time = $('#r-time').value, km = parseFloat($('#r-km').value), t = C.parseTarget($('#r-target').value);
+    if (!name) errs.push('大会名を入力してください'); if (!C.isYmd(date)) errs.push('開催日を入力してください');
+    if (time && !C.isHm(time)) errs.push('スタート時刻が正しくありません');
+    if ($('#r-km').value && !(km > 0 && km <= 500)) errs.push('距離は0より大きい数値で入力してください');
+    if (Number.isNaN(t)) errs.push('目標タイムは「4:30」または「4:30:00」の形式で入力してください');
+    if (errs.length) { $('#r-err').innerHTML = `<div class="alert err">${errs.map(esc).join('<br>')}</div>`; window.scrollTo(0, 0); return; }
+    const old = p.id ? S.races.find(x => x.id === p.id) : null, main = $('#r-main').checked;
+    const r = Object.assign({}, old || { id: uid(), createdAt: nowIso() }, { name, date, startTime: time || null, place: $('#r-place').value.trim(), event: $('#r-event').value, eventKm: km > 0 ? km : null, targetSec: t > 0 ? t : null, status: $('#r-status').value, memo: $('#r-memo').value.trim(), isMain: main, updatedAt: nowIso() });
+    try { await DB.tx('races', 'readwrite', st => { st.races.put(r); if (main) S.races.filter(x => x.id !== r.id && x.isMain).forEach(x => st.races.put(Object.assign({}, x, { isMain: false }))); }); }
+    catch (er) { $('#r-err').innerHTML = `<div class="alert err">保存できませんでした：${esc(errMsg(er))}</div>`; return; }
+    if (main) S.races.forEach(x => { if (x.id !== r.id) x.isMain = false; });
+    const i = S.races.findIndex(x => x.id === r.id); if (i >= 0) S.races[i] = r; else S.races.push(r);
+    toast('大会を保存しました'); back();
+  });
+};
+ACT.raceTgt = el => { $('#r-target').value = el.dataset.v; $$('[data-act="raceTgt"]').forEach(b => b.setAttribute('aria-pressed', b === el)); updRacePace(); };
+ACT.raceDel = async el => {
+  const r = S.races.find(x => x.id === el.dataset.id); if (!r) return;
+  if (!(await ask({ title: '大会を削除しますか？', body: `${r.name}\n練習記録は削除されません。`, ok: '削除する', danger: true }))) return;
+  try { await DB.del('races', r.id); } catch (e) { toast('削除できませんでした：' + errMsg(e), true); return; }
+  S.races = S.races.filter(x => x.id !== r.id); toast('大会を削除しました'); back();
+};
+
+/* ---------- 設定 ---------- */
+let swState = 'オフ';
+TAB.settings = () => {
+  const s = settings(), lb = kv('lastBackupAt');
+  const mi = (act, label, sub = '', extra = '') => `<button data-act="${act}" ${extra}><span><span style="font-weight:700">${label}</span>${sub ? `<br><span class="small muted">${sub}</span>` : ''}</span><span class="chev">›</span></button>`;
+  return `<header class="top"><div><div class="brand">SETTINGS</div><div class="date">設定</div></div></header>
+  <div class="stack" style="margin-top:12px">
+   <h2>トレーニング</h2>
+   <div class="menu">${mi('races', '大会情報・目標タイム', `${S.races.length}件`)}${mi('open', '週間・月間目標', '', 'data-v="goals"')}${mi('open', '練習種別', `${types().length}種類`, 'data-v="types"')}${mi('open', 'お気に入り練習', `${kv('favorites', []).length}件`, 'data-v="favorites"')}${mi('open', 'シューズ情報', `${S.shoes.length}足`, 'data-v="shoes"')}</div>
+   <h2>集計</h2>
+   <div class="menu"><label class="mi check"><span><span style="font-weight:700">ウォーキングを走行距離に含める</span><br><span class="small muted">オフにすると、ウォーキングは回数と時間にだけ反映します</span></span><input type="checkbox" id="set-walk" ${s.includeWalk !== false ? 'checked' : ''}></label></div>
+   <h2>データ</h2>
+   <div class="alert ${lb ? 'info' : 'warn'} small">記録はこの端末のブラウザ内だけに保存されています。端末の変更・ブラウザのデータ削除で失われることがあるため、定期的にバックアップしてください。<br>最終バックアップ：${lb ? new Date(lb).toLocaleString('ja-JP') : 'まだありません'}</div>
+   <div class="menu">${mi('open', 'Apple Watchデータのインポート', 'ファイルを使った手動インポート', 'data-v="import"')}${mi('exportCSV', 'CSV出力', '練習履歴を表計算ソフト用に書き出し')}${mi('backup', 'JSONバックアップ', '全データを1つのファイルに保存')}${mi('open', 'データ復元', 'バックアップファイルから復元', 'data-v="restore"')}${mi('open', 'データ保存方式・取得元の確認', '', 'data-v="storage"')}</div>
+   <div class="menu"><button data-act="wipe"><span class="danger-t">全データを削除</span><span class="chev">›</span></button></div>
+   <h2>アプリについて</h2>
+   <div class="card small stack" style="gap:6px"><div>RUNNING TRAINING LOG v1.0</div><div class="muted">外部APIやクラウドを使わず、すべてブラウザ内で処理します。Apple Watch・ヘルスケアとの自動同期、端末間の自動同期には対応していません。</div>
+   <label class="check" style="min-height:36px"><input type="checkbox" id="set-sw" ${s.offline ? 'checked' : ''} ${swSupported() ? '' : 'disabled'}><span>オフライン起動を使う<br><span class="tiny muted">同じ場所に sw.js を置いた場合のみ。状態：${esc(s.offline ? swState : swSupported() ? 'オフ' : '利用不可（https のサーバーに置いて開いてください）')}</span></span></label>
+   <div class="muted">iPhoneでホーム画面に追加するには、Safariの共有ボタンから「ホーム画面に追加」を選びます。</div></div>
+  </div>`;
+};
+AFTER.tab_settings = () => {
+  const sw = $('#set-sw');
+  if (sw) sw.addEventListener('change', async () => {
+    let on = sw.checked;
+    if (on) { on = await registerSW(); if (!on) toast(swState, true); }
+    else { try { const rs = await navigator.serviceWorker.getRegistrations(); await Promise.all(rs.map(r => r.unregister())); } catch (_) { } swState = 'オフ'; }
+    try { await setKV('settings', Object.assign({}, settings(), { offline: on })); } catch (_) { }
+    render(false);
+  });
+  $('#set-walk').addEventListener('change', async e => {
+    try { await setKV('settings', Object.assign({}, settings(), { includeWalk: e.target.checked })); toast('集計方法を変更しました'); }
+    catch (er) { e.target.checked = !e.target.checked; toast('保存できませんでした：' + errMsg(er), true); }
+  });
+};
+
+/* 練習種別 */
+SUB.types = () => {
+  const tl = types(), used = n => S.workouts.filter(w => w.type === n).length;
+  const catSel = (id, v) => `<select id="${id}" aria-label="分類" style="width:auto">${Object.entries(C.CAT_LABEL).map(([k, l]) => `<option value="${k}" ${k === v ? 'selected' : ''}>${l}</option>`).join('')}</select>`;
+  return bar('練習種別') + `<div class="stack" style="margin-top:14px">
+   <div class="small muted">分類はカレンダーの表示（走・歩・強・大会）と、ウォーキングの距離集計に使います。名前を変えても、過去の記録の種別名は変わりません。</div>
+   <div id="t-err"></div>
+   <div class="menu">${tl.map((t, i) => `<div class="mi"><span class="grow"><b>${esc(t.name)}</b><br><span class="tiny muted">記録 ${used(t.name)}件</span></span>${catSel('tc-' + i, t.cat)}<button class="btn sm" data-act="typeRename" data-i="${i}">名前変更</button><button class="btn sm ghost-danger" data-act="typeDel" data-i="${i}">削除</button></div>`).join('')}</div>
+   <section class="card stack"><h2>種別を追加</h2><div class="field"><label for="t-new">名前</label><input type="text" id="t-new" maxlength="30"></div><div class="field"><label for="t-cat">分類</label>${catSel('t-cat', 'run')}</div><button class="btn primary" data-act="typeAdd">追加する</button></section>
+  </div>`;
+};
+async function saveTypes(tl, msg) { try { await setKV('types', tl); toast(msg); render(false); } catch (e) { toast('保存できませんでした：' + errMsg(e), true); } }
+AFTER.types = () => { types().forEach((t, i) => { const s = $('#tc-' + i); s && s.addEventListener('change', () => { const tl = types().map((x, j) => j === i ? Object.assign({}, x, { cat: s.value }) : x); saveTypes(tl, '分類を変更しました'); }); }); };
+ACT.typeAdd = () => {
+  const n = $('#t-new').value.trim(), cat = $('#t-cat').value;
+  if (!n) { $('#t-err').innerHTML = '<div class="alert err">名前を入力してください</div>'; return; }
+  if (n === REST || types().some(t => t.name === n)) { $('#t-err').innerHTML = '<div class="alert err">同じ名前の種別がすでにあります</div>'; return; }
+  saveTypes([...types(), { name: n, cat }], '種別を追加しました');
+};
+ACT.typeRename = async el => {
+  const i = +el.dataset.i, t = types()[i]; const n = await askText('種別名の変更', '新しい名前', t.name, '変更');
+  if (!n || n === t.name) return;
+  if (n === REST || types().some(x => x.name === n)) { toast('同じ名前の種別がすでにあります', true); return; }
+  saveTypes(types().map((x, j) => j === i ? Object.assign({}, x, { name: n }) : x), '名前を変更しました（過去の記録はそのままです）');
+};
+ACT.typeDel = async el => {
+  const i = +el.dataset.i, t = types()[i];
+  if (types().length <= 1) { toast('種別は最低1つ必要です', true); return; }
+  if (!(await ask({ title: `「${t.name}」を削除しますか？`, body: '選択肢から外れるだけで、この種別の過去の記録は残ります。', ok: '削除する', danger: true }))) return;
+  saveTypes(types().filter((_, j) => j !== i), '種別を削除しました');
+};
+
+/* お気に入り */
+SUB.favorites = () => {
+  const fs = kv('favorites', []);
+  return bar('お気に入り練習') + `<div class="stack" style="margin-top:14px"><div class="small muted">記録の入力画面や記録の詳細画面から登録できます。入力画面でタップすると内容がまとめて入ります。</div>
+  ${fs.length ? `<div class="menu">${fs.map(f => `<div class="mi"><span class="grow"><b>${esc(f.name)}</b><br><span class="tiny muted">${esc(f.type)}${f.distanceM ? '・' + C.fmtKm(f.distanceM) + 'km' : ''}${f.durationSec ? '・' + C.fmtDur(f.durationSec, true) : ''}</span></span><button class="btn sm ghost-danger" data-act="favDel" data-id="${f.id}">削除</button></div>`).join('')}</div>` : '<div class="empty">お気に入りはまだありません</div>'}</div>`;
+};
+ACT.favDel = async el => { try { await setKV('favorites', kv('favorites', []).filter(f => f.id !== el.dataset.id)); toast('削除しました'); render(false); } catch (e) { toast('削除できませんでした：' + errMsg(e), true); } };
+
+/* シューズ */
+SUB.shoes = () => {
+  const dist = id => S.workouts.filter(w => w.shoeId === id).reduce((a, w) => a + (w.distanceM || 0), 0);
+  return bar('シューズ情報') + `<div class="stack" style="margin-top:14px"><div id="s-err"></div>
+  ${S.shoes.length ? `<div class="menu">${S.shoes.map(s => `<div class="mi"><span class="grow"><b>${esc(s.name)}</b> ${s.retired ? '<span class="badge">引退</span>' : ''}<br><span class="tiny muted">累計 ${C.fmtKm(dist(s.id))}km${s.memo ? '・' + esc(s.memo) : ''}</span></span><button class="btn sm" data-act="shoeRetire" data-id="${s.id}">${s.retired ? '復帰' : '引退'}</button><button class="btn sm ghost-danger" data-act="shoeDel" data-id="${s.id}">削除</button></div>`).join('')}</div>` : '<div class="empty">シューズは登録されていません</div>'}
+  <section class="card stack"><h2>シューズを追加</h2><div class="field"><label for="s-name">名前</label><input type="text" id="s-name" maxlength="60" placeholder="例：練習用シューズ"></div><div class="field"><label for="s-memo">メモ</label><input type="text" id="s-memo" maxlength="100"></div><button class="btn primary" data-act="shoeAdd">追加する</button></section>
+  <div class="small muted">引退にすると記録入力の選択肢に表示されなくなります。累計距離は、このシューズを選んだ記録の距離の合計です。</div></div>`;
+};
+ACT.shoeAdd = async () => {
+  const n = $('#s-name').value.trim(); if (!n) { $('#s-err').innerHTML = '<div class="alert err">名前を入力してください</div>'; return; }
+  const s = { id: uid(), name: n, memo: $('#s-memo').value.trim(), retired: false, createdAt: nowIso() };
+  try { await DB.put('shoes', s); S.shoes.push(s); toast('シューズを追加しました'); render(false); } catch (e) { $('#s-err').innerHTML = `<div class="alert err">保存できませんでした：${esc(errMsg(e))}</div>`; }
+};
+ACT.shoeRetire = async el => {
+  const s = S.shoes.find(x => x.id === el.dataset.id); if (!s) return; const n = Object.assign({}, s, { retired: !s.retired });
+  try { await DB.put('shoes', n); Object.assign(s, n); render(false); } catch (e) { toast('保存できませんでした：' + errMsg(e), true); }
+};
+ACT.shoeDel = async el => {
+  const s = S.shoes.find(x => x.id === el.dataset.id); if (!s) return;
+  const n = S.workouts.filter(w => w.shoeId === s.id).length;
+  if (!(await ask({ title: `「${s.name}」を削除しますか？`, body: n ? `${n}件の記録でこのシューズが選ばれています。記録は残り、シューズ欄は「削除済み」と表示されます。` : '', ok: '削除する', danger: true }))) return;
+  try { await DB.del('shoes', s.id); S.shoes = S.shoes.filter(x => x.id !== s.id); toast('削除しました'); render(false); } catch (e) { toast('削除できませんでした：' + errMsg(e), true); }
+};
+
+/* データ保存方式 */
+let persistAsked = false;
+function requestPersist() { if (persistAsked) return; persistAsked = true; try { navigator.storage && navigator.storage.persist && navigator.storage.persist().catch(() => { }); } catch (_) { } }
+SUB.storage = () => {
+  const cnt = {}; C.SOURCES.forEach(s => { cnt[s] = 0; }); S.workouts.forEach(w => { cnt[w.source] = (cnt[w.source] || 0) + 1; });
+  return bar('データ保存方式・取得元') + `<div class="stack" style="margin-top:14px">
+  <section class="card stack" style="gap:8px"><h2>保存方式</h2><div class="small">練習記録・大会・予定・目標・設定は、このブラウザのIndexedDB（ブラウザ内データベース）に保存しています。外部のサーバーやクラウドには送信しません。</div>
+   <ul class="small" style="margin:0;padding-left:20px"><li>iPhoneとPCなど、端末間の自動同期はできません。移す場合はバックアップと復元を使ってください。</li><li>ブラウザの「履歴とWebサイトデータを消去」やアプリの削除で、記録が消えることがあります。</li><li>Safariとホーム画面に追加したアプリでは、保存場所が別になる場合があります。</li></ul>
+   <dl class="dl" id="st-est"><dt>永続化</dt><dd>確認中…</dd></dl></section>
+  <section class="card"><h2 style="margin-bottom:8px">データ取得元の内訳</h2><dl class="dl">${C.SOURCES.map(s => `<dt>${C.SOURCE_LABEL[s]}</dt><dd>${cnt[s]}件</dd>`).join('')}<dt>合計</dt><dd>${S.workouts.length}件</dd></dl>
+   <button class="btn sm" style="margin-top:10px" data-act="srcFilter">取込データを履歴で確認</button></section>
+  <section class="card"><h2 style="margin-bottom:8px">保存件数</h2><dl class="dl"><dt>大会</dt><dd>${S.races.length}件</dd><dt>練習予定</dt><dd>${S.plans.length}件</dd><dt>シューズ</dt><dd>${S.shoes.length}足</dd></dl></section></div>`;
+};
+AFTER.storage = async () => {
+  const el = $('#st-est'); let html = '';
+  try { const p = navigator.storage && navigator.storage.persisted ? await navigator.storage.persisted() : null; html += `<dt>永続化</dt><dd>${p === true ? '許可（自動削除されにくい状態）' : p === false ? '未許可（容量不足時にブラウザが削除する可能性があります）' : '確認できません'}</dd>`; } catch (_) { html += '<dt>永続化</dt><dd>確認できません</dd>'; }
+  try { if (navigator.storage && navigator.storage.estimate) { const e = await navigator.storage.estimate(); html += `<dt>使用量（目安）</dt><dd>${(e.usage / 1048576).toFixed(1)}MB</dd>`; } } catch (_) { }
+  if (el) el.innerHTML = html;
+};
+ACT.srcFilter = () => { Object.assign(hf, { source: 'apple_xml', type: '', from: '', to: '', dmin: '', dmax: '', q: '' }); go('records'); };
+
+/* ---------- 起動 ---------- */
+async function loadAll() {
+  const [w, r, p, s, k] = await Promise.all(DB.STORES.map(DB.getAll));
+  S.workouts = w; S.races = r; S.plans = p; S.shoes = s; S.kv = {}; k.forEach(x => { S.kv[x.key] = x.value; });
+}
+async function seed() {
+  if (kv('seeded')) return;
+  const race = { id: uid(), name: '第40回NAHAマラソン', date: '2026-12-06', startTime: '09:00', place: '', event: 'フルマラソン', eventKm: 42.195, targetSec: null, status: '予定', memo: '', isMain: true, createdAt: nowIso() };
+  await DB.tx(['races', 'kv'], 'readwrite', st => { st.races.put(race); st.kv.put({ key: 'seeded', value: true }); if (!S.kv.types) st.kv.put({ key: 'types', value: C.DEFAULT_TYPES }); });
+  S.races.push(race); S.kv.seeded = true; if (!S.kv.types) S.kv.types = C.DEFAULT_TYPES;
+}
+let lastDay = null;
+async function boot() {
+  try { await DB.open(); await loadAll(); await seed(); }
+  catch (e) {
+    console.error(e);
+    $('#main').innerHTML = `<div class="alert err" style="margin-top:20px"><b>データを読み込めませんでした</b><br>原因：${esc(errMsg(e))}<br><br>対処：プライベートブラウズを解除する、ほかのタブで開いているこのアプリを閉じる、ページを再読み込みする、をお試しください。</div>`;
+    return;
+  }
+  if (settings().offline) await registerSW();
+  lastDay = today(); render(true);
+  // 日付が変わったら表示を更新（カウントダウン等）
+  setInterval(() => { const d = today(); if (d !== lastDay) { lastDay = d; if (!stack.length) render(false); } }, 60000);
+  document.addEventListener('visibilitychange', () => { if (!document.hidden) { const d = today(); if (d !== lastDay) { lastDay = d; if (!stack.length) render(false); } } });
+}
+function setupPWA() {
+  try {
+    const icon = n => 'data:image/png;base64,' + (n === 180 ? ICON180 : ICON512);
+    const manifest = { name: 'RUNNING TRAINING LOG', short_name: 'RUN LOG', lang: 'ja', start_url: location.href.split('#')[0], scope: location.href.split('#')[0].replace(/[^/]*$/, ''), display: 'standalone', background_color: '#eef2f6', theme_color: '#1d5fd0', icons: [{ src: icon(180), sizes: '180x180', type: 'image/png' }, { src: icon(512), sizes: '512x512', type: 'image/png', purpose: 'any' }] };
+    const l = document.createElement('link'); l.rel = 'manifest'; l.href = 'data:application/manifest+json,' + encodeURIComponent(JSON.stringify(manifest)); document.head.appendChild(l);
+  } catch (_) { }
+}
+// オフライン起動は、HTMLと同じ場所に sw.js を置いたうえで設定から有効にする（置いていない環境で404を出さないため）
+const swSupported = () => 'serviceWorker' in navigator && /^https?:$/.test(location.protocol);
+async function registerSW() {
+  if (!swSupported()) { swState = 'この開き方では利用できません（https のサーバーに置いて開いてください）'; return false; }
+  try { await navigator.serviceWorker.register('sw.js'); swState = '有効'; return true; }
+  catch (e) { swState = '有効にできませんでした（同じ場所に sw.js がありません）'; return false; }
+}
+
+/* ===== インポート（Appleヘルスケア XML/ZIP・CSV・JSON）、書き出し、バックアップ・復元、全削除 ===== */
+const LIMIT = { health: 3 * 1024 ** 3, text: 10 * 1024 ** 2, backup: 50 * 1024 ** 2 };
+const fmtBytes = b => b >= 1024 ** 3 ? (b / 1024 ** 3).toFixed(2) + 'GB' : b >= 1048576 ? (b / 1048576).toFixed(1) + 'MB' : Math.max(1, Math.round(b / 1024)) + 'KB';
+
+/* ---------- ファイル読み取り（ブラウザ内のみ） ---------- */
+function sliceStream(blob, onBytes) {
+  let off = 0; const CH = 1 << 20;
+  return new ReadableStream({
+    async pull(ctrl) {
+      if (off >= blob.size) { ctrl.close(); return; }
+      const buf = new Uint8Array(await blob.slice(off, off + CH).arrayBuffer());
+      off += buf.length; if (onBytes) onBytes(off, blob.size); ctrl.enqueue(buf);
+    }
+  });
+}
+const readU8 = async (blob, a, b) => new Uint8Array(await blob.slice(a, b).arrayBuffer());
+// ZIPの目次を読み、export.xml の位置を探す（ZIP64対応、全体を展開しない）
+async function findZipEntry(file) {
+  const tailLen = Math.min(file.size, 65557 + 20), tail = await readU8(file, file.size - tailLen, file.size), dv = new DataView(tail.buffer);
+  let eocd = -1; for (let i = tail.length - 22; i >= 0; i--) if (dv.getUint32(i, true) === 0x06054b50) { eocd = i; break; }
+  if (eocd < 0) throw new Error('ZIPファイルの形式が正しくありません（ファイルが途中までしか保存されていない可能性があります）');
+  let cnt = dv.getUint16(eocd + 10, true), cdSize = dv.getUint32(eocd + 12, true), cdOff = dv.getUint32(eocd + 16, true);
+  if (cdOff === 0xFFFFFFFF || cdSize === 0xFFFFFFFF || cnt === 0xFFFF) {
+    const loc = eocd - 20;
+    if (loc < 0 || dv.getUint32(loc, true) !== 0x07064b50) throw new Error('ZIP64の目次を読み取れません');
+    const zo = Number(dv.getBigUint64(loc + 8, true)), z = await readU8(file, zo, zo + 56), zd = new DataView(z.buffer);
+    if (zd.getUint32(0, true) !== 0x06064b50) throw new Error('ZIP64の目次を読み取れません');
+    cnt = Number(zd.getBigUint64(32, true)); cdSize = Number(zd.getBigUint64(40, true)); cdOff = Number(zd.getBigUint64(48, true));
+  }
+  if (cdOff + cdSize > file.size || cdSize > 256 * 1048576) throw new Error('ZIPの目次が壊れています');
+  const cd = await readU8(file, cdOff, cdOff + cdSize), cv = new DataView(cd.buffer), dec = new TextDecoder();
+  const entries = []; let p = 0;
+  for (let n = 0; n < cnt && p + 46 <= cd.length; n++) {
+    if (cv.getUint32(p, true) !== 0x02014b50) throw new Error('ZIPの目次が壊れています');
+    const flags = cv.getUint16(p + 8, true), method = cv.getUint16(p + 10, true);
+    let comp = cv.getUint32(p + 20, true), uncomp = cv.getUint32(p + 24, true), loff = cv.getUint32(p + 42, true);
+    const nl = cv.getUint16(p + 28, true), el = cv.getUint16(p + 30, true), cl = cv.getUint16(p + 32, true);
+    const name = dec.decode(cd.subarray(p + 46, p + 46 + nl));
+    let e = p + 46 + nl; const eEnd = e + el;
+    while (e + 4 <= eEnd) {
+      const id = cv.getUint16(e, true), sz = cv.getUint16(e + 2, true);
+      if (id === 1) { let q = e + 4; if (uncomp === 0xFFFFFFFF) { uncomp = Number(cv.getBigUint64(q, true)); q += 8; } if (comp === 0xFFFFFFFF) { comp = Number(cv.getBigUint64(q, true)); q += 8; } if (loff === 0xFFFFFFFF) { loff = Number(cv.getBigUint64(q, true)); q += 8; } }
+      e += 4 + sz;
+    }
+    entries.push({ name, flags, method, comp, uncomp, loff }); p = eEnd + cl;
+  }
+  const cands = entries.filter(x => /(^|\/)export\.xml$/i.test(x.name)).sort((a, b) => a.name.length - b.name.length);
+  if (!cands.length) throw new Error('ZIPの中に export.xml が見つかりません。ヘルスケアAppの「すべてのヘルスケアデータを書き出す」で作ったZIPか確認してください');
+  const ent = cands[0];
+  if (ent.flags & 1) throw new Error('暗号化されたZIPには対応していません');
+  if (ent.method !== 0 && ent.method !== 8) throw new Error('未対応の圧縮方式です。「ファイル」AppでZIPを展開し、export.xml を直接選んでください');
+  const lh = await readU8(file, ent.loff, ent.loff + 30), lv = new DataView(lh.buffer);
+  if (lv.getUint32(0, true) !== 0x04034b50) throw new Error('ZIPのデータ部分が壊れています');
+  ent.start = ent.loff + 30 + lv.getUint16(26, true) + lv.getUint16(28, true);
+  return ent;
+}
+function zipEntryStream(file, ent, onBytes) {
+  let s = sliceStream(file.slice(ent.start, ent.start + ent.comp), onBytes);
+  if (ent.method === 8) {
+    if (typeof DecompressionStream === 'undefined') throw new Error('このブラウザはZIPの展開に対応していません。「ファイル」AppでZIPを展開し、export.xml を直接選んでください');
+    s = s.pipeThrough(new DecompressionStream('deflate-raw'));
+  }
+  return s;
+}
+async function readHealth(file, kind, onProg) {
+  let src;
+  if (kind === 'zip') { const ent = await findZipEntry(file); IMP.zipEntry = ent.name; IMP.xmlSize = ent.uncomp; src = zipEntryStream(file, ent, d => onProg(d, ent.comp)); }
+  else src = sliceStream(file, d => onProg(d, file.size));
+  const reader = src.getReader(), dec = new TextDecoder('utf-8'), sc = C.createHealthScanner(), items = [];
+  let last = performance.now();
+  const take = blocks => { for (const b of blocks) items.push(C.parseWorkoutBlock(b)); };
+  try {
+    for (;;) {
+      const { done, value } = await reader.read(); if (done) break;
+      take(sc.push(dec.decode(value, { stream: true })));
+      if (performance.now() - last > 80) { await new Promise(r => setTimeout(r, 0)); last = performance.now(); }
+      if (IMP.cancel) throw new Error('読み込みを中止しました');
+    }
+    const rest = dec.decode(); if (rest) take(sc.push(rest));
+  } catch (e) {
+    try { reader.cancel(); } catch (_) { }
+    if (kind === 'zip' && e && e.name === 'TypeError') throw new Error('ZIPの展開中にエラーが発生しました。ファイルが壊れているか、途中までしか保存されていない可能性があります');
+    throw e;
+  }
+  const fin = sc.finish();
+  if (fin.truncated) IMP.warnings.push('ファイルの末尾にある記録が途中で切れているため、最後のワークアウトを読み込めませんでした。');
+  return items;
+}
+
+/* ---------- インポート画面 ---------- */
+let IMP = null;
+const KIND_LABEL = { apple_xml: 'AppleヘルスケアXML', csv: 'CSV', json: 'JSON' };
+SUB.import = () => bar('Apple Watch記録のインポート') + `<div class="stack" style="margin-top:14px">
+  <div class="alert info"><b>ファイルを使った手動インポート</b><br>このアプリはApple WatchやヘルスケアAppに直接アクセスしません（自動同期・リアルタイム取得はありません）。書き出したファイルを選ぶと、この端末のブラウザ内だけで読み込みます。ファイルの内容が外部に送信されることはありません。</div>
+  <section class="card stack">
+   <div><h2>1. ファイルを選択</h2><div class="small muted">対応：ヘルスケアの書き出しZIP（export.zip）・export.xml・このアプリ形式のCSV／JSON</div></div>
+   <label class="btn primary block" for="imp-file" style="cursor:pointer">ファイルを選択</label>
+   <input type="file" id="imp-file" accept=".zip,.xml,.csv,.json,application/zip,text/xml,application/xml,text/csv,application/json" class="hidden">
+   <details class="more"><summary>ヘルスケアからの書き出し手順</summary><ol class="steps">
+    <li>iPhoneの「ヘルスケア」Appを開きます。</li><li>プロフィール（右上のアイコン）を開き、「すべてのヘルスケアデータを書き出す」などのデータ書き出しの項目を探します。</li>
+    <li>書き出しが終わったら、できたファイル（export.zip）を「ファイル」Appなど、あとで選べる場所に保存します。</li>
+    <li>このインポート画面を開きます。</li><li>「ファイルを選択」で export.zip（または展開した export.xml）を選びます。</li>
+    <li>プレビューで記録の内容と重複の警告を確認します。</li><li>取り込む記録を選んで「インポート」を押します。</li></ol>
+    <div class="small muted" style="margin-top:8px">iOSのバージョンによってメニュー名や場所は異なります。書き出しには数分かかることがあり、ファイルが数百MB以上になることもあります。ZIPのままでも読み込めます。</div></details>
+   <details class="more"><summary>対応形式の詳細</summary><div class="stack small" style="margin-top:6px">
+    <div><b>AppleヘルスケアXML</b>（上限 ${fmtBytes(LIMIT.health)}）<br>export.zip をそのまま選ぶか、中の export.xml を選びます。読み取るのはワークアウト（Workout）の種別・開始/終了日時・運動時間・距離と単位・平均/最大心拍数（ファイルに集計値がある場合のみ）・消費エネルギーです。個別の心拍データから平均値を計算することはしません。マイル等の単位はkmに変換し、判別できない単位は変換せず空欄にします。</div>
+    <div><b>CSV</b>（上限 ${fmtBytes(LIMIT.text)}、UTF-8）<br>1行目の列名を次の名前にしてください（順番は自由、使わない列は省略可）。</div>
+    <div class="code">${C.CSV_COLS.join(',')}</div>
+    <div>必須：実施日・練習種別、および「距離(km)」か「運動時間」のどちらか。実施日は 2026-10-01 または 2026/10/01、運動時間は 1:05:30 または 32:10（分:秒）。このアプリの「CSV出力」で作ったファイルもそのまま読み込めます（平均ペース・データ取得元の列は読み込み時に使いません）。上記以外の列名があるとエラーになります。</div>
+    <div><b>JSON</b>（上限 ${fmtBytes(LIMIT.text)}）</div>
+    <div class="code">${esc(JSON.stringify({ format: 'rtl-workouts', version: 1, workouts: [{ id: '任意の識別子', date: '2026-10-01', startTime: '06:30', type: 'ジョギング', distanceKm: 5.2, durationSec: 1860, avgHr: 148, maxHr: 165, fatigue: 2, memo: '' }] }, null, 1))}</div>
+    <div>date・type と、distanceKm か durationSec のどちらかが必須です。上記以外の項目があるとその記録はエラーになります。バックアップファイルは「設定 → データ復元」から読み込んでください。</div>
+   </div></details>
+  </section>
+  <div id="imp-area">${impArea()}</div>
+ </div>`;
+AFTER.import = () => {
+  $('#imp-file').addEventListener('change', e => { const f = e.target.files[0]; e.target.value = ''; if (f) onImportFile(f); });
+  bindImp();
+};
+function drawImp() { const a = $('#imp-area'); if (a) { a.innerHTML = impArea(); bindImp(); } }
+function selItems() { if (!IMP || !IMP.items) return []; return IMP.items.filter(i => i.checked && !i.error && IMP.groups[i.group].sel && (!IMP.from || i.date >= IMP.from)); }
+function impArea() {
+  if (!IMP) return '';
+  if (IMP.status === 'reading') return `<section class="card stack"><h2>読み込み中…</h2><div class="small">${esc(IMP.fileName)}（${fmtBytes(IMP.size)}）</div>
+    <div class="progress" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="${Math.round(IMP.progress * 100)}"><div id="imp-pg" style="width:${Math.round(IMP.progress * 100)}%"></div></div>
+    <div class="small muted" id="imp-pt">${Math.round(IMP.progress * 100)}%　大きなファイルは数分かかることがあります。この画面のままお待ちください。</div><button class="btn" data-act="impCancel">中止する</button></section>`;
+  if (IMP.status === 'error') return `<div class="alert err"><b>読み込めませんでした</b><br>${esc(IMP.error)}<br><br><span class="small">既存のデータは変更されていません。ファイルの種類と形式を確認して、もう一度選んでください。</span></div>`;
+  if (IMP.status === 'done') {
+    const r = IMP.result;
+    return `<section class="card stack"><h2>インポート結果</h2><div class="alert ok">${r.added.length}件を練習記録に追加しました。</div>
+     <dl class="dl"><dt>読み込んだ記録</dt><dd>${IMP.items.length}件</dd><dt>追加</dt><dd>${r.added.length}件</dd><dt>取り込まなかった</dt><dd>${IMP.items.length - r.added.length - r.failed.length}件（未選択・重複・取込不可）</dd><dt>失敗</dt><dd>${r.failed.length}件</dd>
+     <dt>記録数</dt><dd>${r.before.n}件 → ${r.after.n}件</dd><dt>総距離</dt><dd>${C.fmtKm(r.before.d)}km → ${C.fmtKm(r.after.d)}km（追加分 ${C.fmtKm(r.addD)}km）</dd><dt>集計の確認</dt><dd>${r.consistent ? '<span class="badge ok">一致</span> 追加前＋追加分＝追加後' : '<span class="badge bad">不一致</span>'}</dd></dl>
+     ${r.failed.length ? `<div class="alert err small"><b>失敗した記録</b><ul>${r.failed.map(f => `<li>${esc(f.it.date || '')} ${esc(f.msg)}</li>`).join('')}</ul></div>` : ''}
+     ${r.added.length ? `<div class="tablewrap"><table><thead><tr><th>実施日</th><th>開始</th><th>種別</th><th>距離</th><th>時間</th></tr></thead><tbody>${r.added.slice(0, 300).map(w => `<tr data-act="detail" data-id="${w.id}"><td>${w.date}</td><td>${w.startTime || ''}</td><td>${esc(w.type)}</td><td class="n">${w.distanceM ? C.fmtKm(w.distanceM) : '—'}</td><td>${w.durationSec ? C.fmtDur(w.durationSec, true) : '—'}</td></tr>`).join('')}</tbody></table></div>` : ''}
+     <div class="btns"><button class="btn primary" data-act="impShow">履歴で確認</button><button class="btn" data-act="impReset">別のファイルを読み込む</button></div></section>`;
+  }
+  // プレビュー
+  const its = IMP.items, nErr = its.filter(i => i.error).length, nSame = its.filter(i => i.dup === 'same').length, nPos = its.filter(i => i.dup === 'possible').length;
+  const visible = its.filter(i => !i.error && IMP.groups[i.group].sel && (!IMP.from || i.date >= IMP.from));
+  const errs = its.filter(i => i.error);
+  const sorted = [...visible].sort((a, b) => ((b.date || '') + (b.startTime || '')).localeCompare((a.date || '') + (a.startTime || '')));
+  const sel = selItems(), tnames = types().map(t => t.name);
+  const gs = Object.entries(IMP.groups).filter(([k]) => its.some(i => i.group === k && !i.error)).sort((a, b) => b[1].count - a[1].count);
+  const row = it => {
+    const st = it.error ? '<span class="badge bad">取込不可</span>' : it.dup === 'same' ? '<span class="badge ok">取込済み</span>' : it.dup === 'possible' ? '<span class="badge warn">重複の可能性あり</span>' : '<span class="badge src">新規</span>';
+    const o = it.original || {}, p = C.paceSec(it.distanceM, it.durationSec);
+    const dist = it.distanceM ? (o.distanceUnit && o.distanceUnit !== 'km' ? `${esc(o.distance)}${esc(o.distanceUnit)} → <b>${C.fmtKm(it.distanceM)}km</b>` : `<b>${C.fmtKm(it.distanceM)}km</b>`) : '距離なし';
+    return `<div class="imp-item"><input type="checkbox" data-i="${its.indexOf(it)}" ${it.checked && !it.error ? 'checked' : ''} ${it.error ? 'disabled' : ''} aria-label="${esc(it.date || '')}を取り込む">
+     <div><div class="row" style="gap:6px"><b>${it.date ? `${it.date.slice(0, 4) !== today().slice(0, 4) ? it.date.slice(0, 4) + '/' : ''}${C.fmtMD(it.date)}（${C.dow(it.date)}）` : '日付不明'}${it.startTime ? ' ' + it.startTime : ''}</b><span>${esc(IMP.groups[it.group].label)}</span>${st}</div>
+     ${it.error ? '' : `<div class="small">${dist}・${it.durationSec ? C.fmtDur(it.durationSec, true) : '時間なし'}${p ? `・${C.fmtPace(p)}/km` : ''}${it.avgHr ? `・平均心拍${it.avgHr}` : ''}${it.maxHr ? `・最大${it.maxHr}` : ''}${it.sourceName ? `<span class="tiny muted">・${esc(it.sourceName)}</span>` : ''}</div>`}
+     ${it.error ? `<div class="small" style="color:var(--bad)">${esc(it.error)}</div>` : ''}${it.dupReason ? `<div class="small" style="color:var(--warn)">${esc(it.dupReason)}</div>` : ''}
+     ${(it.warnings || []).map(w => `<div class="tiny" style="color:var(--warn)">${esc(w)}</div>`).join('')}</div></div>`;
+  };
+  return `<section class="card stack">
+   <h2>2. プレビュー</h2>
+   <dl class="dl"><dt>ファイル</dt><dd>${esc(IMP.fileName)}（${fmtBytes(IMP.size)}・${KIND_LABEL[IMP.format]}）</dd>${IMP.zipEntry ? `<dt>ZIP内のファイル</dt><dd>${esc(IMP.zipEntry)}</dd>` : ''}
+   <dt>読み込んだ記録</dt><dd>${its.length}件</dd><dt>内訳</dt><dd>取込不可 ${nErr}件・取込済み ${nSame}件・重複の可能性 ${nPos}件</dd></dl>
+   ${IMP.warnings.map(w => `<div class="alert warn small">${esc(w)}</div>`).join('')}
+   ${nPos ? '<div class="alert warn small">「重複の可能性あり」の記録は最初は選択されていません。内容を見比べて、別の練習であれば選択してください。同じ日の別の時間帯の練習は重複とみなしません。</div>' : ''}
+   <div><div class="lab2">取り込む種類と、記録する練習種別</div><div class="menu" style="margin-top:6px">
+    ${gs.map(([k, g]) => `<div class="mi"><label class="check grow"><input type="checkbox" data-g="${esc(k)}" ${g.sel ? 'checked' : ''}><span><b>${esc(g.label)}</b> <span class="tiny muted">${g.count}件</span></span></label>
+     <select data-gm="${esc(k)}" aria-label="${esc(g.label)}の練習種別" style="width:auto;max-width:48%">${tnames.map(n => `<option ${g.map === n ? 'selected' : ''}>${esc(n)}</option>`).join('')}${IMP.format !== 'apple_xml' && k !== '—' && !tnames.includes(k) ? `<option value="__add__" ${g.map === '__add__' ? 'selected' : ''}>「${esc(k)}」を種別に追加</option>` : ''}</select></div>`).join('')}</div></div>
+   <div class="field"><label for="imp-from">この日付以降だけ表示・取り込み<span class="opt">任意</span></label><input type="date" id="imp-from" value="${IMP.from || ''}"></div>
+   <div class="between"><b>選択中 ${sel.length}件</b><span class="row"><button class="btn sm" data-act="impAll">新規をすべて選択</button><button class="btn sm" data-act="impNone">選択を解除</button></span></div>
+   ${errs.length ? `<details class="more" ${errs.length <= 5 ? 'open' : ''}><summary>取り込めない記録（${errs.length}件）</summary><div class="imp-list" style="margin-top:6px">${errs.slice(0, 200).map(row).join('')}</div>${errs.length > 200 ? `<div class="small muted">ほか${errs.length - 200}件</div>` : ''}</details>` : ''}
+   ${sorted.length ? `<div class="imp-list">${sorted.slice(0, IMP.limit).map(row).join('')}</div>${sorted.length > IMP.limit ? `<button class="btn block" data-act="impMore">さらに表示（残り${sorted.length - IMP.limit}件）</button>` : ''}` : `<div class="empty">${gs.length ? '表示する記録がありません。取り込む種類を選んでください。' : '取り込める記録がありません。'}</div>`}
+   ${IMP.importError ? `<div class="alert err">${esc(IMP.importError)}</div>` : ''}
+   <h2>3. インポート</h2>
+   <button class="btn primary big block" data-act="impRun" ${sel.length ? '' : 'disabled'}>選択した ${sel.length}件をインポート</button>
+   <div class="small muted">既存の記録は上書き・削除されません。インポートは一括で行い、途中で失敗した場合は何も追加されません。</div>
+  </section>`;
+}
+function bindImp() {
+  if (!IMP || IMP.status !== 'preview') return;
+  $$('[data-g]').forEach(c => c.addEventListener('change', () => { IMP.groups[c.dataset.g].sel = c.checked; drawImp(); }));
+  $$('[data-gm]').forEach(s => s.addEventListener('change', () => { IMP.groups[s.dataset.gm].map = s.value; }));
+  $$('.imp-item input[data-i]').forEach(c => c.addEventListener('change', () => { IMP.items[+c.dataset.i].checked = c.checked; const b = $('[data-act="impRun"]'); const n = selItems().length; b.textContent = `選択した ${n}件をインポート`; b.disabled = !n; $('.between b', $('#imp-area')).textContent = `選択中 ${n}件`; }));
+  const f = $('#imp-from'); if (f) f.addEventListener('change', () => { IMP.from = f.value; drawImp(); });
+}
+ACT.impCancel = () => { if (IMP) IMP.cancel = true; };
+ACT.impAll = () => { IMP.items.forEach(i => { if (!i.error && !i.dup) i.checked = true; }); drawImp(); };
+ACT.impNone = () => { IMP.items.forEach(i => { i.checked = false; }); drawImp(); };
+ACT.impMore = () => { IMP.limit += 300; drawImp(); };
+ACT.impReset = () => { IMP = null; drawImp(); $('#imp-file').click(); };
+ACT.impShow = () => { Object.assign(hf, { source: IMP.format, type: '', from: '', to: '', dmin: '', dmax: '', q: '', limit: 100 }); go('records'); };
+
+async function onImportFile(file) {
+  IMP = { fileName: file.name, size: file.size, status: 'reading', progress: 0, warnings: [], limit: 200, cancel: false };
+  drawImp();
+  const prog = (d, t) => { IMP.progress = t ? Math.min(1, d / t) : 0; const pg = $('#imp-pg'), pt = $('#imp-pt'); if (pg) pg.style.width = Math.round(IMP.progress * 100) + '%'; if (pt) pt.firstChild.nodeValue = Math.round(IMP.progress * 100) + '%　'; };
+  try {
+    const head = await readU8(file, 0, Math.min(file.size, 8)), name = file.name.toLowerCase();
+    const isZip = head[0] === 0x50 && head[1] === 0x4b;
+    let kind = isZip ? 'zip' : name.endsWith('.csv') ? 'csv' : name.endsWith('.json') ? 'json' : (name.endsWith('.xml') || head[0] === 0x3c || (head[0] === 0xEF && head[3] === 0x3c)) ? 'xml' : null;
+    if (!kind) throw new Error('対応していないファイル形式です。ZIP・XML・CSV・JSONのいずれかを選んでください');
+    if (file.size === 0) throw new Error('ファイルが空です');
+    if ((kind === 'zip' || kind === 'xml') && file.size > LIMIT.health) throw new Error(`ファイルが大きすぎます（${fmtBytes(file.size)}）。上限は${fmtBytes(LIMIT.health)}です`);
+    if ((kind === 'csv' || kind === 'json') && file.size > LIMIT.text) throw new Error(`ファイルが大きすぎます（${fmtBytes(file.size)}）。CSV・JSONの上限は${fmtBytes(LIMIT.text)}です`);
+    let items;
+    if (kind === 'csv' || kind === 'json') {
+      const text = await file.text(); prog(1, 1);
+      const r = kind === 'csv' ? C.parseAppCSV(text) : C.parseAppJSON(text);
+      if (r.error) throw new Error(r.error);
+      items = r.items; IMP.format = kind;
+    } else { items = await readHealth(file, kind, prog); IMP.format = 'apple_xml'; }
+    if (!items.length) throw new Error('ワークアウトの記録が見つかりませんでした。ヘルスケアにワークアウトが保存されているか確認してください');
+    C.classifyDuplicates(items, S.workouts);
+    const tn = types().map(t => t.name), walk = (types().find(t => t.cat === 'walk') || {}).name;
+    const other = tn.includes('その他') ? 'その他' : tn[tn.length - 1];
+    const groups = {};
+    for (const it of items) {
+      const g = groups[it.group] || (groups[it.group] = { count: 0, label: IMP.format === 'apple_xml' ? C.actName(it.group) : it.group, sel: true, map: other });
+      if (!it.error) g.count++;
+    }
+    for (const [k, g] of Object.entries(groups)) {
+      if (IMP.format === 'apple_xml') {
+        const a = k.replace('HKWorkoutActivityType', '');
+        g.sel = a === 'Running' || a === 'Walking';
+        g.map = a === 'Running' ? (tn.includes('ジョギング') ? 'ジョギング' : other) : (a === 'Walking' || a === 'Hiking') && walk ? walk : other;
+      } else g.map = tn.includes(k) ? k : (k !== '—' ? '__add__' : other);
+    }
+    items.forEach(i => { i.checked = !i.error && !i.dup; });
+    Object.assign(IMP, { status: 'preview', items, groups });
+  } catch (e) {
+    console.warn(e);
+    Object.assign(IMP, { status: 'error', error: e && e.message ? e.message : String(e) });
+  }
+  drawImp();
+}
+ACT.impRun = async () => {
+  const sel = selItems(); if (!sel.length) { toast('取り込む記録が選ばれていません', true); return; }
+  const nPos = sel.filter(i => i.dup === 'possible').length;
+  const ok = await ask({ title: 'インポートの確認', body: `${sel.length}件を練習記録に追加します。${nPos ? `\nうち${nPos}件は「重複の可能性あり」の記録です。` : ''}\n既存の記録は変更・上書きされません。`, ok: 'インポートする' });
+  if (!ok) return;
+  const now = nowIso(), recs = [], failed = [], newTypes = [];
+  for (const [k, g] of Object.entries(IMP.groups)) if (g.sel && g.map === '__add__' && !types().some(t => t.name === k)) newTypes.push({ name: k, cat: 'run' });
+  for (const it of sel) {
+    const g = IMP.groups[it.group], type = g.map === '__add__' ? it.group : g.map;
+    const w = {
+      id: uid(), date: it.date, startTime: it.startTime || null, type, distanceM: it.distanceM || null, durationSec: it.durationSec || null,
+      avgHr: it.avgHr ?? null, maxHr: it.maxHr ?? null, fatigue: it.fatigue ?? null, pain: null, painNote: '', weather: '', shoeId: null, memo: it.memo || '', manualPaceSec: null,
+      source: IMP.format, createdAt: now, updatedAt: now,
+      sourceInfo: { importedAt: now, fileName: IMP.fileName, format: KIND_LABEL[IMP.format], externalKey: it.externalKey || null, activityType: it.activityType || null, sourceName: it.sourceName || null, original: it.original || null, energyKcal: it.energyKcal ?? null, indoor: it.indoor ?? null, endMs: it.endMs ?? null, line: it.line ?? null }
+    };
+    const e = C.validateWorkout(w); if (e.length) failed.push({ it, msg: e.join('／') }); else recs.push(w);
+  }
+  const c = ctx(), totalD = ws => ws.reduce((a, w) => a + C.countedDist(w, c), 0);
+  const before = { n: S.workouts.length, d: totalD(S.workouts) };
+  const tl = newTypes.length ? [...types(), ...newTypes] : null;
+  try {
+    await DB.tx(['workouts', 'kv'], 'readwrite', st => { recs.forEach(r => st.workouts.add(r)); if (tl) st.kv.put({ key: 'types', value: tl }); });
+  } catch (e) {
+    IMP.importError = 'インポートに失敗しました。何も追加されておらず、既存のデータは変更されていません。原因：' + errMsg(e);
+    drawImp(); return;
+  }
+  // 保存後にデータベースから読み直して集計を確認
+  let fresh; try { fresh = await DB.getAll('workouts'); } catch (_) { fresh = [...S.workouts, ...recs]; }
+  S.workouts = fresh; if (tl) S.kv.types = tl;
+  const addD = totalD(recs), after = { n: fresh.length, d: totalD(fresh) };
+  IMP.status = 'done';
+  IMP.result = { added: recs, failed, before, after, addD, consistent: after.n === before.n + recs.length && Math.abs(after.d - before.d - addD) < 0.5 };
+  requestPersist();
+  toast(`${recs.length}件をインポートしました`); drawImp(); window.scrollTo(0, 0);
+};
+
+/* ---------- 書き出し ---------- */
+async function saveFile(name, text, mime) {
+  const blob = new Blob([text], { type: mime });
+  const standalone = window.matchMedia && matchMedia('(display-mode: standalone)').matches || navigator.standalone;
+  if (standalone && navigator.canShare) {
+    try { const file = new File([blob], name, { type: mime }); if (navigator.canShare({ files: [file] })) { await navigator.share({ files: [file], title: name }); return true; } }
+    catch (e) { if (e && e.name === 'AbortError') return false; }
+  }
+  const url = URL.createObjectURL(blob), a = document.createElement('a');
+  a.href = url; a.download = name; a.rel = 'noopener'; document.body.appendChild(a); a.click(); a.remove();
+  setTimeout(() => URL.revokeObjectURL(url), 30000);
+  return true;
+}
+const stamp = () => today().replace(/-/g, '');
+ACT.exportCSV = async () => {
+  if (!S.workouts.length) { toast('出力する記録がありません', true); return; }
+  try { const ok = await saveFile(`running-log-${stamp()}.csv`, C.workoutsToCSV(sortW(S.workouts).reverse()), 'text/csv;charset=utf-8'); if (ok) toast(`${S.workouts.length}件をCSVに書き出しました`); }
+  catch (e) { toast('書き出せませんでした：' + errMsg(e), true); }
+};
+function backupObj() { return { format: 'rtl-backup', version: 1, app: 'RUNNING TRAINING LOG', exportedAt: nowIso(), data: { workouts: S.workouts, races: S.races, plans: S.plans, shoes: S.shoes, kv: Object.assign({}, S.kv) } }; }
+ACT.backup = async () => {
+  try {
+    const ok = await saveFile(`running-log-backup-${stamp()}.json`, JSON.stringify(backupObj(), null, 1), 'application/json');
+    if (!ok) return;
+    await setKV('lastBackupAt', nowIso()).catch(() => { });
+    toast('バックアップファイルを書き出しました'); if (!stack.length) render(false);
+  } catch (e) { toast('バックアップできませんでした：' + errMsg(e), true); }
+};
+
+/* ---------- 復元 ---------- */
+let RST = null;
+SUB.restore = () => bar('データ復元') + `<div class="stack" style="margin-top:14px">
+  <div class="alert info small">「JSONバックアップ」で書き出したファイルから復元します。復元前に内容と件数を確認できます。</div>
+  <label class="btn primary block" for="rst-file" style="cursor:pointer">バックアップファイルを選択</label>
+  <input type="file" id="rst-file" accept=".json,application/json" class="hidden">
+  <div id="rst-area">${rstArea()}</div></div>`;
+function rstArea() {
+  if (!RST) return '';
+  if (RST.error) return `<div class="alert err"><b>このファイルは復元できません</b><br>${esc(RST.error)}${RST.errors ? `<ul>${RST.errors.map(e => `<li>${esc(e)}</li>`).join('')}</ul>${RST.more ? `<div>ほか${RST.more}件</div>` : ''}` : ''}<br><span class="small">既存のデータは変更されていません。</span></div>`;
+  if (RST.done) return `<div class="alert ok">復元が完了しました。${RST.done}</div>`;
+  const c = RST.v.counts, d = RST.obj.data;
+  const nNew = d.workouts.filter(w => !S.workouts.some(x => x.id === w.id)).length;
+  return `<section class="card stack"><h2>復元する内容</h2>
+   <dl class="dl"><dt>ファイル</dt><dd>${esc(RST.fileName)}</dd><dt>作成日時</dt><dd>${RST.obj.exportedAt ? new Date(RST.obj.exportedAt).toLocaleString('ja-JP') : '不明'}</dd></dl>
+   <div class="tablewrap"><table><thead><tr><th>データ</th><th>バックアップ</th><th>現在</th></tr></thead><tbody>
+    <tr><td>練習記録</td><td class="n">${c.workouts}</td><td class="n">${S.workouts.length}</td></tr><tr><td>大会</td><td class="n">${c.races}</td><td class="n">${S.races.length}</td></tr>
+    <tr><td>練習予定</td><td class="n">${c.plans}</td><td class="n">${S.plans.length}</td></tr><tr><td>シューズ</td><td class="n">${c.shoes}</td><td class="n">${S.shoes.length}</td></tr></tbody></table></div>
+   <div class="field"><span class="lab2">復元方法</span>
+    <label class="check"><input type="radio" name="rst-mode" value="replace" ${RST.mode === 'replace' ? 'checked' : ''}><span><b>置き換え</b>：現在のデータをすべて消して、バックアップの内容にします</span></label>
+    <label class="check"><input type="radio" name="rst-mode" value="add" ${RST.mode === 'add' ? 'checked' : ''}><span><b>追加</b>：現在のデータを残し、まだ無いものだけ追加します（練習記録 ${nNew}件が追加対象。目標・設定は現在のまま）</span></label></div>
+   <button class="btn ${RST.mode === 'replace' ? 'danger' : 'primary'} block" data-act="rstRun">${RST.mode === 'replace' ? '置き換えて復元する' : '追加して復元する'}</button></section>`;
+}
+AFTER.restore = () => {
+  $('#rst-file').addEventListener('change', async e => {
+    const f = e.target.files[0]; e.target.value = ''; if (!f) return;
+    RST = { fileName: f.name, mode: 'add' };
+    try {
+      if (f.size > LIMIT.backup) throw new Error(`ファイルが大きすぎます（上限${fmtBytes(LIMIT.backup)}）`);
+      let obj; try { obj = JSON.parse(await f.text()); } catch (er) { throw new Error('JSONとして読み取れません'); }
+      if (obj && obj.format === C.JSON_FORMAT) throw new Error('これは練習記録の取り込み用JSONです。「Apple Watchデータのインポート」から読み込んでください');
+      const v = C.validateBackup(obj);
+      if (!v.ok) { RST.error = 'バックアップの内容に問題があります'; RST.errors = v.errors; RST.more = v.more; }
+      else Object.assign(RST, { obj, v });
+    } catch (er) { RST.error = er.message; }
+    drawRst();
+  });
+  bindRst();
+};
+function drawRst() { const a = $('#rst-area'); if (a) { a.innerHTML = rstArea(); bindRst(); } }
+function bindRst() { $$('[name="rst-mode"]').forEach(r => r.addEventListener('change', () => { RST.mode = r.value; drawRst(); })); }
+ACT.rstRun = async () => {
+  const d = RST.obj.data, rep = RST.mode === 'replace';
+  const ok = await ask({ title: rep ? '現在のデータを置き換えますか？' : '復元しますか？', body: rep ? `現在の練習記録${S.workouts.length}件などをすべて削除し、バックアップの内容（練習記録${d.workouts.length}件）に置き換えます。\nこの操作は取り消せません。必要なら先に現在のデータをバックアップしてください。` : 'まだ無いデータだけを追加します。既存のデータは変更されません。', ok: rep ? '置き換える' : '復元する', danger: rep });
+  if (!ok) return;
+  let added = 0;
+  try {
+    await DB.tx(DB.STORES, 'readwrite', st => {
+      if (rep) {
+        DB.STORES.forEach(s => st[s].clear());
+        ['workouts', 'races', 'plans', 'shoes'].forEach(s => d[s].forEach(x => st[s].put(x)));
+        Object.entries(d.kv).forEach(([key, value]) => st.kv.put({ key, value }));
+        st.kv.put({ key: 'seeded', value: true });
+        added = d.workouts.length;
+      } else {
+        const has = { workouts: new Set(S.workouts.map(x => x.id)), races: new Set(S.races.map(x => x.id)), plans: new Set(S.plans.map(x => x.id)), shoes: new Set(S.shoes.map(x => x.id)) };
+        ['workouts', 'races', 'plans', 'shoes'].forEach(s => d[s].forEach(x => { if (!has[s].has(x.id)) { st[s].add(x); if (s === 'workouts') added++; } }));
+        const tl = [...types()]; (Array.isArray(d.kv.types) ? d.kv.types : []).forEach(t => { if (t && t.name && !tl.some(x => x.name === t.name)) tl.push(t); });
+        const fv = [...kv('favorites', [])]; (Array.isArray(d.kv.favorites) ? d.kv.favorites : []).forEach(f => { if (f && f.id && !fv.some(x => x.id === f.id)) fv.push(f); });
+        st.kv.put({ key: 'types', value: tl }); st.kv.put({ key: 'favorites', value: fv });
+        if (!S.kv.goals && d.kv.goals) st.kv.put({ key: 'goals', value: d.kv.goals });
+      }
+    });
+  } catch (e) { RST.error = '復元に失敗しました。原因：' + errMsg(e); RST.errors = null; drawRst(); return; }
+  await loadAll();
+  RST = { done: rep ? `バックアップの内容に置き換えました（練習記録${added}件）。` : `練習記録${added}件などを追加しました。` };
+  toast('復元しました'); drawRst();
+};
+
+/* ---------- 全データ削除 ---------- */
+ACT.wipe = () => {
+  const bg = modal(`<h3>全データを削除</h3><p>練習記録${S.workouts.length}件、大会、練習予定、目標、シューズ、設定をすべて削除します。<b>取り消すことはできません。</b>\n必要な場合は先に「JSONバックアップ」を行ってください。</p>
+   <div class="field"><label for="wipe-in">確認のため「削除」と入力してください</label><input type="text" id="wipe-in" autocomplete="off"></div>
+   <div class="btns"><button class="btn" data-r="0">キャンセル</button><button class="btn danger" data-r="1" disabled>すべて削除する</button></div>`,
+    async (e, bg) => {
+      const b = e.target.closest('[data-r]'); if (!b) return;
+      if (b.dataset.r === '0') { bg.remove(); return; }
+      b.disabled = true;
+      try { await DB.tx(DB.STORES, 'readwrite', st => { DB.STORES.forEach(s => st[s].clear()); st.kv.put({ key: 'seeded', value: true }); st.kv.put({ key: 'types', value: C.DEFAULT_TYPES }); }); }
+      catch (er) { bg.remove(); toast('削除できませんでした：' + errMsg(er), true); return; }
+      bg.remove(); await loadAll(); toast('全データを削除しました'); go('home');
+    });
+  const inp = $('#wipe-in', bg), btn = $('[data-r="1"]', bg);
+  inp.addEventListener('input', () => { btn.disabled = inp.value.trim() !== '削除'; });
+  setTimeout(() => inp.focus(), 30);
+};
+
+setupPWA();
+boot();
+</script>
+</body>
+</html>
