@@ -305,7 +305,7 @@ var Core = (function () {
     const [y1, m1, d1] = a.split('-').map(Number), [y2, m2, d2] = b.split('-').map(Number);
     return Math.round((Date.UTC(y2, m2 - 1, d2) - Date.UTC(y1, m1 - 1, d1)) / 86400000);
   }
-  function weekStart(s) { const w = (toDate(s).getDay() + 6) % 7; return addDays(s, -w); } // 月曜始まり
+  function weekStart(s) { return addDays(s, -toDate(s).getDay()); } // 日曜始まり（カレンダーと共通）
   function monthStart(s) { return s.slice(0, 8) + '01'; }
   function monthEnd(s) { const [y, m] = s.split('-').map(Number); return ymd(new Date(y, m, 0)); }
   function addMonths(s, n) { const [y, m] = s.split('-').map(Number); return ymd(new Date(y, m - 1 + n, 1)); }
@@ -1443,7 +1443,7 @@ TAB.calendar = () => {
   const t = today(); if (!calMonth) calMonth = C.monthStart(t); if (!calSel) calSel = t;
   const ms = calMonth, me = C.monthEnd(ms), gs = C.weekStart(ms), ge = C.addDays(C.weekStart(me), 6);
   const [y, m] = ms.split('-').map(Number);
-  let cells = ['月', '火', '水', '木', '金', '土', '日'].map((x, i) => `<div class="dh ${i === 5 ? 'sat' : i === 6 ? 'sun' : ''}">${x}</div>`).join('');
+  let cells = ['日', '月', '火', '水', '木', '金', '土'].map((x, i) => `<div class="dh ${i === 0 ? 'sun' : i === 6 ? 'sat' : ''}">${x}</div>`).join('');
   for (let d = gs; d <= ge; d = C.addDays(d, 1)) {
     const info = dayInfo(d), km = info.ws.reduce((a, w) => a + C.countedDist(w, ctx()), 0);
     cells += `<button class="cday${d.slice(0, 7) !== ms.slice(0, 7) ? ' out' : ''}${d === t ? ' today' : ''}${d === calSel ? ' sel' : ''}" data-act="calPick" data-d="${d}" aria-label="${C.fmtDateJa(d)}${info.ws.length ? ' 記録' + info.ws.length + '件' : ''}${info.ps.length ? ' 予定' + info.ps.length + '件' : ''}">
@@ -1535,7 +1535,7 @@ TAB.stats = () => {
   const t = today(); if (!stv.anchor) stv.anchor = t;
   const c = ctx(), g = kv('goals', {}), a = stv.anchor;
   let label, from, to, pFrom, pTo, plab;
-  if (stv.mode === 'week') { from = C.weekStart(a); to = C.addDays(from, 6); pFrom = C.addDays(from, -7); pTo = C.addDays(from, -1); label = `${C.fmtMD(from)}（月）〜 ${C.fmtMD(to)}（日）`; plab = '前週'; }
+  if (stv.mode === 'week') { from = C.weekStart(a); to = C.addDays(from, 6); pFrom = C.addDays(from, -7); pTo = C.addDays(from, -1); label = `${C.fmtMD(from)}（日）〜 ${C.fmtMD(to)}（土）`; plab = '前週'; }
   else if (stv.mode === 'month') { from = C.monthStart(a); to = C.monthEnd(a); pFrom = C.addMonths(from, -1); pTo = C.monthEnd(pFrom); const [y, m] = from.split('-').map(Number); label = `${y}年${m}月`; plab = '前月'; }
   else { from = a.slice(0, 4) + '-01-01'; to = a.slice(0, 4) + '-12-31'; pFrom = (+a.slice(0, 4) - 1) + '-01-01'; pTo = (+a.slice(0, 4) - 1) + '-12-31'; label = a.slice(0, 4) + '年'; plab = '前年'; }
   const cur = C.aggregate(S.workouts, from, to, c), prv = C.aggregate(S.workouts, pFrom, pTo, c);
@@ -1567,7 +1567,7 @@ TAB.stats = () => {
   // 推移
   const N = stv.trendN, endW = C.weekStart(stv.mode === 'week' ? from : (to < t ? to : t)), wd = [], wp = [];
   for (let i = N - 1; i >= 0; i--) { const s = C.addDays(endW, -7 * i), ag = C.aggregate(S.workouts, s, C.addDays(s, 6), c); wd.push({ l: C.fmtMD(s), v: ag.distM / 1000, hl: s === endW }); wp.push({ l: C.fmtMD(s), v: ag.avgPace }); }
-  body += `<section class="card"><div class="sec-title"><h2>週間走行距離の推移</h2><select id="st-n" aria-label="期間" style="width:auto;min-height:36px;padding:4px 8px">${[8, 12, 26, 52].map(n => `<option value="${n}" ${n === N ? 'selected' : ''}>${n}週</option>`).join('')}</select></div>${barChart(wd, { every: Math.ceil(N / 6), goal: g.weekDistKm || null, unit: 'km', fmt: v => v.toFixed(0) })}<div class="tiny muted">${C.fmtMD(C.addDays(endW, -7 * (N - 1)))}の週〜${C.fmtMD(endW)}の週（月曜始まり）</div></section>`;
+  body += `<section class="card"><div class="sec-title"><h2>週間走行距離の推移</h2><select id="st-n" aria-label="期間" style="width:auto;min-height:36px;padding:4px 8px">${[8, 12, 26, 52].map(n => `<option value="${n}" ${n === N ? 'selected' : ''}>${n}週</option>`).join('')}</select></div>${barChart(wd, { every: Math.ceil(N / 6), goal: g.weekDistKm || null, unit: 'km', fmt: v => v.toFixed(0) })}<div class="tiny muted">${C.fmtMD(C.addDays(endW, -7 * (N - 1)))}の週〜${C.fmtMD(endW)}の週（日曜始まり）</div></section>`;
   body += `<section class="card"><div class="sec-title"><h2>平均ペースの推移（週ごと）</h2><span class="tiny muted">上ほど速い</span></div>${lineChart(wp, { invert: true, fmt: v => C.fmtPace(v), every: Math.ceil(N / 6) })}<div class="tiny muted">記録がない週は線をつなげず、空白のままにしています。</div></section>`;
   return `<header class="top"><div><div class="brand">STATS</div><div class="date">統計</div></div><button class="link" data-act="open" data-v="goals">目標設定</button></header>
   <div class="stack" style="margin-top:12px">
